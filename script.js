@@ -21,10 +21,28 @@
         themeToggle.addEventListener('click', toggleTheme);
     }
 
-    // Nav scroll state
+    // Nav scroll state — hide on scroll down, show on scroll up or at top
     const nav = document.getElementById('nav');
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+    function onNavScroll() {
+        const y = window.scrollY;
+        if (nav) {
+            nav.classList.toggle('scrolled', y > 10);
+            // Show when at top or scrolling up; hide when scrolling down past 60px
+            if (y <= 10) {
+                nav.classList.remove('nav-hidden');
+            } else if (y > lastScrollY && y > 60) {
+                nav.classList.add('nav-hidden');
+            } else if (y < lastScrollY) {
+                nav.classList.remove('nav-hidden');
+            }
+        }
+        lastScrollY = y;
+        ticking = false;
+    }
     window.addEventListener('scroll', () => {
-        if (nav) nav.classList.toggle('scrolled', window.scrollY > 10);
+        if (!ticking) { requestAnimationFrame(onNavScroll); ticking = true; }
     }, { passive: true });
 
     // Mobile nav toggle
