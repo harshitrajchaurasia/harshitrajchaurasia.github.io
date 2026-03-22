@@ -1,0 +1,11 @@
+# Word documents & temp files
+*.docx
+~$*
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Editor files
+*.swp
+*.swo
