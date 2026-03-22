@@ -513,36 +513,12 @@ img { max-width: 100%; display: block; }
     letter-spacing: -0.02em;
 }
 
-.projects-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-}
-.project-card-wide {
-    grid-column: 1 / -1;
-}
-.project-card {
-    padding: 20px;
-    background: var(--bg-card); border: 1px solid var(--border);
-    border-radius: var(--radius);
-    transition: border-color 0.2s var(--ease);
-}
-.project-card:hover { border-color: var(--text-muted); }
-.project-card h4 {
-    font-family: var(--font-heading);
-    font-size: 0.92rem; font-weight: 700; color: var(--text);
-    margin-bottom: 6px; letter-spacing: -0.01em;
-}
 .project-tag-sm {
     display: inline-block; font-size: 0.72rem; font-weight: 700;
     text-transform: uppercase; letter-spacing: 0.06em;
     color: var(--text-muted); background: var(--bg-alt);
     border: 1px solid var(--border); border-radius: 3px;
     padding: 2px 8px; margin-bottom: 8px;
-}
-.project-card p {
-    font-size: 0.85rem; color: var(--text-secondary);
-    line-height: 1.65; margin-bottom: 10px;
 }
 
 /* ---------- EXPERIENCE ---------- */
@@ -671,28 +647,57 @@ img { max-width: 100%; display: block; }
     font-size: 0.92rem; color: var(--text-secondary);
 }
 
-/* ---------- CONTACT ---------- */
+/* ---------- CONTACT (CTA Section) ---------- */
+.contact-section {
+    background: var(--bg-alt);
+    border-top: 2px solid var(--accent);
+}
 .contact-desc {
-    font-size: 0.92rem; color: var(--text-secondary);
-    line-height: 1.7; margin-bottom: 24px; margin-top: -16px;
+    font-size: 0.95rem; color: var(--text-secondary);
+    line-height: 1.7; margin-bottom: 32px; margin-top: -12px;
+    max-width: 600px;
 }
-.contact-info {
-    list-style: none; display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px 40px;
+.contact-cta-row {
+    display: flex; flex-direction: column; gap: 12px;
+    margin-bottom: 28px;
 }
-.contact-info li {
-    font-size: 0.92rem; color: var(--text-secondary);
-    display: flex; gap: 12px; align-items: baseline;
+.contact-cta {
+    display: flex; align-items: center; gap: 12px;
+    padding: 16px 20px; border-radius: var(--radius);
+    text-decoration: none; font-weight: 600;
+    transition: all 0.2s var(--ease);
 }
-.contact-info a {
-    font-weight: 500; color: var(--accent);
+.contact-cta-primary {
+    background: var(--accent); color: #fff;
+    font-size: 0.92rem;
+    justify-content: center;
 }
-.contact-info a:hover { color: var(--accent-hover); }
-.contact-label {
-    font-size: 0.78rem; font-weight: 700; text-transform: uppercase;
-    letter-spacing: 0.06em; color: var(--text-muted);
-    min-width: 60px;
+.contact-cta-primary:hover {
+    background: var(--accent-hover); color: #fff;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+.contact-cta-pair {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+}
+.contact-cta-secondary {
+    background: var(--bg-card); color: var(--text);
+    border: 1px solid var(--border);
+    font-size: 0.85rem; justify-content: center;
+}
+.contact-cta-secondary:hover {
+    border-color: var(--accent); color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+.contact-cta-secondary svg { flex-shrink: 0; }
+.contact-meta {
+    display: flex; flex-wrap: wrap; gap: 8px 24px;
+    font-size: 0.82rem; color: var(--text-muted);
+    padding-top: 20px; border-top: 1px solid var(--border);
+}
+.contact-meta strong {
+    font-weight: 600; color: var(--text-secondary);
 }
 
 /* ---------- FOOTER ---------- */
@@ -926,8 +931,6 @@ img { max-width: 100%; display: block; }
     .project-demo { grid-template-columns: 1fr; }
     .demo-interactive { grid-template-columns: 1fr; }
     .projects-twoup { grid-template-columns: 1fr; }
-    .projects-grid { grid-template-columns: 1fr; }
-    .project-card-wide { grid-column: auto; }
     .skills-grid { grid-template-columns: 1fr; }
     .metrics-strip {
         gap: 16px;
@@ -998,7 +1001,8 @@ img { max-width: 100%; display: block; }
 
     .currently-item { font-size: 0.88rem; }
 
-    .contact-info { grid-template-columns: 1fr; }
+    .contact-cta-pair { grid-template-columns: 1fr; }
+    .contact-meta { flex-direction: column; gap: 6px; }
     .footer-inner { flex-direction: column; text-align: center; }
 
     .kbd-toast {
