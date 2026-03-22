@@ -95,7 +95,7 @@
 
     // Scroll reveal via IntersectionObserver
     const revealElements = document.querySelectorAll(
-        '.project-slide, .project-card, .section-title, .contact-desc, .contact-info, .more-heading, .project-demo, .intro-expand, .exp-role, .exp-awards, .skills-grid, .certs-section, .education-section, .metrics-strip, .currently-content, .exp-narrative'
+        '.project-slide, .section-title, .contact-desc, .contact-cta-row, .contact-meta, .more-heading, .project-demo, .intro-expand, .exp-role, .exp-awards, .skills-grid, .certs-section, .education-section, .metrics-strip, .currently-content, .exp-narrative'
     );
     if (revealElements.length) {
         revealElements.forEach(el => el.classList.add('reveal'));
@@ -161,6 +161,32 @@
         });
         carousel.addEventListener('scroll', updateArrows, { passive: true });
         updateArrows();
+    }
+
+    // Other Projects carousel
+    var otherCarousel = document.getElementById('otherProjectsCarousel');
+    var otherPrev = document.getElementById('otherCarouselPrev');
+    var otherNext = document.getElementById('otherCarouselNext');
+
+    function updateOtherArrows() {
+        if (!otherCarousel || !otherPrev || !otherNext) return;
+        var scrollLeft = otherCarousel.scrollLeft;
+        var maxScroll = otherCarousel.scrollWidth - otherCarousel.clientWidth;
+        otherPrev.classList.toggle('hidden', scrollLeft < 5);
+        otherNext.classList.toggle('hidden', scrollLeft >= maxScroll - 5);
+    }
+
+    if (otherCarousel && otherPrev && otherNext) {
+        otherPrev.addEventListener('click', function () {
+            var slide = otherCarousel.querySelector('.project-slide');
+            if (slide) otherCarousel.scrollBy({ left: -(slide.offsetWidth + 20), behavior: 'smooth' });
+        });
+        otherNext.addEventListener('click', function () {
+            var slide = otherCarousel.querySelector('.project-slide');
+            if (slide) otherCarousel.scrollBy({ left: slide.offsetWidth + 20, behavior: 'smooth' });
+        });
+        otherCarousel.addEventListener('scroll', updateOtherArrows, { passive: true });
+        updateOtherArrows();
     }
 
     // ============================================
