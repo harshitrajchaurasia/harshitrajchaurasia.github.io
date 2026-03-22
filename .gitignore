@@ -9,3 +9,6 @@ Thumbs.db
 # Editor files
 *.swp
 *.swo
+
+# Unused assets
+circle-image.png
