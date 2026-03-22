@@ -64,7 +64,7 @@
 
     // Scroll reveal via IntersectionObserver
     const revealElements = document.querySelectorAll(
-        '.project-slide, .project-card, .section-title, .contact-desc, .contact-info, .more-heading, .project-demo, .intro-expand'
+        '.project-slide, .project-card, .section-title, .contact-desc, .contact-info, .more-heading, .project-demo, .intro-expand, .exp-role, .skills-grid, .certs-section, .education-section'
     );
     if (revealElements.length) {
         revealElements.forEach(el => el.classList.add('reveal'));
