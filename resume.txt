@@ -1,0 +1,37 @@
+HARSHIT CHAURASIA
+Senior Automation Engineer  |  AI/ML & Cloud Solutions
++91-9889483489  |  harshit1chaurasia@outlook.com  |  linkedin.com/in/harshit-raj-chaurasia  |  github.com/YOUR-HANDLE
+Lucknow, India  |  English (Fluent), Hindi (Native)  |  Open to Remote & Relocation
+PROFESSIONAL SUMMARY
+Automation and AI Engineer with 4.5+ years at TCS, specializing in building ML systems and enterprise automation platforms at scale. Designed a BERT-based classification system processing 300K+ monthly transactions at 97% accuracy, and led a zero-downtime 5TB GCP migration serving 800K+ endpoints. Copyright holder for an enterprise RPA platform; 1st and 2nd place winner at TCS AI Hackathon 2025.
+PROFESSIONAL EXPERIENCE
+TATA CONSULTANCY SERVICES (TCS)
+Analytics & Automation Specialist  |  2024 – Present
+•  Led end-to-end 5TB+ data migration to GCP (BigQuery, Dataflow, Dataproc) for a major enterprise client, achieving zero downtime over 6 months and reducing annual infrastructure costs.
+•  Improved endpoint compliance from 70% to 98% across 800K+ devices by designing a Smart Business Rules engine, directly reducing security audit findings.
+•  GHDRover (Ticket & RFC): Built a ticket/change-request classification system using BERT base-uncased (Bi-Encoder + Cross-Encoder), achieving 97% accuracy on 300K+ monthly transactions. Automated catalog selection and reduced resolution time by 85%.
+•  Network InSights: Developed time-series forecasting models for network link optimization, saving INR 60 lakh in FY24 with projected savings of INR 2+ crore by FY26 through intelligent upgrade/downgrade recommendations.
+RPA Developer  |  2022 – 2024
+•  Enterprise RPA 1.0 Platform (Copyright 2025): Architected an end-to-end automation platform covering software deployment, O365 licensing, compliance monitoring, and testing. Delivered 8 production bots with 92% success rate, saving 1000+ hours and reducing manual effort by 95%.
+•  Built Agentic AI POC using UiPath AI Center for automated knowledge extraction from service desk databases, demonstrating feasibility for self-healing ticket resolution.
+•  Developed and maintained production RPA bots processing IT operations workflows using UiPath REFramework and Orchestrator, supporting a team of 15+ operations staff.
+IT Operations Lead & Asset Management  |  2021 – 2022
+•  Managed IT operations for India North Region, overseeing asset lifecycle and vendor coordination.
+•  Identified and piloted 25+ automation opportunities, building the business case that led to the dedicated RPA practice.
+HACKATHON WINS
+•  1st Place – TCS AI Hackathon 2025: Energy Optimizer for Oil & Gas Pipelines — ML predictive system optimizing pump configurations across long-distance pipelines by analyzing flow rates, viscosity, pressure, and terrain to reduce energy consumption while maintaining throughput and safety.
+•  2nd Place – TCS AI Hackathon 2025: IoT AI Agent for Facility Energy Optimization — Generative AI-powered agent ingesting real-time IoT sensor data to identify consumption patterns and deliver optimization recommendations with projected savings.
+CERTIFICATIONS
+UiPath Certified Professional  |  UiPath Agentic Automation Associate  |  Microsoft Power Automate RPA Developer Associate  |  Microsoft Azure Administrator (AZ-104)  |  Microsoft Azure Developer (AZ-204)  |  Google Cloud Associate Engineer
+TECHNICAL SKILLS
+RPA & Automation: UiPath (REFramework, Orchestrator, AI Center), Power Automate, Selenium WebDriver, Process Mining
+AI/ML: BERT, Transformers, Bi-Encoder, Cross-Encoder, Time Series Forecasting, LLMs, Agentic AI, NLP, Generative AI
+Cloud & Data: Google Cloud Platform (BigQuery, Dataflow, Dataproc), Microsoft Azure, SQL, ETL Pipelines, PySpark
+Programming: Python (Primary), C#, Java
+DevOps & Tools: Docker, Git, CI/CD, REST APIs, Linux
+AWARDS & RECOGNITION
+•  Copyright Award 2025 – Enterprise RPA 1.0 Platform (intellectual property recognition by TCS)
+•  Best Performance Improvement Project – Unit Level (1,000+ employees), Sep 2024
+•  30 awards and 28 appreciations for technical excellence, innovation, and delivery across 4.5 years
+EDUCATION
+Bachelor of Computer Applications (BCA)  —  Shri Ramswaroop Memorial University, 2021

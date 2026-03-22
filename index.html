@@ -3,341 +3,507 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harshit Chaurasia</title>
-    <meta name="description" content="I build AI and automation systems that work at scale. Open-source maker. Hackathon winner. Currently automating the enterprise.">
-    <meta property="og:title" content="Harshit Chaurasia">
-    <meta property="og:description" content="I build AI and automation systems that work at scale.">
+    <title>Harshit Chaurasia — Portfolio</title>
+    <meta name="description" content="Portfolio of Harshit Chaurasia — 4.5+ years building ML systems, enterprise automation, and open-source tools at TCS.">
+    <meta property="og:title" content="Harshit Chaurasia — Portfolio">
+    <meta property="og:description" content="4.5+ years building ML systems, enterprise automation, and open-source tools at TCS.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://harshitrajchaurasia.github.io">
+    <meta property="og:url" content="https://erosiousharsh.github.io">
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%232563eb'/%3E%3Ctext x='50' y='68' font-family='system-ui,sans-serif' font-size='52' font-weight='900' fill='white' text-anchor='middle'%3EHC%3C/text%3E%3C/svg%3E">
+    <!-- OG Image — replace with a real screenshot for social sharing -->
+    <meta property="og:image" content="https://erosiousharsh.github.io/og-image.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Harshit Chaurasia — Portfolio">
+    <meta name="twitter:description" content="4.5+ years building ML systems, enterprise automation, and open-source tools at TCS.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script>
+      (function(){
+        var t=localStorage.getItem('theme');
+        if(!t)t=window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
+        document.documentElement.setAttribute('data-theme',t);
+      })();
+    </script>
 </head>
 <body>
-    <canvas id="particles"></canvas>
+    <!-- Loader -->
+    <div class="loader" id="loader">
+        <div class="loader-inner">
+            <span class="loader-text">Harshit Chaurasia</span>
+            <span class="loader-role">AI/ML &amp; Automation Engineer</span>
+            <div class="loader-bar"><div class="loader-progress"></div></div>
+        </div>
+    </div>
+
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <!-- Animated gradient background -->
+    <div class="bg-glow" aria-hidden="true">
+        <div class="glow-blob glow-1"></div>
+        <div class="glow-blob glow-2"></div>
+        <div class="glow-blob glow-3"></div>
+        <div class="glow-blob glow-4"></div>
+    </div>
 
     <!-- Nav -->
     <nav class="nav" id="nav">
-        <div class="nav-container">
-            <a href="#" class="nav-logo">Harshit Chaurasia</a>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <div class="nav-inner">
+            <a href="#hero" class="nav-logo" aria-label="Home">
+                <span class="logo-mark" id="logoMark">Welcome</span>
+            </a>
+            <ul class="nav-links" id="navLinks" role="list">
+                <li><a href="#work">Work</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#certs">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" type="button">
+                    <svg class="theme-icon icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+                    <svg class="theme-icon icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+                </button>
+                <a href="Harshit_Chaurasia_Resume.pdf" download class="nav-resume">Resume</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" type="button">
                 <span></span><span></span><span></span>
             </button>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#work">Work</a></li>
-                <li><a href="#impact">Impact</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="Harshit_Chaurasia_Resume.pdf" download class="nav-resume">Resume</a></li>
-            </ul>
         </div>
     </nav>
 
-    <!-- Hero -->
-    <section class="hero" id="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <span class="badge-dot"></span>
-                    Open to opportunities
-                </div>
-                <h1 class="hero-title">
-                    <span class="hero-greeting">Hey, I'm Harshit.</span>
-                    <span class="hero-tagline">I build <span class="typewriter-wrap"><span class="typewriter-text" id="typewriter"></span><span class="typewriter-cursor">|</span></span></span>
-                </h1>
-                <p class="hero-description">
-                    Engineer who automates what shouldn't be manual and builds AI systems
-                    that actually ship to production. Currently at a Fortune 50, previously
-                    turned a 25-item automation wish list into an 8-bot platform with a copyright.
-                </p>
-                <div class="hero-actions">
-                    <a href="#work" class="btn btn-primary">
-                        See what I've built
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
-                    </a>
-                    <a href="Harshit_Chaurasia_Resume.pdf" download class="btn btn-secondary">
-                        <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                        Resume
-                    </a>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="hero-orbit">
-                    <div class="orbit-ring ring-1"></div>
-                    <div class="orbit-ring ring-2"></div>
-                    <div class="orbit-ring ring-3"></div>
-                    <div class="orbit-icon icon-1"><span>PY</span></div>
-                    <div class="orbit-icon icon-2"><span>AI</span></div>
-                    <div class="orbit-icon icon-3"><span>GCP</span></div>
-                    <div class="orbit-icon icon-4"><span>RPA</span></div>
-                    <div class="orbit-icon icon-5"><span>Az</span></div>
-                    <div class="orbit-icon icon-6"><span>NLP</span></div>
-                </div>
-                <div class="hero-photo-wrap">
-                    <div class="hero-photo-placeholder">
-                        <span class="photo-initials">HC</span>
-                    </div>
-                    <!-- Replace placeholder with: <img src="photo.jpg" alt="Harshit Chaurasia" class="hero-photo"> -->
-                </div>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
-        </div>
-    </section>
+    <main id="main">
 
-    <!-- Work: PII Shield (the proof) -->
-    <section class="section" id="work">
-        <div class="container">
-            <span class="section-label">Featured Project</span>
-            <h2 class="section-title">PII Shield</h2>
-            <p class="section-subtitle">I needed to paste support logs into ChatGPT without leaking customer data. Nothing good existed. So I built it.</p>
-
-            <div class="pii-showcase" data-tilt>
-                <div class="pii-content">
-                    <div class="pii-before-after">
-                        <div class="pii-panel before">
-                            <span class="panel-label">Before</span>
-                            <div class="panel-text">
-                                <p>Hi, my name is <span class="pii-highlight danger">Rahul Sharma</span> and my Aadhaar is <span class="pii-highlight danger">2341 5678 9012</span>.</p>
-                                <p>Please transfer Rs 50,000 to account <span class="pii-highlight danger">91827364550</span> (IFSC: <span class="pii-highlight danger">SBIN0001234</span>).</p>
-                                <p>You can reach me at <span class="pii-highlight danger">rahul.sharma@gmail.com</span> or <span class="pii-highlight danger">+91-98765-43210</span>.</p>
-                            </div>
-                        </div>
-                        <div class="pii-arrow">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                        </div>
-                        <div class="pii-panel after">
-                            <span class="panel-label safe">After</span>
-                            <div class="panel-text">
-                                <p>Hi, my name is <span class="pii-highlight safe">[NAME]</span> and my Aadhaar is <span class="pii-highlight safe">[AADHAAR]</span>.</p>
-                                <p>Please transfer Rs 50,000 to account <span class="pii-highlight safe">[BANK_ACCT]</span> (IFSC: <span class="pii-highlight safe">[IFSC]</span>).</p>
-                                <p>You can reach me at <span class="pii-highlight safe">[EMAIL]</span> or <span class="pii-highlight safe">[PHONE]</span>.</p>
-                            </div>
-                        </div>
+        <!-- ====== HERO ====== -->
+        <section class="hero" id="hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <span class="badge-dot"></span>
+                        Open to opportunities &mdash; Remote &amp; Relocation
                     </div>
-                    <div class="pii-stats">
-                        <div class="pii-stat">
-                            <span class="pii-stat-num">35+</span>
-                            <span class="pii-stat-label">PII types detected</span>
-                        </div>
-                        <div class="pii-stat">
-                            <span class="pii-stat-num">0</span>
-                            <span class="pii-stat-label">data stored</span>
-                        </div>
-                        <div class="pii-stat">
-                            <span class="pii-stat-num">MIT</span>
-                            <span class="pii-stat-label">licensed, free forever</span>
-                        </div>
-                    </div>
-                    <div class="pii-actions">
-                        <a href="https://pii-shield-49982461185.us-central1.run.app" target="_blank" rel="noopener" class="btn btn-primary">
-                            Try it live
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                        </a>
-                        <a href="https://github.com/harshitrajchaurasia/pii-shield" target="_blank" rel="noopener" class="btn btn-ghost">
-                            Read the code
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="tech-used">
-                <span class="tech-label">Built with</span>
-                <div class="tech-pills">
-                    <span>Python</span>
-                    <span>FastAPI</span>
-                    <span>spaCy NER</span>
-                    <span>Regex Engine</span>
-                    <span>GCP Cloud Run</span>
-                    <span>Docker</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Impact Stories (no company names, no project names -- just what I did) -->
-    <section class="section section-alt" id="impact">
-        <div class="container">
-            <span class="section-label">What I do at work</span>
-            <h2 class="section-title">Impact Stories</h2>
-            <p class="section-subtitle">
-                I can't share proprietary code, but I can tell you what happened when I applied
-                AI and automation to real enterprise problems.
-            </p>
-
-            <div class="stories-grid">
-                <div class="story-card" data-tilt>
-                    <div class="story-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/></svg>
-                    </div>
-                    <div class="story-content">
-                        <h3>Taught a model to route 300K tickets/month</h3>
-                        <p>
-                            The service desk was manually categorizing every support ticket. I built a
-                            BERT-based classifier with a Bi-Encoder + Cross-Encoder architecture that
-                            now handles 300K+ monthly transactions at 97% accuracy. Resolution time
-                            dropped 85%.
-                        </p>
-                        <div class="story-result">
-                            <span class="result-number">97%</span> accuracy
-                            <span class="result-sep">&middot;</span>
-                            <span class="result-number">85%</span> faster resolution
-                        </div>
-                    </div>
-                </div>
-
-                <div class="story-card" data-tilt>
-                    <div class="story-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2.25 15a4.5 4.5 0 004.5 4.5H18a3.75 3.75 0 001.332-7.257 3 3 0 00-3.758-3.848 5.25 5.25 0 00-10.233 2.33A4.502 4.502 0 002.25 15z"/></svg>
-                    </div>
-                    <div class="story-content">
-                        <h3>Migrated 5TB to the cloud with zero downtime</h3>
-                        <p>
-                            Led a 6-month migration of 5TB+ of enterprise data to GCP -- BigQuery,
-                            Dataflow, Dataproc. Not a single minute of downtime. The business didn't
-                            even notice it happened, which was the whole point.
-                        </p>
-                        <div class="story-result">
-                            <span class="result-number">5TB+</span> migrated
-                            <span class="result-sep">&middot;</span>
-                            <span class="result-number">0</span> downtime
-                        </div>
-                    </div>
-                </div>
-
-                <div class="story-card" data-tilt>
-                    <div class="story-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4.5 12a7.5 7.5 0 0015 0m-15 0a7.5 7.5 0 1115 0m-15 0H3m16.5 0H21m-1.5 0H12m-8.457 3.077l1.41-.513m14.095-5.13l1.41-.513M5.106 17.785l1.15-.964m11.49-9.642l1.149-.964M7.501 19.795l.75-1.3m7.5-12.99l.75-1.3"/></svg>
-                    </div>
-                    <div class="story-content">
-                        <h3>Built an automation platform, got a copyright</h3>
-                        <p>
-                            Started by spotting 25 manual processes nobody wanted to fix. Turned that
-                            into an end-to-end RPA platform: software deployment, licensing,
-                            compliance, testing. 8 production bots, 92% success rate. The company
-                            awarded it copyright recognition as intellectual property.
-                        </p>
-                        <div class="story-result">
-                            <span class="result-number">1000+</span> hrs saved/year
-                            <span class="result-sep">&middot;</span>
-                            <span class="result-number">95%</span> less manual work
-                        </div>
-                    </div>
-                </div>
-
-                <div class="story-card" data-tilt>
-                    <div class="story-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"/></svg>
-                    </div>
-                    <div class="story-content">
-                        <h3>Saved millions with a forecasting model</h3>
-                        <p>
-                            Built time-series models that predict network link utilization and
-                            recommend upgrades or downgrades. The first year saved INR 60 lakh.
-                            Projected to save 2+ crore by FY26. No overprovisioning, no waste.
-                        </p>
-                        <div class="story-result">
-                            <span class="result-number">60L</span> saved year one
-                            <span class="result-sep">&middot;</span>
-                            <span class="result-number">2Cr+</span> projected
-                        </div>
-                    </div>
-                </div>
-
-                <div class="story-card" data-tilt>
-                    <div class="story-icon trophy">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-4.5A3.375 3.375 0 0019.875 11h.375a2.625 2.625 0 002.625-2.625V6.75a2.25 2.25 0 00-2.25-2.25h-1.078M7.5 18.75v-4.5A3.375 3.375 0 004.125 11H3.75a2.625 2.625 0 01-2.625-2.625V6.75A2.25 2.25 0 013.375 4.5h1.078M7.5 18.75h9m-9-14.25h9"/></svg>
-                    </div>
-                    <div class="story-content">
-                        <h3>Won two hackathons back to back</h3>
-                        <p>
-                            1st place: ML system that optimizes pump configurations across oil & gas
-                            pipelines by analyzing flow, viscosity, pressure, and terrain.
-                            2nd place: GenAI agent that ingests real-time IoT sensor data for
-                            facility energy optimization. Both at the company's flagship AI competition.
-                        </p>
-                        <div class="story-result">
-                            <span class="result-number">1st</span> + <span class="result-number">2nd</span> place
-                            <span class="result-sep">&middot;</span>
-                            AI Hackathon 2025
-                        </div>
-                    </div>
-                </div>
-
-                <div class="story-card" data-tilt>
-                    <div class="story-icon">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
-                    </div>
-                    <div class="story-content">
-                        <h3>Pushed compliance from 70% to 98%</h3>
-                        <p>
-                            Designed a Smart Business Rules engine that automated compliance
-                            checks across 800K+ endpoints. Security audit findings dropped
-                            dramatically. The system now runs continuously without human intervention.
-                        </p>
-                        <div class="story-result">
-                            <span class="result-number">800K+</span> endpoints
-                            <span class="result-sep">&middot;</span>
-                            <span class="result-number">70% to 98%</span> compliance
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section class="section" id="contact">
-        <div class="container">
-            <div class="contact-wrapper">
-                <div class="contact-text">
-                    <span class="section-label">Get in touch</span>
-                    <h2 class="section-title">Interested? Let's talk.</h2>
-                    <p>
-                        I'm looking for roles where I can build AI/ML systems and automation
-                        at scale. If that's what you need, or if you just want to chat, reach out.
+                    <h1 class="hero-title">
+                        <span class="hero-line hero-greeting"><span class="hero-name-gradient">Harshit</span> Chaurasia</span>
+                        <span class="hero-line hero-tagline"><span class="typewriter-wrap"><span class="typewriter-text" id="typewriter"></span><span class="typewriter-cursor">|</span></span></span>
+                    </h1>
+                    <p class="hero-description">
+                        4.5+ years at TCS building ML systems, automation platforms, and open-source tools
+                        for a Fortune 50 telecom client. Most of what I make replaces things people used to do by hand.
                     </p>
-                    <a href="Harshit_Chaurasia_Resume.pdf" download class="resume-download">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                        Download my resume
-                    </a>
+                    <div class="hero-stats">
+                        <div class="hero-stat"><span class="hero-stat-num">4.5+</span><span class="hero-stat-label">Years</span></div>
+                        <div class="hero-stat"><span class="hero-stat-num">300K+</span><span class="hero-stat-label">Transactions / mo</span></div>
+                        <div class="hero-stat"><span class="hero-stat-num">6</span><span class="hero-stat-label">Certifications</span></div>
+                        <div class="hero-stat"><span class="hero-stat-num">30+</span><span class="hero-stat-label">Awards</span></div>
+                    </div>
+                    <div class="hero-actions">
+                        <a href="#work" class="btn btn-primary magnetic">
+                            See what I've built
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+                        </a>
+                        <a href="Harshit_Chaurasia_Resume.pdf" download class="btn btn-secondary magnetic">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+                            Download Resume
+                        </a>
+                        <a href="#contact" class="btn btn-ghost magnetic">
+                            Contact
+                        </a>
+                    </div>
                 </div>
-                <div class="contact-cards">
-                    <a href="mailto:harshit1chaurasia@outlook.com" class="c-card">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
-                        <div>
-                            <span class="c-label">Email</span>
-                            <span class="c-value">harshit1chaurasia@outlook.com</span>
-                        </div>
-                    </a>
-                    <a href="https://linkedin.com/in/harshit-raj-chaurasia" target="_blank" rel="noopener" class="c-card">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                        <div>
-                            <span class="c-label">LinkedIn</span>
-                            <span class="c-value">harshit-raj-chaurasia</span>
-                        </div>
-                    </a>
-                    <a href="https://github.com/harshitrajchaurasia" target="_blank" rel="noopener" class="c-card">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                        <div>
-                            <span class="c-label">GitHub</span>
-                            <span class="c-value">harshitrajchaurasia</span>
-                        </div>
-                    </a>
+                <div class="hero-visual" role="img" aria-label="Animated orbital graphic showing technology skills">
+                    <div class="hero-orbit">
+                        <div class="orbit-ring ring-1"></div>
+                        <div class="orbit-ring ring-2"></div>
+                        <div class="orbit-ring ring-3"></div>
+                        <div class="orbit-icon icon-1"><span>PY</span></div>
+                        <div class="orbit-icon icon-2"><span>AI</span></div>
+                        <div class="orbit-icon icon-3"><span>GCP</span></div>
+                        <div class="orbit-icon icon-4"><span>RPA</span></div>
+                        <div class="orbit-icon icon-5"><span>Az</span></div>
+                        <div class="orbit-icon icon-6"><span>NLP</span></div>
+                    </div>
+                    <div class="hero-photo-wrap">
+                        <img src="circle-image.png" alt="Harshit Chaurasia" class="hero-photo">
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+            <div class="scroll-indicator" aria-hidden="true">
+                <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+            </div>
+        </section>
 
+        <!-- ====== WORK / PORTFOLIO SHOWCASE ====== -->
+        <section class="section" id="work">
+            <div class="container">
+                <h2 class="section-title">Work</h2>
+            </div>
+
+            <!-- === SHOWCASE 1: PII Shield (interactive demo) === -->
+            <div class="showcase" id="showcase-pii">
+                <div class="container">
+                    <div class="showcase-header">
+                        <div class="showcase-number" aria-hidden="true">01</div>
+                        <div class="showcase-meta">
+                            <h3 class="showcase-title">PII Shield</h3>
+                            <p class="showcase-tagline">I got paranoid about pasting client data into ChatGPT, so I built a tool that strips PII first. Then open-sourced it.</p>
+                        </div>
+                        <div class="showcase-links">
+                            <a href="https://pii-shield-49982461185.us-central1.run.app" target="_blank" rel="noopener" class="btn btn-primary btn-sm magnetic">
+                                Try it live
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            </a>
+                            <a href="https://github.com/harshitrajchaurasia/pii-shield" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">Source</a>
+                        </div>
+                    </div>
+
+                    <!-- Interactive before/after demo -->
+                    <div class="showcase-demo" data-tilt>
+                        <div class="demo-window">
+                            <div class="demo-toolbar">
+                                <div class="demo-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+                                <span class="demo-toolbar-title">PII Shield — Live Preview</span>
+                            </div>
+                            <div class="demo-body">
+                                <div class="demo-panel demo-before">
+                                    <span class="demo-label danger">Input (Raw)</span>
+                                    <div class="demo-text">
+                                        <p>Hi, my name is <span class="pii danger">Rahul Sharma</span> and my Aadhaar is <span class="pii danger">2341 5678 9012</span>.</p>
+                                        <p>Transfer &#x20B9;50,000 to account <span class="pii danger">91827364550</span> (IFSC: <span class="pii danger">SBIN0001234</span>).</p>
+                                        <p>Reach me at <span class="pii danger">rahul.sharma@gmail.com</span> or <span class="pii danger">+91-98765-43210</span>.</p>
+                                    </div>
+                                </div>
+                                <div class="demo-arrow" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                                </div>
+                                <div class="demo-panel demo-after">
+                                    <span class="demo-label safe">Output (Redacted)</span>
+                                    <div class="demo-text">
+                                        <p>Hi, my name is <span class="pii safe">[NAME]</span> and my Aadhaar is <span class="pii safe">[AADHAAR]</span>.</p>
+                                        <p>Transfer &#x20B9;50,000 to account <span class="pii safe">[BANK_ACCT]</span> (IFSC: <span class="pii safe">[IFSC]</span>).</p>
+                                        <p>Reach me at <span class="pii safe">[EMAIL]</span> or <span class="pii safe">[PHONE]</span>.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="showcase-details">
+                        <div class="showcase-pills">
+                            <span>Python</span><span>FastAPI</span><span>spaCy NER</span><span>Regex Engine</span><span>GCP Cloud Run</span><span>Docker</span>
+                        </div>
+                        <div class="showcase-highlights">
+                            <span><strong>35+</strong> PII types detected</span>
+                            <span><strong>0</strong> data stored</span>
+                            <span><strong>MIT</strong> licensed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- === SHOWCASE 2: Smart Ticket Router === -->
+            <div class="showcase" id="showcase-ticket">
+                <div class="container">
+                    <div class="showcase-header">
+                        <div class="showcase-number" aria-hidden="true">02</div>
+                        <div class="showcase-meta">
+                            <h3 class="showcase-title">Smart Ticket Router</h3>
+                            <p class="showcase-tagline">Support team was drowning in tickets. I trained a BERT classifier to route them automatically. It handles 300K+ a month now.</p>
+                        </div>
+                        <div class="showcase-links">
+                            <span class="showcase-enterprise">Enterprise &middot; Proprietary</span>
+                        </div>
+                    </div>
+                    <div class="showcase-visual" data-tilt>
+                        <div class="visual-card" style="--accent-from:#8b5cf6;--accent-to:#d946ef">
+                            <div class="visual-diagram">
+                                <div class="diagram-flow">
+                                    <div class="diagram-node node-input">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+                                        <span>Incoming Ticket</span>
+                                    </div>
+                                    <div class="diagram-connector" aria-hidden="true"><span></span></div>
+                                    <div class="diagram-node node-model">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3"/></svg>
+                                        <span>BERT Classifier</span>
+                                    </div>
+                                    <div class="diagram-connector" aria-hidden="true"><span></span></div>
+                                    <div class="diagram-node node-output">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                                        <span>Auto-Routed</span>
+                                    </div>
+                                </div>
+                                <div class="visual-metrics">
+                                    <div class="v-metric"><span class="v-metric-num" data-count="300">0</span><span class="v-metric-suffix">K+</span><span class="v-metric-label">tickets / month</span></div>
+                                    <div class="v-metric"><span class="v-metric-num" data-count="97">0</span><span class="v-metric-suffix">%</span><span class="v-metric-label">accuracy</span></div>
+                                    <div class="v-metric"><span class="v-metric-num" data-count="85">0</span><span class="v-metric-suffix">%</span><span class="v-metric-label">faster resolution</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="showcase-details">
+                        <div class="showcase-pills"><span>Python</span><span>BERT</span><span>Bi-Encoder</span><span>Cross-Encoder</span><span>TensorFlow</span><span>NLP</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- === SHOWCASE 3: RPA Platform === -->
+            <div class="showcase" id="showcase-rpa">
+                <div class="container">
+                    <div class="showcase-header">
+                        <div class="showcase-number" aria-hidden="true">03</div>
+                        <div class="showcase-meta">
+                            <h3 class="showcase-title">Enterprise RPA Platform</h3>
+                            <p class="showcase-tagline">Started as "can you automate this one thing?" — turned into 8 production bots that replaced 25 manual processes. The company copyrighted it.</p>
+                        </div>
+                        <div class="showcase-links">
+                            <span class="showcase-enterprise">Enterprise &middot; Copyright Protected</span>
+                        </div>
+                    </div>
+                    <div class="showcase-visual" data-tilt>
+                        <div class="visual-card" style="--accent-from:#f59e0b;--accent-to:#ef4444">
+                            <div class="visual-grid-bots">
+                                <div class="bot-node"><div class="bot-icon">&#x2699;&#xFE0F;</div><span>Deploy</span></div>
+                                <div class="bot-node"><div class="bot-icon">&#x1F4DD;</div><span>License</span></div>
+                                <div class="bot-node"><div class="bot-icon">&#x1F50D;</div><span>Audit</span></div>
+                                <div class="bot-node"><div class="bot-icon">&#x2705;</div><span>Comply</span></div>
+                                <div class="bot-node"><div class="bot-icon">&#x1F9EA;</div><span>Test</span></div>
+                                <div class="bot-node"><div class="bot-icon">&#x1F4E6;</div><span>Package</span></div>
+                                <div class="bot-node"><div class="bot-icon">&#x1F504;</div><span>Sync</span></div>
+                                <div class="bot-node"><div class="bot-icon">&#x1F4CA;</div><span>Report</span></div>
+                            </div>
+                            <div class="visual-metrics">
+                                <div class="v-metric"><span class="v-metric-num" data-count="8">0</span><span class="v-metric-label">production bots</span></div>
+                                <div class="v-metric"><span class="v-metric-num" data-count="1000">0</span><span class="v-metric-suffix">+</span><span class="v-metric-label">hrs saved / year</span></div>
+                                <div class="v-metric"><span class="v-metric-num" data-count="95">0</span><span class="v-metric-suffix">%</span><span class="v-metric-label">less manual work</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="showcase-details">
+                        <div class="showcase-pills"><span>UiPath</span><span>Power Automate</span><span>Python</span><span>REST APIs</span><span>SQL</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- === More Projects Grid === -->
+            <div class="container">
+                <h3 class="more-work-heading">More Projects</h3>
+                <div class="projects-compact-grid">
+                    <div class="compact-card" data-tilt>
+                        <div class="compact-accent" style="background:linear-gradient(135deg,#10b981,#0ea5e9)"></div>
+                        <div class="compact-body">
+                            <h4>Network Cost Optimizer</h4>
+                            <p>Predicted which network links were being overpaid for. Saved &#x20B9;60L in year one.</p>
+                            <div class="compact-pills"><span>Python</span><span>Forecasting</span><span>Analytics</span></div>
+                        </div>
+                    </div>
+                    <div class="compact-card" data-tilt>
+                        <div class="compact-accent" style="background:linear-gradient(135deg,#2563eb,#7c3aed)"></div>
+                        <div class="compact-body">
+                            <h4>5TB Cloud Migration</h4>
+                            <p>Moved 5TB of on-prem data to GCP. The best compliment: nobody noticed it happened.</p>
+                            <div class="compact-pills"><span>GCP</span><span>BigQuery</span><span>Dataflow</span></div>
+                        </div>
+                    </div>
+                    <div class="compact-card" data-tilt>
+                        <div class="compact-accent" style="background:linear-gradient(135deg,#0ea5e9,#10b981)"></div>
+                        <div class="compact-body">
+                            <h4>Smart Compliance Engine</h4>
+                            <p>800K+ endpoints were being checked manually. Automated the whole thing. Compliance went from 70% to 98%.</p>
+                            <div class="compact-pills"><span>Python</span><span>Rule Engine</span><span>Automation</span></div>
+                        </div>
+                    </div>
+                    <div class="compact-card" data-tilt>
+                        <div class="compact-accent" style="background:linear-gradient(135deg,#f59e0b,#d946ef)"></div>
+                        <div class="compact-body">
+                            <h4>TCS AI Hackathon 2025 &#x1F3C6;</h4>
+                            <p>1st &amp; 2nd place back-to-back — energy optimizer for oil &amp; gas pipelines (ML predictive system) and an IoT AI agent for facility energy optimization.</p>
+                            <div class="compact-pills"><span>ML</span><span>GenAI</span><span>IoT</span><span>Time Series</span></div>
+                        </div>
+                    </div>
+                    <div class="compact-card" data-tilt>
+                        <div class="compact-accent" style="background:linear-gradient(135deg,#7c3aed,#2563eb)"></div>
+                        <div class="compact-body">
+                            <h4>Agentic AI POC</h4>
+                            <p>Built an Agentic AI proof-of-concept using UiPath AI Center — automated knowledge extraction from service desk databases for self-healing ticket resolution.</p>
+                            <div class="compact-pills"><span>UiPath AI Center</span><span>Agentic AI</span><span>NLP</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== SCROLLING MARQUEE ====== -->
+        <div class="marquee-section" aria-hidden="true">
+            <div class="marquee-track">
+                <span class="marquee-item">Python <span class="marquee-sep"></span></span>
+                <span class="marquee-item">BERT <span class="marquee-sep"></span></span>
+                <span class="marquee-item">UiPath <span class="marquee-sep"></span></span>
+                <span class="marquee-item">BigQuery <span class="marquee-sep"></span></span>
+                <span class="marquee-item">Docker <span class="marquee-sep"></span></span>
+                <span class="marquee-item">FastAPI <span class="marquee-sep"></span></span>
+                <span class="marquee-item">spaCy <span class="marquee-sep"></span></span>
+                <span class="marquee-item">GCP <span class="marquee-sep"></span></span>
+                <span class="marquee-item">Azure <span class="marquee-sep"></span></span>
+                <span class="marquee-item">Transformers <span class="marquee-sep"></span></span>
+                <span class="marquee-item">Power Automate <span class="marquee-sep"></span></span>
+                <!-- Duplicate for seamless loop -->
+                <span class="marquee-item">Python <span class="marquee-sep"></span></span>
+                <span class="marquee-item">BERT <span class="marquee-sep"></span></span>
+                <span class="marquee-item">UiPath <span class="marquee-sep"></span></span>
+                <span class="marquee-item">BigQuery <span class="marquee-sep"></span></span>
+                <span class="marquee-item">Docker <span class="marquee-sep"></span></span>
+                <span class="marquee-item">FastAPI <span class="marquee-sep"></span></span>
+                <span class="marquee-item">spaCy <span class="marquee-sep"></span></span>
+                <span class="marquee-item">GCP <span class="marquee-sep"></span></span>
+                <span class="marquee-item">Azure <span class="marquee-sep"></span></span>
+                <span class="marquee-item">Transformers <span class="marquee-sep"></span></span>
+                <span class="marquee-item">Power Automate <span class="marquee-sep"></span></span>
+            </div>
+        </div>
+
+        <!-- ====== ABOUT (short + personal) ====== -->
+        <section class="section section-alt" id="about">
+            <div class="container">
+                <div class="about-row">
+                    <div class="about-photo-col">
+                        <div class="about-image-wrap">
+                            <img src="image.jpg" alt="Harshit Chaurasia" class="about-photo" loading="lazy">
+                        </div>
+                        <div class="about-image-glow" aria-hidden="true"></div>
+                    </div>
+                    <div class="about-text">
+                        <h2 class="section-title">About</h2>
+                        <p>
+                            I'm based in Lucknow, India. Analytics &amp; Automation Specialist at TCS
+                            with 4.5+ years of building ML systems and automation platforms for a
+                            Fortune 50 telecom client. BCA from Shri Ramswaroop Memorial University (2021).
+                        </p>
+                        <p>
+                            I like the part of engineering where you take a messy manual process
+                            and make it disappear. 30+ awards and a copyright grant for an RPA platform
+                            later, I'm still chasing the next thing to automate.
+                        </p>
+                        <div class="about-tools">
+                            <span>Python</span><span>TensorFlow</span><span>BERT</span><span>Transformers</span><span>GCP</span>
+                            <span>Azure</span><span>FastAPI</span><span>Docker</span><span>spaCy</span>
+                            <span>UiPath</span><span>Power Automate</span><span>BigQuery</span><span>PySpark</span><span>Selenium</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== CERTIFICATIONS ====== -->
+        <section class="section" id="certs">
+            <div class="container">
+                <h2 class="section-title">Certifications</h2>
+                <p class="section-subtitle">Industry credentials that back the work.</p>
+                <div class="certs-grid">
+                    <div class="cert-badge">
+                        <div class="cert-icon" style="--cert-color:#fa4616">
+                            <img src="assets/certs/uipath.svg" alt="UiPath" width="28" height="28">
+                        </div>
+                        <span class="cert-name">UiPath Certified Professional</span>
+                        <span class="cert-issuer">UiPath</span>
+                    </div>
+                    <div class="cert-badge">
+                        <div class="cert-icon" style="--cert-color:#fa4616">
+                            <img src="assets/certs/uipath.svg" alt="UiPath" width="28" height="28">
+                        </div>
+                        <span class="cert-name">Agentic Automation Associate</span>
+                        <span class="cert-issuer">UiPath</span>
+                    </div>
+                    <div class="cert-badge">
+                        <div class="cert-icon" style="--cert-color:#0066ff">
+                            <img src="assets/certs/powerautomate.svg" alt="Power Automate" width="28" height="28">
+                        </div>
+                        <span class="cert-name">Power Automate RPA Developer</span>
+                        <span class="cert-issuer">Microsoft</span>
+                    </div>
+                    <div class="cert-badge">
+                        <div class="cert-icon" style="--cert-color:#0078d4">
+                            <img src="assets/certs/azure.svg" alt="Microsoft Azure" width="28" height="28">
+                        </div>
+                        <span class="cert-name">Azure Administrator</span>
+                        <span class="cert-issuer">Microsoft &middot; AZ-104</span>
+                    </div>
+                    <div class="cert-badge">
+                        <div class="cert-icon" style="--cert-color:#0078d4">
+                            <img src="assets/certs/azure.svg" alt="Microsoft Azure" width="28" height="28">
+                        </div>
+                        <span class="cert-name">Azure Developer</span>
+                        <span class="cert-issuer">Microsoft &middot; AZ-204</span>
+                    </div>
+                    <div class="cert-badge">
+                        <div class="cert-icon" style="--cert-color:#4285f4">
+                            <img src="assets/certs/googlecloud.svg" alt="Google Cloud" width="28" height="28">
+                        </div>
+                        <span class="cert-name">Cloud Associate Engineer</span>
+                        <span class="cert-issuer">Google Cloud</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ====== CONTACT ====== -->
+        <section class="section" id="contact">
+            <div class="container">
+                <div class="contact-wrapper">
+                    <div class="contact-text">
+                        <h2 class="section-title">Let's talk</h2>
+                        <p>
+                            Open to roles in AI/ML, automation, and cloud engineering &mdash;
+                            or interesting project collaborations. Happy to chat.
+                        </p>
+                        <a href="mailto:harshit1chaurasia@outlook.com" id="mailBtn" class="btn btn-primary magnetic">
+                            Drop me a mail
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </a>
+                    </div>
+                    <div class="contact-cards">
+                        <a href="mailto:harshit1chaurasia@outlook.com" class="c-card">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24"><path d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+                            <div>
+                                <span class="c-label">Email</span>
+                                <span class="c-value">harshit1chaurasia@outlook.com</span>
+                            </div>
+                        </a>
+                        <a href="https://github.com/harshitrajchaurasia" target="_blank" rel="noopener" class="c-card">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                            <div>
+                                <span class="c-label">GitHub</span>
+                                <span class="c-value">harshitrajchaurasia</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
     <footer class="footer">
-        <div class="container footer-content">
-            <span>Harshit Chaurasia</span>
-            <span class="footer-sep">&middot;</span>
-            <span>Lucknow, India</span>
+        <div class="container footer-inner">
+            <div class="footer-left">
+                <span class="footer-logo">HC</span>
+                <span class="footer-credit">&copy; <span id="footerYear"></span> Designed &amp; built by Harshit Chaurasia</span>
+            </div>
+            <div class="footer-social">
+                <a href="https://github.com/harshitrajchaurasia" target="_blank" rel="noopener" aria-label="GitHub">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                </a>
+            </div>
         </div>
     </footer>
 
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="20" height="20"><path d="M18 15l-6-6-6 6"/></svg>
+    </button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1/dist/lenis.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
