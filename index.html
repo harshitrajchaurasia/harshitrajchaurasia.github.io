@@ -223,36 +223,44 @@
                 </div>
 
                 <h3 class="more-heading">Other Projects</h3>
-                <div class="projects-grid">
-                    <div class="project-card project-card-wide">
-                        <span class="project-tag-sm">Enterprise · TCS</span>
-                        <h4>Network Cost Optimizer</h4>
-                        <p>Time-series forecasting model that identified overpaid network links by analyzing usage patterns against contract tiers. Saved &#x20B9;60L in FY24, with projected savings of &#x20B9;2Cr+ by FY26.</p>
-                        <div class="project-tech"><span>Python</span><span>Forecasting</span><span>Analytics</span></div>
-                    </div>
-                    <div class="project-card">
-                        <span class="project-tag-sm">Enterprise · TCS</span>
-                        <h4>5TB Cloud Migration</h4>
-                        <p>Migrated 5TB of on-prem data to GCP (BigQuery, Dataflow, Dataproc) with zero downtime over 6 months. Reduced annual infrastructure costs and now serves 800K+ endpoints.</p>
-                        <div class="project-tech"><span>GCP</span><span>BigQuery</span><span>Dataflow</span></div>
-                    </div>
-                    <div class="project-card">
-                        <span class="project-tag-sm">Enterprise · TCS</span>
-                        <h4>Smart Compliance Engine</h4>
-                        <p>Rule engine that automated compliance checks across 800K+ endpoints, improving compliance from 70% to 98% and directly reducing security audit findings.</p>
-                        <div class="project-tech"><span>Python</span><span>Rule Engine</span><span>Automation</span></div>
-                    </div>
-                    <div class="project-card">
-                        <span class="project-tag-sm">TCS Hackathon</span>
-                        <h4>TCS AI Hackathon 2025</h4>
-                        <p>1st place: ML system optimizing pump configurations across oil &amp; gas pipelines by analyzing flow rates, pressure, and terrain. 2nd place: GenAI agent ingesting real-time IoT sensor data for facility energy optimization.</p>
-                        <div class="project-tech"><span>ML</span><span>GenAI</span><span>IoT</span></div>
-                    </div>
-                    <div class="project-card">
-                        <span class="project-tag-sm">Enterprise · TCS</span>
-                        <h4>Agentic AI POC</h4>
-                        <p>Proof-of-concept for self-healing ticket resolution - automated knowledge extraction from service desk databases using UiPath AI Center. Demonstrated feasibility for production deployment.</p>
-                        <div class="project-tech"><span>UiPath AI Center</span><span>Agentic AI</span></div>
+                <div class="carousel-wrapper">
+                    <button class="carousel-arrow carousel-prev" id="otherCarouselPrev" aria-label="Previous project" type="button">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
+                    </button>
+                    <button class="carousel-arrow carousel-next" id="otherCarouselNext" aria-label="Next project" type="button">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
+                    </button>
+                    <div class="projects-carousel" id="otherProjectsCarousel">
+                        <article class="project-slide">
+                            <span class="project-tag-sm">Enterprise · TCS</span>
+                            <h3 class="project-title">Network Cost Optimizer</h3>
+                            <p>Time-series forecasting model that identified overpaid network links by analyzing usage patterns against contract tiers. Saved &#x20B9;60L in FY24, with projected savings of &#x20B9;2Cr+ by FY26.</p>
+                            <div class="project-tech"><span>Python</span><span>Forecasting</span><span>Analytics</span></div>
+                        </article>
+                        <article class="project-slide">
+                            <span class="project-tag-sm">Enterprise · TCS</span>
+                            <h3 class="project-title">5TB Cloud Migration</h3>
+                            <p>Migrated 5TB of on-prem data to GCP (BigQuery, Dataflow, Dataproc) with zero downtime over 6 months. Reduced annual infrastructure costs and now serves 800K+ endpoints.</p>
+                            <div class="project-tech"><span>GCP</span><span>BigQuery</span><span>Dataflow</span></div>
+                        </article>
+                        <article class="project-slide">
+                            <span class="project-tag-sm">Enterprise · TCS</span>
+                            <h3 class="project-title">Smart Compliance Engine</h3>
+                            <p>Rule engine that automated compliance checks across 800K+ endpoints, improving compliance from 70% to 98% and directly reducing security audit findings.</p>
+                            <div class="project-tech"><span>Python</span><span>Rule Engine</span><span>Automation</span></div>
+                        </article>
+                        <article class="project-slide">
+                            <span class="project-tag-sm">TCS Hackathon</span>
+                            <h3 class="project-title">TCS AI Hackathon 2025</h3>
+                            <p>1st place: ML system optimizing pump configurations across oil &amp; gas pipelines by analyzing flow rates, pressure, and terrain. 2nd place: GenAI agent ingesting real-time IoT sensor data for facility energy optimization.</p>
+                            <div class="project-tech"><span>ML</span><span>GenAI</span><span>IoT</span></div>
+                        </article>
+                        <article class="project-slide">
+                            <span class="project-tag-sm">Enterprise · TCS</span>
+                            <h3 class="project-title">Agentic AI POC</h3>
+                            <p>Proof-of-concept for self-healing ticket resolution - automated knowledge extraction from service desk databases using UiPath AI Center. Demonstrated feasibility for production deployment.</p>
+                            <div class="project-tech"><span>UiPath AI Center</span><span>Agentic AI</span></div>
+                        </article>
                     </div>
                 </div>
             </div>
@@ -394,18 +402,32 @@
         </section>
 
         <!-- Contact -->
-        <section class="section" id="contact">
+        <section class="section contact-section" id="contact">
             <div class="container">
-                <h2 class="section-title">Contact</h2>
-                <div class="contact-details">
-                    <p class="contact-desc">I build ML systems and automation platforms that work at scale - 300K tickets classified monthly, 25 manual workflows eliminated, &#x20B9;60L+ saved. Looking for ML Engineering, Automation, or Cloud roles. Open to remote, hybrid, or relocation.</p>
-                    <ul class="contact-info">
-                        <li><span class="contact-label">Email</span> <a href="mailto:harshit1chaurasia@outlook.com">harshit1chaurasia@outlook.com</a></li>
-                        <li><span class="contact-label">GitHub</span> <a href="https://github.com/harshitrajchaurasia" target="_blank" rel="noopener">github.com/harshitrajchaurasia</a></li>
-                        <li><span class="contact-label">Resume</span> <a href="Harshit_Chaurasia_Resume.pdf" download>Download PDF</a></li>
-                        <li><span class="contact-label">Location</span> Lucknow, India</li>
-                        <li><span class="contact-label">Notice</span> 30 days</li>
-                    </ul>
+                <h2 class="section-title">Let's Work Together</h2>
+                <p class="contact-desc">I build ML systems and automation platforms that work at scale - 300K tickets classified monthly, 25 manual workflows eliminated, &#x20B9;60L+ saved. Looking for ML Engineering, Automation, or Cloud roles.</p>
+
+                <div class="contact-cta-row">
+                    <a href="mailto:harshit1chaurasia@outlook.com" class="contact-cta contact-cta-primary">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
+                        harshit1chaurasia@outlook.com
+                    </a>
+                    <div class="contact-cta-pair">
+                        <a href="Harshit_Chaurasia_Resume.pdf" download class="contact-cta contact-cta-secondary">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            Download Resume
+                        </a>
+                        <a href="https://github.com/harshitrajchaurasia" target="_blank" rel="noopener" class="contact-cta contact-cta-secondary">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                            GitHub Profile
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-meta">
+                    <span><strong>Location:</strong> Lucknow, India</span>
+                    <span><strong>Availability:</strong> 30 days notice</span>
+                    <span><strong>Open to:</strong> Remote, hybrid, relocation</span>
                 </div>
             </div>
         </section>
