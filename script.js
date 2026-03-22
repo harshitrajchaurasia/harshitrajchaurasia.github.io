@@ -1,6 +1,7 @@
 // ============================================
 // HARSHIT CHAURASIA - PORTFOLIO
-// Lightweight: theme toggle, nav, scroll reveal
+// Lightweight: theme toggle, nav, scroll reveal,
+// PII demo, count-up metrics, keyboard shortcuts
 // ============================================
 
 (function () {
@@ -10,12 +11,14 @@
     const themeToggle = document.getElementById('themeToggle');
     const root = document.documentElement;
 
+    function toggleTheme() {
+        const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+        root.setAttribute('data-theme', next);
+        localStorage.setItem('theme', next);
+    }
+
     if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
-            const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-            root.setAttribute('data-theme', next);
-            localStorage.setItem('theme', next);
-        });
+        themeToggle.addEventListener('click', toggleTheme);
     }
 
     // Nav scroll state
@@ -28,10 +31,18 @@
     const navToggle = document.getElementById('navToggle');
     const navLinks = document.getElementById('navLinks');
     if (navToggle && navLinks) {
-        navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+        navToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            navLinks.classList.toggle('open');
+        });
         navLinks.querySelectorAll('a').forEach(a =>
             a.addEventListener('click', () => navLinks.classList.remove('open'))
         );
+        document.addEventListener('click', (e) => {
+            if (!navLinks.contains(e.target) && !navToggle.contains(e.target)) {
+                navLinks.classList.remove('open');
+            }
+        });
     }
 
     // Active nav highlight
@@ -64,7 +75,7 @@
 
     // Scroll reveal via IntersectionObserver
     const revealElements = document.querySelectorAll(
-        '.project-slide, .project-card, .section-title, .contact-desc, .contact-info, .more-heading, .project-demo, .intro-expand, .exp-role, .skills-grid, .certs-section, .education-section'
+        '.project-slide, .project-card, .section-title, .contact-desc, .contact-info, .more-heading, .project-demo, .intro-expand, .exp-role, .exp-awards, .skills-grid, .certs-section, .education-section, .metrics-strip, .currently-content, .exp-narrative'
     );
     if (revealElements.length) {
         revealElements.forEach(el => el.classList.add('reveal'));
@@ -88,7 +99,7 @@
         introBtn.addEventListener('click', function () {
             var wrapper = introBtn.closest('.intro-expand');
             var isOpen = wrapper.classList.toggle('open');
-            introBtn.querySelector('.intro-expand-label').textContent = isOpen ? 'Less about me' : 'More about me';
+            introBtn.querySelector('.intro-expand-label').textContent = isOpen ? 'Hide highlights' : 'Key highlights';
         });
     }
 
@@ -131,5 +142,136 @@
         carousel.addEventListener('scroll', updateArrows, { passive: true });
         updateArrows();
     }
+
+    // ============================================
+    // SCROLL-ANIMATED METRICS (count-up on scroll)
+    // ============================================
+    var metricsStrip = document.querySelector('.metrics-strip');
+    if (metricsStrip) {
+        var metricsAnimated = false;
+        var metricsObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting && !metricsAnimated) {
+                    metricsAnimated = true;
+                    animateMetrics();
+                    metricsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+        metricsObserver.observe(metricsStrip);
+    }
+
+    function animateMetrics() {
+        document.querySelectorAll('.metric').forEach(function (metric) {
+            var target = parseInt(metric.getAttribute('data-target'), 10);
+            var valueEl = metric.querySelector('.metric-value');
+            if (!valueEl || isNaN(target)) return;
+
+            var duration = 1200;
+            var start = performance.now();
+
+            function easeOutQuart(t) { return 1 - Math.pow(1 - t, 4); }
+
+            function tick(now) {
+                var elapsed = now - start;
+                var progress = Math.min(elapsed / duration, 1);
+                var current = Math.round(easeOutQuart(progress) * target);
+                valueEl.textContent = current.toLocaleString();
+                if (progress < 1) requestAnimationFrame(tick);
+            }
+
+            requestAnimationFrame(tick);
+        });
+    }
+
+    // ============================================
+    // INTERACTIVE PII DEMO
+    // ============================================
+    var piiInput = document.getElementById('piiInput');
+    var piiOutput = document.getElementById('piiOutput');
+    var piiBtn = document.getElementById('piiRedactBtn');
+    var piiStats = document.getElementById('piiStats');
+    var PII_API = 'https://pii-shield-49982461185.us-central1.run.app/api/redact-text';
+
+    if (piiBtn && piiInput && piiOutput) {
+        piiBtn.addEventListener('click', async function () {
+            var text = piiInput.value.trim();
+            if (!text) return;
+
+            piiBtn.disabled = true;
+            piiBtn.textContent = 'Processing…';
+            piiOutput.innerHTML = '';
+            if (piiStats) piiStats.textContent = '';
+
+            try {
+                var response = await fetch(PII_API, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ text: text, fast_mode: false })
+                });
+
+                if (!response.ok) throw new Error('API error');
+
+                var data = await response.json();
+                piiOutput.textContent = data.redacted_text || '';
+
+                if (piiStats) {
+                    piiStats.innerHTML =
+                        '<span>' + (data.redaction_count || 0) + ' redactions</span>' +
+                        '<span>' + ((data.processing_time_ms || 0).toFixed(0)) + 'ms</span>';
+                }
+            } catch (err) {
+                // Fallback: show a static demo if API is unavailable
+                piiOutput.innerHTML = '<span style="color:var(--text-muted);font-style:italic;">API unavailable — <a href="https://pii-shield-49982461185.us-central1.run.app" target="_blank" rel="noopener" style="color:var(--accent);">try the full app</a></span>';
+            } finally {
+                piiBtn.disabled = false;
+                piiBtn.textContent = 'Shield it';
+            }
+        });
+    }
+
+    // ============================================
+    // KEYBOARD SHORTCUTS
+    // ============================================
+    var kbdToast = document.getElementById('kbdToast');
+    var sectionIds = ['work', 'experience', 'skills', 'currently', 'contact'];
+    var kbdVisible = false;
+
+    function getCurrentSectionIndex() {
+        var y = window.scrollY + 200;
+        for (var i = sectionIds.length - 1; i >= 0; i--) {
+            var el = document.getElementById(sectionIds[i]);
+            if (el && el.offsetTop <= y) return i;
+        }
+        return -1;
+    }
+
+    function navigateSection(delta) {
+        var idx = getCurrentSectionIndex() + delta;
+        idx = Math.max(0, Math.min(idx, sectionIds.length - 1));
+        var el = document.getElementById(sectionIds[idx]);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function showKbdToast() {
+        if (!kbdToast) return;
+        kbdVisible = !kbdVisible;
+        kbdToast.classList.toggle('show', kbdVisible);
+    }
+
+    document.addEventListener('keydown', function (e) {
+        // Ignore when typing in inputs/textareas
+        if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.isContentEditable) return;
+
+        switch (e.key) {
+            case 'j': navigateSection(1); break;
+            case 'k': navigateSection(-1); break;
+            case 't': toggleTheme(); break;
+            case '?': showKbdToast(); e.preventDefault(); break;
+            case 'Escape':
+                if (kbdVisible) { kbdVisible = false; kbdToast.classList.remove('show'); }
+                break;
+        }
+    });
 
 })();

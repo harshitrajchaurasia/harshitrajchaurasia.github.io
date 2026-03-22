@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Harshit Chaurasia</title>
     <meta name="description" content="Harshit Chaurasia — ML engineer and automation specialist. 4.5 years at TCS building production ML systems and RPA platforms.">
     <meta property="og:title" content="Harshit Chaurasia">
@@ -19,6 +19,19 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Harshit Chaurasia",
+      "url": "https://harshitrajchaurasia.github.io",
+      "jobTitle": "Analytics & Automation Specialist",
+      "worksFor": { "@type": "Organization", "name": "Tata Consultancy Services" },
+      "knowsAbout": ["Machine Learning", "BERT", "NLP", "RPA", "UiPath", "Python", "GCP", "Azure", "TensorFlow"],
+      "sameAs": ["https://github.com/harshitrajchaurasia"],
+      "alumniOf": { "@type": "CollegeOrUniversity", "name": "Shri Ramswaroop Memorial University" }
+    }
+    </script>
     <script>
       (function(){
         var t=localStorage.getItem('theme');
@@ -59,6 +72,13 @@
                 <div class="intro-text">
                     <h1 class="intro-name">Harshit Chaurasia</h1>
                     <p class="intro-role">4.5+ years at TCS building ML systems, automation platforms, and open-source tools for a Fortune 50 telecom client. 300K tickets/month classified, 25 manual workflows replaced, 1,000+ hours/year saved.</p>
+
+                    <div class="metrics-strip">
+                        <div class="metric" data-target="300" data-suffix="K+"><span class="metric-value">0</span><span class="metric-suffix">K+</span><span class="metric-label">tickets/month</span></div>
+                        <div class="metric" data-target="97" data-suffix="%"><span class="metric-value">0</span><span class="metric-suffix">%</span><span class="metric-label">accuracy</span></div>
+                        <div class="metric" data-target="25" data-suffix=""><span class="metric-value">0</span><span class="metric-suffix"></span><span class="metric-label">bots deployed</span></div>
+                        <div class="metric" data-target="1000" data-suffix="+"><span class="metric-value">0</span><span class="metric-suffix">+</span><span class="metric-label">hrs/year saved</span></div>
+                    </div>
                     <p class="intro-location">Based in Lucknow, India &mdash; open to remote & relocation</p>
                     <div class="intro-expand">
                         <div class="intro-expand-content" id="introExpandContent">
@@ -69,25 +89,19 @@
                                     <li>TCS Copyright grant for an RPA platform</li>
                                     <li>6 cloud & automation certifications</li>
                                 </ul>
-                                <p class="intro-bio">
-                                    ML engineer & automation specialist working with a Fortune 50 telecom client.
-                                    BCA from Shri Ramswaroop Memorial University. 30+ internal awards.
-                                    Certified on Azure (AZ-104, AZ-204), GCP, UiPath, and Power Automate.
-                                </p>
-                                <p class="intro-tools">
-                                    Python, TensorFlow, BERT, spaCy, FastAPI, Docker, GCP, Azure, BigQuery, UiPath, Power Automate, PySpark
-                                </p>
                             </div>
                         </div>
                         <button class="intro-expand-btn" id="introExpandBtn" type="button">
-                            <span class="intro-expand-label">More about me</span>
+                            <span class="intro-expand-label">Key highlights</span>
                             <svg class="intro-expand-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
                         </button>
                     </div>
-                    <a href="#work" class="btn btn-primary">View my work</a>
+                    <div class="intro-ctas">
+                        <a href="#work" class="btn btn-primary">View my work</a>
+                        <a href="#contact" class="btn btn-secondary">Get in touch</a>
+                    </div>
                 </div>
                 <div class="intro-photo-col">
-                    <!-- TODO: Replace with a casual, non-headshot photo of yourself -->
                     <img src="image.jpg" alt="Harshit Chaurasia" class="intro-photo" loading="eager">
                 </div>
             </div>
@@ -126,27 +140,42 @@
                         </p>
                         <p class="project-aside">This started as a weekend hack after I accidentally pasted a client's phone number into ChatGPT.</p>
 
-                        <!-- TODO: Replace this placeholder with a real screenshot of PII Shield's UI -->
                         <div class="project-screenshot placeholder-img">
-                            <span class="placeholder-label">Screenshot: PII Shield UI — paste your actual screenshot here</span>
-                            <!-- <img src="assets/screenshots/pii-shield.png" alt="PII Shield interface showing redacted PII" loading="lazy"> -->
+                            <span class="placeholder-label">Screenshot coming soon</span>
                         </div>
 
                         <div class="project-demo">
-                            <div class="demo-panel">
-                                <span class="demo-label demo-label-danger">Input</span>
-                                <div class="demo-text">
-                                    <p>Hi, my name is <span class="pii pii-danger">Rahul Sharma</span> and my Aadhaar is <span class="pii pii-danger">2341 5678 9012</span>.</p>
-                                    <p>Reach me at <span class="pii pii-danger">rahul.sharma@gmail.com</span> or <span class="pii pii-danger">+91-98765-43210</span>.</p>
+                            <div class="demo-interactive" id="piiDemo">
+                                <div class="demo-input-wrap">
+                                    <span class="demo-label demo-label-danger">Try it &mdash; paste any text</span>
+                                    <textarea class="demo-input" id="piiInput" placeholder="Type or paste text with personal info here... e.g. My name is Rahul Sharma, Aadhaar 2341 5678 9012, email rahul@gmail.com" rows="3"></textarea>
+                                    <button class="demo-redact-btn" id="piiRedactBtn" type="button">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                                        Shield it
+                                    </button>
+                                </div>
+                                <div class="demo-output-wrap">
+                                    <span class="demo-label demo-label-safe">Redacted output</span>
+                                    <div class="demo-output" id="piiOutput">
+                                        <p class="demo-output-placeholder">Your redacted text will appear here&hellip;</p>
+                                    </div>
+                                    <div class="demo-stats" id="piiStats"></div>
                                 </div>
                             </div>
-                            <div class="demo-panel">
-                                <span class="demo-label demo-label-safe">Output</span>
-                                <div class="demo-text">
-                                    <p>Hi, my name is <span class="pii pii-safe">[NAME]</span> and my Aadhaar is <span class="pii pii-safe">[AADHAAR]</span>.</p>
-                                    <p>Reach me at <span class="pii pii-safe">[EMAIL]</span> or <span class="pii pii-safe">[PHONE]</span>.</p>
+                            <noscript>
+                                <div class="demo-panel">
+                                    <span class="demo-label demo-label-danger">Input</span>
+                                    <div class="demo-text">
+                                        <p>Hi, my name is <span class="pii pii-danger">Rahul Sharma</span> and my Aadhaar is <span class="pii pii-danger">2341 5678 9012</span>.</p>
+                                    </div>
                                 </div>
-                            </div>
+                                <div class="demo-panel">
+                                    <span class="demo-label demo-label-safe">Output</span>
+                                    <div class="demo-text">
+                                        <p>Hi, my name is <span class="pii pii-safe">[NAME]</span> and my Aadhaar is <span class="pii pii-safe">[AADHAAR]</span>.</p>
+                                    </div>
+                                </div>
+                            </noscript>
                         </div>
                         <div class="project-tech">
                             <span>Python</span><span>FastAPI</span><span>spaCy NER</span><span>Regex</span><span>GCP Cloud Run</span><span>Docker</span>
@@ -154,17 +183,17 @@
                     </article>
 
                     <article class="project-slide" id="showcase-ticket">
-                        <h3 class="project-title">Smart Ticket Router</h3>
-                        <span class="project-tag">Enterprise</span>
+                        <div class="project-title-row">
+                            <h3 class="project-title">Smart Ticket Router</h3>
+                            <span class="project-tag">Enterprise</span>
+                        </div>
                         <p class="project-desc">
                             BERT-based classifier that auto-routes support tickets. 300K+ tickets/month,
                             97% accuracy, 85% faster resolution. Bi-encoder for retrieval, cross-encoder for re-ranking.
                         </p>
 
-                        <!-- TODO: Replace with a real screenshot — dashboard, confusion matrix, anything real -->
                         <div class="project-screenshot placeholder-img">
-                            <span class="placeholder-label">Screenshot: ticket router dashboard or accuracy metrics</span>
-                            <!-- <img src="assets/screenshots/ticket-router.png" alt="Ticket Router accuracy dashboard" loading="lazy"> -->
+                            <span class="placeholder-label">Screenshot coming soon</span>
                         </div>
 
                         <div class="project-tech">
@@ -173,18 +202,18 @@
                     </article>
 
                     <article class="project-slide" id="showcase-rpa">
-                        <h3 class="project-title">Enterprise RPA Platform</h3>
-                        <span class="project-tag">Copyright Protected</span>
+                        <div class="project-title-row">
+                            <h3 class="project-title">Enterprise RPA Platform</h3>
+                            <span class="project-tag">Copyright Protected</span>
+                        </div>
                         <p class="project-desc">
                             8 production bots replacing 25 manual processes. 1,000+ hours/year saved,
                             95% less manual work. TCS granted copyright for this one.
                         </p>
                         <p class="project-aside">My favorite project — the compliance bot alone freed up an entire team's Friday.</p>
 
-                        <!-- TODO: Replace with a screenshot — bot logs, process flow, anything demonstrable -->
                         <div class="project-screenshot placeholder-img">
-                            <span class="placeholder-label">Screenshot: RPA bot dashboard or process output</span>
-                            <!-- <img src="assets/screenshots/rpa-platform.png" alt="RPA Platform bot overview" loading="lazy"> -->
+                            <span class="placeholder-label">Screenshot coming soon</span>
                         </div>
 
                         <div class="project-tech">
@@ -194,31 +223,36 @@
                     </div>
                 </div>
 
-                <h3 class="more-heading">More</h3>
+                <h3 class="more-heading">Other Projects</h3>
                 <div class="projects-grid">
                     <div class="project-card project-card-wide">
+                        <span class="project-tag-sm">Enterprise · TCS</span>
                         <h4>Network Cost Optimizer</h4>
-                        <p>Forecasting model that identified overpaid network links. Saved &#x20B9;60L in year one.</p>
+                        <p>Time-series forecasting model that identified overpaid network links by analyzing usage patterns against contract tiers. Saved &#x20B9;60L in FY24, with projected savings of &#x20B9;2Cr+ by FY26.</p>
                         <div class="project-tech"><span>Python</span><span>Forecasting</span><span>Analytics</span></div>
                     </div>
                     <div class="project-card">
+                        <span class="project-tag-sm">Enterprise · TCS</span>
                         <h4>5TB Cloud Migration</h4>
-                        <p>Migrated 5TB of on-prem data to GCP with zero downtime.</p>
+                        <p>Migrated 5TB of on-prem data to GCP (BigQuery, Dataflow, Dataproc) with zero downtime over 6 months. Reduced annual infrastructure costs and now serves 800K+ endpoints.</p>
                         <div class="project-tech"><span>GCP</span><span>BigQuery</span><span>Dataflow</span></div>
                     </div>
                     <div class="project-card">
+                        <span class="project-tag-sm">Enterprise · TCS</span>
                         <h4>Smart Compliance Engine</h4>
-                        <p>Automated compliance checks across 800K+ endpoints. 70% &rarr; 98%.</p>
+                        <p>Rule engine that automated compliance checks across 800K+ endpoints, improving compliance from 70% to 98% and directly reducing security audit findings.</p>
                         <div class="project-tech"><span>Python</span><span>Rule Engine</span><span>Automation</span></div>
                     </div>
                     <div class="project-card">
+                        <span class="project-tag-sm">TCS Hackathon</span>
                         <h4>TCS AI Hackathon 2025</h4>
-                        <p>1st and 2nd place. Energy optimizer + IoT agent.</p>
+                        <p>1st place: ML system optimizing pump configurations across oil &amp; gas pipelines by analyzing flow rates, pressure, and terrain. 2nd place: GenAI agent ingesting real-time IoT sensor data for facility energy optimization.</p>
                         <div class="project-tech"><span>ML</span><span>GenAI</span><span>IoT</span></div>
                     </div>
                     <div class="project-card">
+                        <span class="project-tag-sm">Enterprise · TCS</span>
                         <h4>Agentic AI POC</h4>
-                        <p>Self-healing ticket resolution via knowledge extraction.</p>
+                        <p>Proof-of-concept for self-healing ticket resolution &mdash; automated knowledge extraction from service desk databases using UiPath AI Center. Demonstrated feasibility for production deployment.</p>
                         <div class="project-tech"><span>UiPath AI Center</span><span>Agentic AI</span></div>
                     </div>
                 </div>
@@ -229,6 +263,7 @@
         <section class="section section-alt" id="experience">
             <div class="container">
                 <h2 class="section-title">Experience</h2>
+                <p class="exp-narrative">Started in IT operations, saw 25+ processes begging to be automated, built the business case for an RPA practice, then taught myself ML to solve the problems automation couldn't.</p>
                 <div class="exp-company">
                     <div class="exp-company-header">
                         <h3 class="exp-company-name">Tata Consultancy Services</h3>
@@ -270,10 +305,18 @@
                         </div>
                     </div>
                 </div>
+                <div class="exp-awards">
+                    <h4 class="exp-awards-label">Awards &amp; Recognition</h4>
+                    <ul class="exp-awards-list">
+                        <li><strong>Copyright Award 2025</strong> &mdash; Enterprise RPA Platform (IP recognition by TCS)</li>
+                        <li><strong>1st Place</strong>, TCS AI Hackathon 2025 &mdash; Energy Optimizer for Oil &amp; Gas Pipelines</li>
+                        <li><strong>2nd Place</strong>, TCS AI Hackathon 2025 &mdash; IoT AI Agent for Facility Energy Optimization</li>
+                        <li><strong>Best Performance Improvement Project</strong> &mdash; Unit level (1,000+ employees), Sep 2024</li>
+                        <li>30+ awards and 28 appreciations for technical excellence across 4.5 years</li>
+                    </ul>
+                </div>
             </div>
         </section>
-
-        <!-- Skills & Certifications -->
         <section class="section" id="skills">
             <div class="container">
                 <h2 class="section-title">Skills &amp; Certifications</h2>
@@ -306,12 +349,12 @@
                 <div class="certs-section">
                     <h4 class="certs-label">Certifications</h4>
                     <div class="certs-list">
-                        <span class="cert-badge">Azure Administrator (AZ-104)</span>
-                        <span class="cert-badge">Azure Developer (AZ-204)</span>
-                        <span class="cert-badge">GCP Associate Cloud Engineer</span>
-                        <span class="cert-badge">UiPath Certified Professional</span>
-                        <span class="cert-badge">UiPath Agentic Automation</span>
-                        <span class="cert-badge">Power Automate RPA Developer</span>
+                        <span class="cert-badge"><img src="assets/certs/azure.svg" alt="" width="14" height="14"> Azure Administrator (AZ-104)</span>
+                        <span class="cert-badge"><img src="assets/certs/azure.svg" alt="" width="14" height="14"> Azure Developer (AZ-204)</span>
+                        <span class="cert-badge"><img src="assets/certs/googlecloud.svg" alt="" width="14" height="14"> GCP Associate Cloud Engineer</span>
+                        <span class="cert-badge"><img src="assets/certs/uipath.svg" alt="" width="14" height="14"> UiPath Certified Professional</span>
+                        <span class="cert-badge"><img src="assets/certs/uipath.svg" alt="" width="14" height="14"> UiPath Agentic Automation</span>
+                        <span class="cert-badge"><img src="assets/certs/powerautomate.svg" alt="" width="14" height="14"> Power Automate RPA Developer</span>
                     </div>
                 </div>
                 <div class="education-section">
@@ -321,12 +364,42 @@
             </div>
         </section>
 
+        <!-- Currently -->
+        <section class="section section-alt" id="currently">
+            <div class="container">
+                <h2 class="section-title">Currently</h2>
+                <div class="currently-content">
+                    <div class="currently-item">
+                        <span class="currently-icon">🔬</span>
+                        <div>
+                            <strong>Exploring:</strong> Agentic AI patterns for self-healing enterprise workflows
+                            <!-- YOUR TODO: Update this with what you're actually working on right now -->
+                        </div>
+                    </div>
+                    <div class="currently-item">
+                        <span class="currently-icon">🛠️</span>
+                        <div>
+                            <strong>Building:</strong> Open-source tools for ML pipeline automation
+                            <!-- YOUR TODO: Replace with your current side project -->
+                        </div>
+                    </div>
+                    <div class="currently-item">
+                        <span class="currently-icon">📚</span>
+                        <div>
+                            <strong>Learning:</strong> RAG pipelines and knowledge graph integration
+                            <!-- YOUR TODO: Replace with what you're actually studying -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Contact -->
         <section class="section" id="contact">
             <div class="container">
                 <h2 class="section-title">Contact</h2>
                 <div class="contact-details">
-                    <p class="contact-desc">Looking for ML Engineering, Automation, or Cloud roles. Open to remote, hybrid, or relocation.</p>
+                    <p class="contact-desc">I build ML systems and automation platforms that work at scale &mdash; 300K tickets classified monthly, 25 manual workflows eliminated, &#x20B9;60L+ saved. Looking for ML Engineering, Automation, or Cloud roles. Open to remote, hybrid, or relocation.</p>
                     <ul class="contact-info">
                         <li><span class="contact-label">Email</span> <a href="mailto:harshit1chaurasia@outlook.com">harshit1chaurasia@outlook.com</a></li>
                         <li><span class="contact-label">GitHub</span> <a href="https://github.com/harshitrajchaurasia" target="_blank" rel="noopener">github.com/harshitrajchaurasia</a></li>
@@ -349,6 +422,18 @@
     <button class="scroll-top" id="scrollTop" aria-label="Scroll to top" type="button">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="20" height="20"><path d="M18 15l-6-6-6 6"/></svg>
     </button>
+
+    <!-- Keyboard shortcuts toast -->
+    <div class="kbd-toast" id="kbdToast" hidden>
+        <h4>Keyboard Shortcuts</h4>
+        <div class="kbd-grid">
+            <kbd>j</kbd><span>Next section</span>
+            <kbd>k</kbd><span>Previous section</span>
+            <kbd>t</kbd><span>Toggle theme</span>
+            <kbd>?</kbd><span>Show shortcuts</span>
+            <kbd>Esc</kbd><span>Close this</span>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
