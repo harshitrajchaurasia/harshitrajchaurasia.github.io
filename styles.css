@@ -1019,25 +1019,26 @@ img { max-width: 100%; display: block; }
 }
 
 @media (max-width: 900px) {
-    .hero-container { grid-template-columns: 1fr; text-align: center; gap: 32px; }
-    .hero-description { max-width: 100%; margin: 0 auto 24px; }
+    .hero-container { grid-template-columns: 1fr; text-align: center; gap: 24px; }
+    .hero-description { max-width: 100%; margin: 0 auto 20px; font-size: 0.95rem; }
     .hero-badge { margin: 0 auto; }
-    .hero-stats { justify-content: center; }
-    .hero-actions { justify-content: center; }
-    .hero-visual { order: -1; height: 280px; }
-    .hero-orbit { width: 280px; height: 280px; }
-    .ring-1 { width: 150px; height: 150px; }
-    .ring-2 { width: 215px; height: 215px; }
-    .ring-3 { width: 270px; height: 270px; }
-    .hero-photo-wrap { width: 140px; height: 140px; }
-    .photo-initials { font-size: 2rem; }
+    .hero-stats { justify-content: center; gap: 20px; }
+    .hero-actions { justify-content: center; flex-wrap: wrap; }
+    .hero-visual { order: -1; height: 260px; }
+    .hero-orbit { width: 260px; height: 260px; }
+    .ring-1 { width: 140px; height: 140px; }
+    .ring-2 { width: 200px; height: 200px; }
+    .ring-3 { width: 250px; height: 250px; }
+    .hero-photo-wrap { width: 130px; height: 130px; }
+    .photo-initials { font-size: 1.8rem; }
 
     .about-row { grid-template-columns: 1fr; text-align: center; }
-    .about-photo-col { max-width: 300px; margin: 0 auto; }
+    .about-photo-col { max-width: 260px; margin: 0 auto; }
     .about-tools { justify-content: center; }
 
     .showcase-header { flex-direction: column; gap: 12px; }
     .showcase-links { width: 100%; }
+    .showcase-number { font-size: clamp(2rem, 4vw, 3rem); }
 
     .visual-grid-bots { grid-template-columns: repeat(4, 1fr); }
     .visual-metrics { gap: 24px; }
@@ -1049,43 +1050,98 @@ img { max-width: 100%; display: block; }
     .certs-grid { grid-template-columns: repeat(2, 1fr); }
 
     .contact-wrapper { grid-template-columns: 1fr; text-align: center; }
+    .c-card:hover { transform: translateX(0) translateY(-2px); }
+
+    .showcase-details { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .showcase-highlights { margin-left: 0; }
 }
 
 @media (max-width: 640px) {
+    .container { padding: 0 16px; }
+
+    .nav-inner { padding: 0 16px; }
     .nav-links {
         display: none; position: absolute; top: 64px; left: 0; right: 0;
         background: var(--nav-bg); backdrop-filter: var(--nav-blur);
         border-bottom: 1px solid var(--border);
-        flex-direction: column; padding: 12px 16px; gap: 4px;
+        flex-direction: column; padding: 16px 20px; gap: 2px;
         box-shadow: var(--shadow);
     }
     .nav-links.open { display: flex; }
+    .nav-links a { padding: 12px 16px; font-size: 0.92rem; border-radius: 10px; }
     .nav-links a::after { display: none; }
     .nav-toggle { display: flex; }
     .nav-actions .nav-resume { display: none; }
 
-    .hero { padding: 110px 0 40px; min-height: auto; }
+    .hero { padding: 100px 0 32px; min-height: auto; }
     .scroll-indicator { display: none; }
-    .hero-stats { gap: 16px; }
-    .hero-stat-num { font-size: 1.1rem; }
+    .hero-stats { gap: 12px; padding: 12px 0; }
+    .hero-stat-num { font-size: 1.05rem; }
+    .hero-stat-label { font-size: 0.62rem; }
+    .hero-description { font-size: 0.9rem; line-height: 1.7; }
+    .hero-actions { flex-direction: column; width: 100%; gap: 8px; }
+    .hero-actions .btn { width: 100%; justify-content: center; padding: 14px 20px; }
+    .hero-visual { height: 220px; }
+    .hero-orbit { width: 220px; height: 220px; }
+    .ring-1 { width: 120px; height: 120px; }
+    .ring-2 { width: 170px; height: 170px; }
+    .ring-3 { width: 215px; height: 215px; }
+    .hero-photo-wrap { width: 110px; height: 110px; }
 
-    .section { padding: 64px 0; }
-    .showcase { padding: 40px 0; }
+    .section { padding: 56px 0; }
+    .section-title { font-size: clamp(1.4rem, 5vw, 1.8rem); margin-bottom: 8px; }
+    .section-subtitle { font-size: 0.92rem; margin-bottom: 32px; }
+    .showcase { padding: 36px 0; }
+    .showcase-number { font-size: 2rem; }
 
-    .about-row { gap: 32px; }
-    .about-photo-placeholder { font-size: 3rem; }
+    .about-row { gap: 28px; }
+    .about-photo-col { max-width: 200px; }
+    .about-text p { font-size: 0.92rem; }
+    .about-tools span { font-size: 0.72rem; padding: 4px 10px; }
 
     .diagram-flow { flex-direction: column; }
     .diagram-connector { transform: rotate(90deg); padding: 4px 0; }
-    .visual-grid-bots { grid-template-columns: repeat(2, 1fr); }
+    .diagram-node { padding: 14px; min-width: 100px; }
+    .visual-grid-bots { grid-template-columns: repeat(2, 1fr); gap: 8px; }
     .visual-metrics { flex-direction: column; gap: 16px; }
-    .certs-grid { grid-template-columns: 1fr 1fr; }
+    .v-metric-num { font-size: 1.4rem; }
+    .certs-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .cert-badge { padding: 20px 14px; }
+    .cert-name { font-size: 0.8rem; }
 
-    .demo-body { padding: 16px; }
+    .compact-card { flex-direction: column; }
+    .compact-accent { width: 100%; height: 4px; }
+
+    .demo-body { padding: 14px; }
+    .demo-text { font-size: 0.82rem; line-height: 1.75; }
+    .pii { font-size: 0.78rem; }
+
+    .c-card { padding: 16px 18px; }
+    .c-value { font-size: 0.84rem; }
 
     .footer-inner { flex-direction: column; gap: 12px; text-align: center; }
 
-    .orbit-icon { width: 30px; height: 30px; font-size: 0.5rem; }
+    .orbit-icon { width: 28px; height: 28px; font-size: 0.45rem; border-radius: 8px; }
+
+    .scroll-top { bottom: 20px; right: 20px; width: 40px; height: 40px; }
+
+    .showcase-pills span { font-size: 0.66rem; padding: 3px 8px; }
+    .compact-pills span { font-size: 0.64rem; padding: 2px 8px; }
+}
+
+/* Extra small screens */
+@media (max-width: 400px) {
+    .container { padding: 0 12px; }
+    .hero-stats { flex-wrap: wrap; justify-content: space-around; }
+    .hero-stat { min-width: 60px; }
+    .certs-grid { grid-template-columns: 1fr; }
+    .visual-grid-bots { grid-template-columns: repeat(2, 1fr); }
+    .bot-node { padding: 12px 6px; }
+    .bot-node span { font-size: 0.62rem; }
+    .hero-badge { font-size: 0.68rem; padding: 4px 10px; }
+    .showcase-tagline { font-size: 0.88rem; }
+    .compact-body h4 { font-size: 0.92rem; }
+    .compact-body p { font-size: 0.8rem; }
 }
 
 /* ---------- REDUCED MOTION ---------- */
