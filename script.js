@@ -21,7 +21,7 @@
         themeToggle.addEventListener('click', toggleTheme);
     }
 
-    // Nav scroll state — hide on scroll down, show on scroll up or at top
+    // Nav scroll state - hide on scroll down, show on scroll up or at top
     const nav = document.getElementById('nav');
     let lastScrollY = window.scrollY;
     let ticking = false;
@@ -63,15 +63,17 @@
         });
     }
 
-    // Active nav highlight
+    // Active nav highlight + scroll spy
     const sections = document.querySelectorAll('section[id]');
+    const spyDots = document.querySelectorAll('.spy-dot');
     function updateActiveNav() {
         const y = window.scrollY + 120;
         sections.forEach(s => {
+            const isActive = y >= s.offsetTop && y < s.offsetTop + s.offsetHeight;
             const link = document.querySelector(`.nav-links a[href="#${s.id}"]`);
-            if (link) {
-                link.classList.toggle('active', y >= s.offsetTop && y < s.offsetTop + s.offsetHeight);
-            }
+            if (link) link.classList.toggle('active', isActive);
+            const dot = document.querySelector(`.spy-dot[href="#${s.id}"]`);
+            if (dot) dot.classList.toggle('active', isActive);
         });
     }
     window.addEventListener('scroll', updateActiveNav, { passive: true });
@@ -217,7 +219,7 @@
             if (!text) return;
 
             piiBtn.disabled = true;
-            piiBtn.textContent = 'Processing…';
+            piiBtn.textContent = 'Processing...';
             piiOutput.innerHTML = '';
             if (piiStats) piiStats.textContent = '';
 
@@ -240,7 +242,7 @@
                 }
             } catch (err) {
                 // Fallback: show a static demo if API is unavailable
-                piiOutput.innerHTML = '<span style="color:var(--text-muted);font-style:italic;">API unavailable — <a href="https://pii-shield-49982461185.us-central1.run.app" target="_blank" rel="noopener" style="color:var(--accent);">try the full app</a></span>';
+                piiOutput.innerHTML = '<span style="color:var(--text-muted);font-style:italic;">API unavailable - <a href="https://pii-shield-49982461185.us-central1.run.app" target="_blank" rel="noopener" style="color:var(--accent);">try the full app</a></span>';
             } finally {
                 piiBtn.disabled = false;
                 piiBtn.textContent = 'Shield it';
