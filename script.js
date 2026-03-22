@@ -1,5 +1,5 @@
 // ============================================
-// HARSHIT CHAURASIA — PORTFOLIO v5
+// HARSHIT CHAURASIA - PORTFOLIO v5
 // GSAP + Lenis + Dark Mode + Showcase Animations
 // ============================================
 
@@ -194,7 +194,7 @@
     }
 
     // ============================================
-    // MAIL BUTTON — explicit handler for reliability
+    // MAIL BUTTON - explicit handler for reliability
     // ============================================
     const mailBtn = document.getElementById('mailBtn');
     if (mailBtn) {
