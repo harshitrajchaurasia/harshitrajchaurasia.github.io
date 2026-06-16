@@ -277,6 +277,47 @@
     }
 
     // ============================================
+    // HERO STAGGERED ENTRANCE
+    // ============================================
+    var heroAnims = document.querySelectorAll('.intro [data-anim]');
+    heroAnims.forEach(function (el, i) {
+        el.style.transitionDelay = (i * 0.075) + 's';
+    });
+    function markLoaded() { document.body.classList.add('loaded'); }
+    requestAnimationFrame(function () { requestAnimationFrame(markLoaded); });
+
+    // ============================================
+    // SCROLL PROGRESS BAR
+    // ============================================
+    var progressBar = document.getElementById('scrollProgress');
+    if (progressBar) {
+        var progressTicking = false;
+        function updateProgress() {
+            var h = document.documentElement.scrollHeight - window.innerHeight;
+            var p = h > 0 ? (window.scrollY / h) * 100 : 0;
+            progressBar.style.width = p + '%';
+            progressTicking = false;
+        }
+        window.addEventListener('scroll', function () {
+            if (!progressTicking) { requestAnimationFrame(updateProgress); progressTicking = true; }
+        }, { passive: true });
+        updateProgress();
+    }
+
+    // ============================================
+    // CARD CURSOR SPOTLIGHT
+    // ============================================
+    if (window.matchMedia && window.matchMedia('(hover: hover)').matches) {
+        document.querySelectorAll('.project-slide').forEach(function (card) {
+            card.addEventListener('pointermove', function (e) {
+                var r = card.getBoundingClientRect();
+                card.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100) + '%');
+                card.style.setProperty('--my', ((e.clientY - r.top) / r.height * 100) + '%');
+            });
+        });
+    }
+
+    // ============================================
     // KEYBOARD SHORTCUTS
     // ============================================
     var kbdToast = document.getElementById('kbdToast');
