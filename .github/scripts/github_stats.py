@@ -2,9 +2,9 @@
 """Fetch public GitHub activity for the site's live stats panel.
 
 Writes github-stats.json at the repo root. Uses the GraphQL API with the
-token in GH_TOKEN. The built-in Actions GITHUB_TOKEN works for PUBLIC
-contributions; to include private-repo contributions, supply a personal
-access token (see .github/workflows/github-stats.yml).
+token in GH_TOKEN. When that token is the GH_STATS_TOKEN PAT (read:user),
+the contribution calendar for your own user includes PRIVATE contributions;
+the built-in Actions GITHUB_TOKEN sees PUBLIC contributions only.
 """
 import datetime
 import json
