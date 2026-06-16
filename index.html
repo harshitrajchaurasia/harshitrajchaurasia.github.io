@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Harshit Chaurasia — harshit.sh</title>
-    <meta name="description" content="Harshit Chaurasia — AI & Automation Engineer. 4.5 years at TCS building ML systems, RPA platforms, and privacy tools. Detail-oriented, data-driven, occasionally zer0CO0L.">
-    <meta property="og:title" content="Harshit Chaurasia — harshit.sh">
+    <title>Harshit Chaurasia - harshit.sh</title>
+    <meta name="description" content="Harshit Chaurasia - AI & Automation Engineer. 4.5 years at TCS building ML systems, RPA platforms, and privacy tools. Detail-oriented, data-driven, occasionally zer0CO0L.">
+    <meta property="og:title" content="Harshit Chaurasia - harshit.sh">
     <meta property="og:description" content="AI & Automation Engineer. ML systems, RPA platforms, and privacy-first tools at enterprise scale.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://harshitrajchaurasia.github.io">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230b0e16'/%3E%3Ctext x='14' y='66' font-family='monospace' font-size='44' font-weight='800' fill='%235eead4'%3E%26gt;_%3C/text%3E%3C/svg%3E">
     <meta property="og:image" content="https://harshitrajchaurasia.github.io/image.jpg">
-    <meta name="twitter:title" content="Harshit Chaurasia — harshit.sh">
+    <meta name="twitter:title" content="Harshit Chaurasia - harshit.sh">
     <meta name="twitter:description" content="AI & Automation Engineer. ML systems, RPA platforms, and privacy-first tools at enterprise scale.">
     <meta name="twitter:image" content="https://harshitrajchaurasia.github.io/image.jpg">
     <meta name="twitter:card" content="summary_large_image">
@@ -36,15 +36,34 @@
     </script>
     <script>
       (function(){
-        document.documentElement.classList.add('js');
+        var d=document.documentElement;
+        d.classList.add('js');
         var t=localStorage.getItem('theme');
         if(!t)t=window.matchMedia('(prefers-color-scheme:light)').matches?'light':'dark';
-        document.documentElement.setAttribute('data-theme',t);
+        d.setAttribute('data-theme',t);
+        // first-visit boot loader: flag before paint, with a failsafe unlock
+        try{
+          var seen=sessionStorage.getItem('booted');
+          var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          if(!seen&&!reduce){
+            d.classList.add('booting');
+            setTimeout(function(){d.classList.remove('booting');},4500);
+          }
+        }catch(e){}
       })();
     </script>
 </head>
 <body>
     <a href="#whoami" class="skip-link">Skip to main content</a>
+
+    <!-- ============ BOOT LOADER (first visit only) ============ -->
+    <div class="boot-loader" id="bootLoader" aria-hidden="true">
+        <div class="bl-inner">
+            <pre class="bl-log" id="bootLog"></pre>
+            <div class="bl-bar" aria-hidden="true"><i id="bootBar"></i></div>
+            <p class="bl-skip">press any key to skip</p>
+        </div>
+    </div>
 
     <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
     <div class="bg-grid" aria-hidden="true"></div>
@@ -67,7 +86,7 @@
             <div class="topbar-actions">
                 <button class="cmdk-trigger" id="cmdkTrigger" type="button" aria-label="Open command palette">
                     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
-                    <span class="cmdk-label">Jump to…</span>
+                    <span class="cmdk-label">Jump to...</span>
                     <kbd class="cmdk-kbd"><span class="cmdk-mod">⌘</span>K</kbd>
                 </button>
                 <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" type="button">
@@ -93,21 +112,21 @@
                         <div class="terminal-body" id="terminalBody">
                             <!-- typed lines injected by JS; static fallback below -->
                             <div class="term-line"><span class="term-prompt">harshit@portfolio</span><span class="term-sep">:</span><span class="term-dir">~</span><span class="term-dollar">$</span> <span class="term-cmd">whoami</span></div>
-                            <div class="term-out">Harshit Chaurasia — AI &amp; Automation Engineer</div>
+                            <div class="term-out">Harshit Chaurasia - Automation &amp; AI Engineer</div>
                             <div class="term-line"><span class="term-prompt">harshit@portfolio</span><span class="term-sep">:</span><span class="term-dir">~</span><span class="term-dollar">$</span> <span class="term-cmd">cat mission.txt</span></div>
-                            <div class="term-out">I build ML systems &amp; automation that move at enterprise scale —<br>and privacy-first tools so your data stays yours.</div>
+                            <div class="term-out">I build automation and ML systems that move at enterprise scale,<br>plus privacy-first tools so your data stays yours.</div>
                             <div class="term-line"><span class="term-prompt">harshit@portfolio</span><span class="term-sep">:</span><span class="term-dir">~</span><span class="term-dollar">$</span> <span class="term-cmd">./explore --start</span><span class="term-caret" aria-hidden="true">▋</span></div>
                         </div>
                     </div>
 
                     <h1 class="hero-name">Harshit Chaurasia<span class="hero-name-cursor" aria-hidden="true">_</span></h1>
                     <p class="hero-roles">
+                        <span class="role-chip" style="--c:var(--green)">Automation / RPA</span>
                         <span class="role-chip" style="--c:var(--cyan)">AI / ML</span>
-                        <span class="role-chip" style="--c:var(--green)">Automation</span>
                         <span class="role-chip" style="--c:var(--violet)">Cloud</span>
                         <span class="role-chip" style="--c:var(--pink)">Privacy</span>
                     </p>
-                    <p class="hero-blurb">Detail-oriented and analytical — I value accuracy, efficiency, and data-driven decisions. 4.5+ years at TCS turning messy enterprise problems into systems that just work.</p>
+                    <p class="hero-blurb">Detail-oriented and analytical: I value accuracy, efficiency, and data-driven decisions. 4.5+ years at TCS building RPA platforms and ML systems that turn messy enterprise work into something that just runs.</p>
 
                     <div class="hero-ctas">
                         <a href="#projects" class="btn btn-primary"><span>see what I built</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
@@ -128,7 +147,7 @@
                                 <span class="id-key">loc</span><span class="id-val">Lucknow, India</span>
                                 <span class="id-key">org</span><span class="id-val">Tata Consultancy Services</span>
                                 <span class="id-key">focus</span><span class="id-val">ML · RPA · Cloud · Privacy</span>
-                                <span class="id-key">alias</span><span class="id-val id-alias" id="aliasReveal" title="some things you have to earn…">[ classified ]</span>
+                                <span class="id-key">alias</span><span class="id-val id-alias" id="aliasReveal" title="some things you have to earn...">[ classified ]</span>
                             </div>
                         </div>
                     </div>
@@ -141,6 +160,21 @@
                 <div class="metric" data-target="2" data-suffix="×"><span class="metric-value">0</span><span class="metric-suffix">×</span><span class="metric-label">TCS AI Hackathon wins · 2025</span></div>
                 <div class="metric"><span class="metric-value">©1</span><span class="metric-suffix"></span><span class="metric-label">TCS-granted copyright</span></div>
             </div>
+
+            <!-- live GitHub activity (populated from github-stats.json by a nightly Action) -->
+            <div class="gh-stats" id="ghStats" hidden>
+                <div class="gh-head">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    <span class="gh-user">github.com/harshitrajchaurasia</span>
+                    <span class="gh-live">live</span>
+                </div>
+                <div class="gh-grid">
+                    <div class="gh-stat"><span class="gh-num" data-gh="contributions">--</span><span class="gh-lbl">contributions · past year</span></div>
+                    <div class="gh-stat"><span class="gh-num" data-gh="streak">--</span><span class="gh-lbl">day commit streak</span></div>
+                    <div class="gh-stat"><span class="gh-num" data-gh="repos">--</span><span class="gh-lbl">public repos</span></div>
+                    <div class="gh-stat"><span class="gh-num" data-gh="since">--</span><span class="gh-lbl">on GitHub since</span></div>
+                </div>
+            </div>
         </section>
 
         <!-- ============ WHOAMI ============ -->
@@ -152,13 +186,13 @@
                     <span class="sec-rule" aria-hidden="true"></span>
                 </div>
                 <div class="whoami-grid">
-                    <p class="whoami-lead">I’m an engineer who likes the hard, unglamorous middle of a problem — the data that doesn’t fit, the workflow nobody wants to own, the edge case that breaks everything at 2&nbsp;AM.</p>
+                    <p class="whoami-lead">I'm an engineer who likes the hard, unglamorous middle of a problem: the data that doesn't fit, the workflow nobody wants to own, the edge case that breaks everything at 2&nbsp;AM.</p>
                     <div class="whoami-body">
-                        <p>I started in IT operations, kept noticing the same manual work being done by hand, and built the business case for a dedicated RPA practice. Then I taught myself ML to solve the problems automation alone couldn’t.</p>
-                        <p>Today I ship BERT classifiers, forecasting models, automation bots, and privacy tooling for a Fortune&nbsp;50 telecom client — and I care just as much about <em>why</em> a number moved as the number itself.</p>
+                        <p>I started in IT operations, kept noticing the same manual work being done by hand, and built the business case for a dedicated RPA practice. Then I taught myself ML to solve the problems automation alone couldn't.</p>
+                        <p>Today I ship BERT classifiers, forecasting models, automation bots, and privacy tooling for a Fortune&nbsp;50 telecom client - and I care just as much about <em>why</em> a number moved as the number itself.</p>
                         <ul class="whoami-facts">
                             <li><span>$</span> 4.5+ yrs @ Tata Consultancy Services</li>
-                            <li><span>$</span> TCS Copyright holder — Enterprise RPA Platform</li>
+                            <li><span>$</span> TCS Copyright holder - Enterprise RPA Platform</li>
                             <li><span>$</span> 1st &amp; 2nd place, TCS AI Hackathon 2025</li>
                             <li><span>$</span> 30+ awards · 28 appreciations</li>
                         </ul>
@@ -183,7 +217,7 @@
                         <div>
                             <span class="proj-kicker">// open source · privacy</span>
                             <h3 class="proj-title">PII&nbsp;Shield</h3>
-                            <p class="proj-desc">Strips personal information out of text <em>before</em> it ever reaches an LLM. Detects 35+ PII types — Aadhaar, PAN, bank accounts, emails, phones — with spaCy NER + regex. Nothing is stored. Ever.</p>
+                            <p class="proj-desc">Strips personal information out of text <em>before</em> it ever reaches an LLM. Detects 35+ PII types - Aadhaar, PAN, bank accounts, emails, phones - with spaCy NER + regex. Nothing is stored. Ever.</p>
                             <p class="proj-why">// built it because pasting customer data into an LLM is a breach waiting to happen.</p>
                         </div>
                         <div class="proj-links">
@@ -195,7 +229,7 @@
                     <div class="demo" id="piiDemo">
                         <div class="demo-pane">
                             <span class="demo-tag demo-tag-in"><span class="demo-tag-dot"></span>raw input</span>
-                            <textarea class="demo-input" id="piiInput" rows="4" placeholder="Paste something with personal info…&#10;e.g. Hi, I'm Rahul Sharma, Aadhaar 2341 5678 9012, rahul@gmail.com, +91 98765 43210"></textarea>
+                            <textarea class="demo-input" id="piiInput" rows="4" placeholder="Paste something with personal info...&#10;e.g. Hi, I'm Rahul Sharma, Aadhaar 2341 5678 9012, rahul@gmail.com, +91 98765 43210"></textarea>
                             <button class="demo-run" id="piiRedactBtn" type="button">
                                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
                                 <span>shield it</span>
@@ -217,35 +251,35 @@
                         <span class="proj-badge">Enterprise · ML</span>
                         <h3 class="proj-title">Smart Ticket Router</h3>
                         <div class="case">
-                            <div class="case-row"><span class="case-k">problem</span><span class="case-v">300K+ support tickets a month were triaged and routed by hand — slow, inconsistent, and a constant drain on senior engineers.</span></div>
-                            <div class="case-row"><span class="case-k">approach</span><span class="case-v">A BERT <strong>bi-encoder</strong> retrieves candidate queues, a <strong>cross-encoder</strong> re-ranks them — tuned for precision over recall so a misroute stays rarer than a near-miss.</span></div>
+                            <div class="case-row"><span class="case-k">problem</span><span class="case-v">300K+ support tickets a month were triaged and routed by hand - slow, inconsistent, and a constant drain on senior engineers.</span></div>
+                            <div class="case-row"><span class="case-k">approach</span><span class="case-v">A BERT <strong>bi-encoder</strong> retrieves candidate queues, a <strong>cross-encoder</strong> re-ranks them - tuned for precision over recall so a misroute stays rarer than a near-miss.</span></div>
                             <div class="case-row"><span class="case-k">result</span><span class="case-v"><strong>97%</strong> routing accuracy, <strong>85%</strong> faster resolution, catalog selection fully automated.</span></div>
                         </div>
                         <div class="route-viz" aria-hidden="true">
-                            <div class="rv-in">“VPN keeps dropping after the Win11 client update.”</div>
+                            <div class="rv-in">"VPN keeps dropping after the Win11 client update."</div>
                             <div class="rv-flow"><span>bi-encoder</span><span class="rv-arrow">→</span><span>re-rank</span></div>
-                            <div class="rv-out"><span class="rv-route">Network › VPN › Tier&nbsp;2</span><span class="rv-conf"><i style="--w:97%"></i></span><span class="rv-meta">97% · 0.4s</span></div>
+                            <div class="rv-out"><span class="rv-route">Network > VPN > Tier&nbsp;2</span><span class="rv-conf"><i style="--w:97%"></i></span><span class="rv-meta">97% · 0.4s</span></div>
                         </div>
                         <div class="proj-tech"><span>BERT</span><span>Bi-Encoder</span><span>Cross-Encoder</span><span>TensorFlow</span></div>
-                        <span class="proj-repo"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Proprietary · TCS — no public repo</span>
+                        <span class="proj-repo"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Proprietary · TCS - no public repo</span>
                     </article>
 
                     <article class="proj proj-card" style="--sec:var(--amber)">
                         <span class="proj-badge">© Copyright-protected</span>
                         <h3 class="proj-title">Enterprise RPA Platform</h3>
                         <div class="case">
-                            <div class="case-row"><span class="case-k">problem</span><span class="case-v">25+ IT-ops workflows — deployments, O365 licensing, compliance, patching — were fully manual across a 15-person team.</span></div>
+                            <div class="case-row"><span class="case-k">problem</span><span class="case-v">25+ IT-ops workflows - deployments, O365 licensing, compliance, patching - were fully manual across a 15-person team.</span></div>
                             <div class="case-row"><span class="case-k">approach</span><span class="case-v">Architected an end-to-end UiPath platform (<strong>REFramework + Orchestrator</strong>): 8 production bots with monitoring and self-recovery.</span></div>
-                            <div class="case-row"><span class="case-k">result</span><span class="case-v"><strong>1,000+ hrs/year</strong> saved, <strong>95%</strong> less manual effort, <strong>92%</strong> bot success rate — TCS granted it copyright.</span></div>
+                            <div class="case-row"><span class="case-k">result</span><span class="case-v"><strong>1,000+ hrs/year</strong> saved, <strong>95%</strong> less manual effort, <strong>92%</strong> bot success rate - TCS granted it copyright.</span></div>
                         </div>
-                        <p class="proj-why">// favorite ship — the compliance bot alone freed up an entire team’s Friday.</p>
+                        <p class="proj-why">// favorite ship - the compliance bot alone freed up an entire team's Friday.</p>
                         <div class="bot-grid" aria-hidden="true">
                             <span><i></i>Deployment</span><span><i></i>O365 Licensing</span>
                             <span><i></i>Compliance</span><span><i></i>Patch Validate</span>
                             <span><i></i>Asset Recon</span><span><i></i>Ticket Triage</span>
                         </div>
                         <div class="proj-tech"><span>UiPath</span><span>Power&nbsp;Automate</span><span>Python</span><span>SQL</span></div>
-                        <span class="proj-repo"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Proprietary · TCS — copyright-protected</span>
+                        <span class="proj-repo"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Proprietary · TCS - copyright-protected</span>
                     </article>
                 </div>
 
@@ -265,7 +299,7 @@
                     <article class="proj-mini">
                         <span class="mini-tag">TCS</span>
                         <h4>Smart Compliance Engine</h4>
-                        <p>Rule engine across 800K+ endpoints — pushed compliance from 70% → 98% and cut audit findings.</p>
+                        <p>Rule engine across 800K+ endpoints - pushed compliance from 70% → 98% and cut audit findings.</p>
                     </article>
                     <article class="proj-mini">
                         <span class="mini-tag">Hackathon</span>
@@ -285,19 +319,19 @@
                     <span class="sec-rule" aria-hidden="true"></span>
                     <span class="sec-aside">git log --reverse</span>
                 </div>
-                <p class="journey-intro">Ops → automation → ML. Each step solved a problem the last one couldn’t.</p>
+                <p class="journey-intro">Ops → automation → ML. Each step solved a problem the last one couldn't.</p>
 
                 <div class="timeline">
                     <div class="tl-node">
                         <span class="tl-dot"></span>
                         <div class="tl-head">
                             <h3 class="tl-role">Analytics &amp; Automation Specialist</h3>
-                            <span class="tl-meta">TCS · 2024 – Present</span>
+                            <span class="tl-meta">TCS · 2024 - Present</span>
                         </div>
                         <ul class="tl-points">
-                            <li>Led end-to-end 5TB+ GCP migration (BigQuery, Dataflow, Dataproc) — zero downtime over 6 months</li>
-                            <li>Built BERT ticket classifier — 300K+ monthly transactions at 97% accuracy</li>
-                            <li>Designed time-series forecasting for network optimization — ₹60L saved in FY24</li>
+                            <li>Led end-to-end 5TB+ GCP migration (BigQuery, Dataflow, Dataproc) - zero downtime over 6 months</li>
+                            <li>Built BERT ticket classifier - 300K+ monthly transactions at 97% accuracy</li>
+                            <li>Designed time-series forecasting for network optimization - ₹60L saved in FY24</li>
                             <li>Lifted endpoint compliance 70% → 98% across 800K+ devices</li>
                         </ul>
                     </div>
@@ -305,10 +339,11 @@
                         <span class="tl-dot"></span>
                         <div class="tl-head">
                             <h3 class="tl-role">RPA Developer</h3>
-                            <span class="tl-meta">TCS · 2022 – 2024</span>
+                            <span class="tl-meta">TCS · 2022 - 2024</span>
                         </div>
                         <ul class="tl-points">
-                            <li>Architected the Enterprise RPA Platform — 8 bots, 1,000+ hrs saved, TCS copyright granted</li>
+                            <li>Architected the Enterprise RPA Platform on UiPath (REFramework + Orchestrator): 8 bots, 1,000+ hrs saved, TCS copyright granted</li>
+                            <li>Built bots across UiPath, Power Automate, and Python, with Selenium for web automation and SQL for data validation</li>
                             <li>Built an Agentic AI POC for self-healing ticket resolution with UiPath AI Center</li>
                             <li>Ran production RPA workflows supporting 15+ operations staff</li>
                         </ul>
@@ -317,10 +352,10 @@
                         <span class="tl-dot"></span>
                         <div class="tl-head">
                             <h3 class="tl-role">IT Operations Lead</h3>
-                            <span class="tl-meta">TCS · 2021 – 2022</span>
+                            <span class="tl-meta">TCS · 2021 - 2022</span>
                         </div>
                         <ul class="tl-points">
-                            <li>Managed IT ops for India North Region — asset lifecycle &amp; vendor coordination</li>
+                            <li>Managed IT ops for India North Region - asset lifecycle &amp; vendor coordination</li>
                             <li>Identified 25+ automation opportunities and built the case for a dedicated RPA practice</li>
                         </ul>
                     </div>
@@ -329,10 +364,10 @@
                 <div class="awards">
                     <h4 class="awards-label"><span>★</span> awards &amp; recognition</h4>
                     <ul class="awards-list">
-                        <li><strong>Copyright Award 2025</strong> — Enterprise RPA Platform (IP recognition by TCS)</li>
-                        <li><strong>1st Place</strong> — TCS AI Hackathon 2025, Energy Optimizer for Oil &amp; Gas Pipelines</li>
-                        <li><strong>2nd Place</strong> — TCS AI Hackathon 2025, IoT AI Agent for Facility Energy</li>
-                        <li><strong>Best Performance Improvement Project</strong> — Unit level (1,000+ employees), Sep 2024</li>
+                        <li><strong>Copyright Award 2025</strong> - Enterprise RPA Platform (IP recognition by TCS)</li>
+                        <li><strong>1st Place</strong> - TCS AI Hackathon 2025, Energy Optimizer for Oil &amp; Gas Pipelines</li>
+                        <li><strong>2nd Place</strong> - TCS AI Hackathon 2025, IoT AI Agent for Facility Energy</li>
+                        <li><strong>Best Performance Improvement Project</strong> - Unit level (1,000+ employees), Sep 2024</li>
                         <li>30+ awards &amp; 28 appreciations for technical excellence across 4.5 years</li>
                     </ul>
                 </div>
@@ -349,12 +384,12 @@
                 </div>
                 <div class="stack-grid">
                     <div class="stack-group">
-                        <h4 class="stack-label">AI / ML</h4>
-                        <div class="chips"><span>BERT</span><span>Transformers</span><span>spaCy</span><span>TensorFlow</span><span>NLP</span><span>LLMs</span><span>GenAI</span><span>Time&nbsp;Series</span></div>
+                        <h4 class="stack-label">Automation / RPA</h4>
+                        <div class="chips"><span>UiPath</span><span>REFramework</span><span>Orchestrator</span><span>AI&nbsp;Center</span><span>Power&nbsp;Automate</span><span>Selenium</span><span>Process&nbsp;Mining</span></div>
                     </div>
                     <div class="stack-group">
-                        <h4 class="stack-label">Automation</h4>
-                        <div class="chips"><span>UiPath</span><span>Power&nbsp;Automate</span><span>Selenium</span><span>Process&nbsp;Mining</span></div>
+                        <h4 class="stack-label">AI / ML</h4>
+                        <div class="chips"><span>BERT</span><span>Transformers</span><span>spaCy</span><span>TensorFlow</span><span>NLP</span><span>LLMs</span><span>GenAI</span><span>Time&nbsp;Series</span></div>
                     </div>
                     <div class="stack-group">
                         <h4 class="stack-label">Cloud &amp; Data</h4>
@@ -375,7 +410,7 @@
                         <span class="cert"><img src="assets/certs/uipath.svg" alt="" width="14" height="14"> UiPath Agentic Automation</span>
                         <span class="cert"><img src="assets/certs/powerautomate.svg" alt="" width="14" height="14"> Power Automate RPA Developer</span>
                     </div>
-                    <p class="edu"><span class="edu-key">edu</span> Bachelor of Computer Applications (BCA) — Shri Ramswaroop Memorial University, 2021</p>
+                    <p class="edu"><span class="edu-key">edu</span> Bachelor of Computer Applications (BCA) - Shri Ramswaroop Memorial University, 2021</p>
                 </div>
             </div>
         </section>
@@ -392,12 +427,12 @@
                     <article class="passion-card">
                         <span class="passion-ico">🛡️</span>
                         <h3>Privacy by default</h3>
-                        <p>I keep a deliberately tiny social footprint and build tools (like PII&nbsp;Shield) that put people back in control of their data. Privacy isn’t a feature — it’s the default.</p>
+                        <p>I keep a deliberately tiny social footprint and build tools (like PII&nbsp;Shield) that put people back in control of their data. Privacy isn't a feature - it's the default.</p>
                     </article>
                     <article class="passion-card">
                         <span class="passion-ico">⚡</span>
                         <h3>Performance &amp; precision</h3>
-                        <p>I obsess over the difference between “it works” and “it’s right.” Latency, accuracy, the why behind a moved metric — that’s the fun part.</p>
+                        <p>I obsess over the difference between "it works" and "it's right." Latency, accuracy, the why behind a moved metric - that's the fun part.</p>
                     </article>
                     <article class="passion-card">
                         <span class="passion-ico">🧩</span>
@@ -407,7 +442,7 @@
                     <article class="passion-card">
                         <span class="passion-ico">🤖</span>
                         <h3>Where AI meets ops</h3>
-                        <p>Agentic AI, self-healing pipelines, RAG — I’m drawn to the seam where ML stops being a demo and starts doing real operational work.</p>
+                        <p>Agentic AI, self-healing pipelines, RAG - I'm drawn to the seam where ML stops being a demo and starts doing real operational work.</p>
                     </article>
                 </div>
             </div>
@@ -441,11 +476,11 @@
                     <aside class="otc-side">
                         <div class="otc-mini">
                             <span class="otc-mini-label">// the signal-to-noise rule</span>
-                            <p>You won’t find me scattered across ten feeds. LinkedIn, GitHub, Steam, email — that’s the whole footprint. Deliberate, not absent.</p>
+                            <p>You won't find me scattered across ten feeds. LinkedIn, GitHub, Steam, email - that's the whole footprint. Deliberate, not absent.</p>
                         </div>
                         <div class="otc-mini">
                             <span class="otc-mini-label">// playstyle</span>
-                            <p>Tactical patience over rushing — read the map, hold the angle, take the shot once. Turns out that’s how I debug, too.</p>
+                            <p>Tactical patience over rushing - read the map, hold the angle, take the shot once. Turns out that's how I debug, too.</p>
                         </div>
                     </aside>
                 </div>
@@ -478,10 +513,10 @@
                     <span class="sec-rule" aria-hidden="true"></span>
                 </div>
                 <div class="contact-term">
-                    <div class="contact-term-bar"><span class="tdot tdot-r"></span><span class="tdot tdot-y"></span><span class="tdot tdot-g"></span><span class="terminal-path">connect — bash</span></div>
+                    <div class="contact-term-bar"><span class="tdot tdot-r"></span><span class="tdot tdot-y"></span><span class="tdot tdot-g"></span><span class="terminal-path">connect - bash</span></div>
                     <div class="contact-term-body">
                         <p class="ct-line"><span class="term-prompt">you</span><span class="term-dollar">$</span> <span class="term-cmd">echo "hello, harshit"</span></p>
-                        <p class="ct-resp">If something here landed — a hard problem worth chewing on, a team building real things, or just a good conversation about ML and automation — I’d like to hear from you. Email’s the fastest line.</p>
+                        <p class="ct-resp">If something here landed - a hard problem worth chewing on, a team building real things, or just a good conversation about ML and automation - I'd like to hear from you. Email's the fastest line.</p>
                         <div class="contact-links">
                             <a href="mailto:harshit1chaurasia@outlook.com" class="c-link c-link-primary">
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
@@ -521,7 +556,7 @@
         <div class="cmdk-panel" role="dialog" aria-modal="true" aria-label="Command palette">
             <div class="cmdk-input-row">
                 <span class="cmdk-prompt">&gt;</span>
-                <input type="text" class="cmdk-input" id="cmdkInput" placeholder="jump to a section, or type a command…" autocomplete="off" spellcheck="false">
+                <input type="text" class="cmdk-input" id="cmdkInput" placeholder="jump to a section, or type a command..." autocomplete="off" spellcheck="false">
                 <kbd class="cmdk-esc">esc</kbd>
             </div>
             <ul class="cmdk-list" id="cmdkList" role="listbox"></ul>

@@ -1,5 +1,5 @@
 // =========================================================
-// harshit.sh — portfolio interactions
+// harshit.sh - portfolio interactions
 // boot terminal · command palette · PII demo · metrics
 // scroll reveal · scroll-spy · zer0CO0L easter egg
 // =========================================================
@@ -76,9 +76,9 @@
     const terminalBody = document.getElementById('terminalBody');
     const bootScript = [
         { type: 'cmd', text: 'whoami' },
-        { type: 'out', text: 'Harshit Chaurasia — AI & Automation Engineer' },
+        { type: 'out', text: 'Harshit Chaurasia - Automation & AI Engineer' },
         { type: 'cmd', text: 'cat mission.txt' },
-        { type: 'out', text: 'I build ML systems & automation that move at enterprise scale —\nand privacy-first tools so your data stays yours.' },
+        { type: 'out', text: 'I build automation and ML systems that move at enterprise scale,\nplus privacy-first tools so your data stays yours.' },
         { type: 'cmd', text: './explore --start', caret: true }
     ];
     const PROMPT = '<span class="term-prompt">harshit@portfolio</span><span class="term-sep">:</span><span class="term-dir">~</span><span class="term-dollar">$</span> ';
@@ -95,7 +95,7 @@
         for (const row of bootScript) {
             const line = document.createElement('div');
             if (row.type === 'cmd') {
-                line.className = 'term-line';
+                line.className = 'term-line boot-line';
                 line.innerHTML = PROMPT;
                 terminalBody.appendChild(line);
                 const cmd = document.createElement('span');
@@ -110,7 +110,7 @@
                 await sleep(220);
             } else {
                 const out = document.createElement('div');
-                out.className = 'term-out';
+                out.className = 'term-out boot-line';
                 out.innerHTML = row.text.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/\n/g, '<br>');
                 terminalBody.appendChild(out);
                 await sleep(300);
@@ -118,6 +118,97 @@
         }
     }
     runBoot();
+
+    // ---------- BOOT LOADER (first visit) ----------
+    (function bootLoader() {
+        const loader = document.getElementById('bootLoader');
+        if (!root.classList.contains('booting')) { if (loader) loader.remove(); return; }
+        if (!loader) { root.classList.remove('booting'); return; }
+        const log = loader.querySelector('#bootLog');
+        const bar = loader.querySelector('#bootBar');
+        let finished = false;
+        function finish() {
+            if (finished) return; finished = true;
+            try { sessionStorage.setItem('booted', '1'); } catch (e) { }
+            root.classList.remove('booting');
+            loader.classList.add('done');
+            setTimeout(() => loader.remove(), 600);
+        }
+        loader.addEventListener('click', finish);
+        window.addEventListener('keydown', finish, { once: true });
+        const lines = [
+            { t: 'booting harshit.sh ...', cls: 'bl-head' },
+            { t: 'loading modules ......... ok' },
+            { t: 'mounting /portfolio ...... ok' },
+            { t: 'starting services ........ ok' },
+            { t: 'ready.' }
+        ];
+        (async () => {
+            for (let i = 0; i < lines.length && !finished; i++) {
+                const span = document.createElement('span');
+                if (lines[i].cls) span.className = lines[i].cls;
+                span.textContent = lines[i].t + '\n';
+                log.appendChild(span);
+                if (bar) bar.style.width = Math.round(((i + 1) / lines.length) * 100) + '%';
+                await sleep(150);
+            }
+            await sleep(260);
+            finish();
+        })();
+    })();
+
+    // ---------- GITHUB ACTIVITY ----------
+    (function ghActivity() {
+        const panel = document.getElementById('ghStats');
+        if (!panel) return;
+        fetch('github-stats.json', { cache: 'no-cache' })
+            .then(r => r.ok ? r.json() : Promise.reject())
+            .then(d => {
+                if (!d || !d.updated) return;     // no real data yet -> stay hidden
+                panel.querySelectorAll('[data-gh]').forEach(el => {
+                    const v = d[el.getAttribute('data-gh')];
+                    if (v === undefined || v === null) return;   // leave the "--" placeholder
+                    el.textContent = (typeof v === 'number') ? v.toLocaleString() : v;
+                });
+                panel.hidden = false;
+                requestAnimationFrame(() => panel.classList.add('in'));
+            })
+            .catch(() => { /* offline or missing -> panel stays hidden */ });
+    })();
+
+    // ---------- SECTION HEADING TYPEWRITER ----------
+    (function headingTyper() {
+        const headings = Array.from(document.querySelectorAll('.sec-title'));
+        if (!headings.length || prefersReduced || !('IntersectionObserver' in window)) return;
+        headings.forEach(h => {
+            const word = h.textContent.trim();
+            h.innerHTML = '<span class="type-word" aria-hidden="true"></span>'
+                + '<span class="type-caret" aria-hidden="true">▋</span>'
+                + '<span class="sr-only">' + word + '</span>';
+            h._ts = { active: false, word: word, el: h.querySelector('.type-word') };
+            h._ts.el.textContent = word;          // full word until it scrolls into view
+        });
+        async function loop(st) {
+            const word = st.word, el = st.el;
+            while (st.active) {
+                for (let i = 1; i <= word.length && st.active; i++) { el.textContent = word.slice(0, i); await sleep(85 + Math.random() * 40); }
+                await sleep(1500);
+                if (!st.active) break;
+                for (let i = word.length - 1; i >= 0 && st.active; i--) { el.textContent = word.slice(0, i); await sleep(45); }
+                await sleep(450);
+            }
+            el.textContent = word;                // settle on the full word when paused
+        }
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                const st = e.target._ts;
+                if (!st) return;
+                if (e.isIntersecting && !st.active) { st.active = true; loop(st); }
+                else if (!e.isIntersecting) { st.active = false; }
+            });
+        }, { threshold: 0.6 });
+        headings.forEach(h => io.observe(h));
+    })();
 
     // ---------- METRICS COUNT-UP ----------
     const metricsStrip = document.querySelector('.metrics');
@@ -166,7 +257,7 @@
         if (!text) { piiInput.focus(); return; }
         const label = piiBtn.querySelector('span');
         piiBtn.disabled = true;
-        if (label) label.textContent = 'shielding…';
+        if (label) label.textContent = 'shielding...';
         piiOutput.innerHTML = '';
         if (piiStats) piiStats.textContent = '';
         try {
@@ -177,14 +268,14 @@
             });
             if (!res.ok) throw new Error('api');
             const data = await res.json();
-            piiOutput.innerHTML = highlightMasks(data.redacted_text || '') || '<p class="demo-placeholder">No PII detected — nothing to redact.</p>';
+            piiOutput.innerHTML = highlightMasks(data.redacted_text || '') || '<p class="demo-placeholder">No PII detected - nothing to redact.</p>';
             if (piiStats) {
                 piiStats.innerHTML =
                     '<span>' + (data.redaction_count || 0) + ' redactions</span>' +
                     '<span>' + ((data.processing_time_ms || 0).toFixed(0)) + 'ms</span>';
             }
         } catch (err) {
-            piiOutput.innerHTML = '<span class="demo-placeholder">API is waking up — <a href="https://pii-shield-49982461185.us-central1.run.app" target="_blank" rel="noopener" style="color:var(--sec)">open the full app →</a></span>';
+            piiOutput.innerHTML = '<span class="demo-placeholder">API is waking up - <a href="https://pii-shield-49982461185.us-central1.run.app" target="_blank" rel="noopener" style="color:var(--sec)">open the full app →</a></span>';
         } finally {
             piiBtn.disabled = false;
             if (label) label.textContent = 'shield it';
@@ -238,7 +329,7 @@
         { id: 'off', name: 'off-the-clock', desc: 'gaming', go: () => jump('#off-the-clock') },
         { id: 'now', name: 'now', desc: 'current focus', go: () => jump('#now') },
         { id: 'contact', name: 'contact', desc: 'get in touch', go: () => jump('#contact') },
-        { id: 'resume', name: 'download résumé', desc: 'pdf', go: () => { window.location.href = 'Harshit_Chaurasia_Resume.pdf'; } },
+        { id: 'resume', name: 'download resume', desc: 'pdf', go: () => { window.location.href = 'Harshit_Chaurasia_Resume.pdf'; } },
         { id: 'theme', name: 'toggle theme', desc: 'dark / light', go: toggleTheme },
         { id: 'email', name: 'email harshit', desc: 'outlook', go: () => { window.location.href = 'mailto:harshit1chaurasia@outlook.com'; } },
         { id: 'egg', name: 'sudo unlock zer0CO0L', desc: '???', go: showEgg }
@@ -252,7 +343,7 @@
     function renderCmdk() {
         cmdkList.innerHTML = '';
         if (!filtered.length) {
-            cmdkList.innerHTML = '<li class="cmdk-empty">no match — try “projects”, “theme”, “contact”</li>';
+            cmdkList.innerHTML = '<li class="cmdk-empty">no match - try "projects", "theme", "contact"</li>';
             return;
         }
         filtered.forEach((c, i) => {
@@ -295,7 +386,7 @@
     }
 
     // =====================================================
-    // EASTER EGG — zer0CO0L
+    // EASTER EGG - zer0CO0L
     // =====================================================
     const egg = document.getElementById('egg');
     function showEgg() {

@@ -20,3 +20,7 @@ jds/
 # Internal dev/planning notes (not site content, keep private)
 CLAUDE.md
 docs/
+
+# Playwright MCP test output
+.playwright-mcp/
+*-loader.png
