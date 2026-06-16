@@ -1,9 +1,9 @@
 name: github-stats
 
 # Refreshes github-stats.json (read by the site's live activity panel).
-# The built-in GITHUB_TOKEN covers PUBLIC contributions. To count private
-# contributions too: create a PAT with read:user, add it as a repo secret
-# named GH_STATS_TOKEN, and swap the GH_TOKEN line below to use it.
+# Uses GH_STATS_TOKEN (a read:user PAT) so the contribution calendar counts
+# PRIVATE contributions too; it falls back to the built-in GITHUB_TOKEN
+# (public contributions only) if the secret is ever removed.
 
 on:
   schedule:
@@ -25,7 +25,7 @@ jobs:
 
       - name: Fetch stats
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GH_STATS_TOKEN || secrets.GITHUB_TOKEN }}
           LOGIN: harshitrajchaurasia
         run: python3 .github/scripts/github_stats.py
 
