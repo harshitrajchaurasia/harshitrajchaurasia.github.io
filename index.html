@@ -17,6 +17,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="image" href="image-opt.jpg" fetchpriority="high">
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script type="application/ld+json">
@@ -34,6 +35,7 @@
     </script>
     <script>
       (function(){
+        document.documentElement.classList.add('js');
         var t=localStorage.getItem('theme');
         if(!t)t=window.matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
         document.documentElement.setAttribute('data-theme',t);
@@ -42,6 +44,9 @@
 </head>
 <body>
     <a href="#main" class="skip-link">Skip to main content</a>
+
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
 
     <nav class="nav" id="nav">
         <div class="nav-inner">
@@ -68,18 +73,21 @@
 
         <!-- Intro (Hero + About merged) -->
         <section class="intro" id="hero">
+            <div class="hero-aurora" aria-hidden="true"></div>
             <div class="container intro-grid">
                 <div class="intro-text">
-                    <h1 class="intro-name">Harshit Chaurasia</h1>
-                    <p class="intro-role">4.5+ years at TCS building ML systems, automation platforms, and open-source tools for a Fortune 50 telecom client. 300K tickets/month classified, 25 manual workflows replaced, 1,000+ hours/year saved.</p>
+                    <span class="hero-status" data-anim><span class="status-dot"></span>Available for new opportunities</span>
+                    <h1 class="intro-name" data-anim>Harshit Chaurasia</h1>
+                    <p class="intro-tagline" data-anim>ML Engineer <span class="tagline-sep">&middot;</span> Automation Specialist</p>
+                    <p class="intro-role" data-anim>4.5+ years at TCS building ML systems, automation platforms, and open-source tools for a Fortune 50 telecom client. 300K tickets/month classified, 25 manual workflows replaced, 1,000+ hours/year saved.</p>
 
-                    <div class="metrics-strip">
+                    <div class="metrics-strip" data-anim>
                         <div class="metric" data-target="300" data-suffix="K+"><span class="metric-value">0</span><span class="metric-suffix">K+</span><span class="metric-label">tickets/month</span></div>
                         <div class="metric" data-target="97" data-suffix="%"><span class="metric-value">0</span><span class="metric-suffix">%</span><span class="metric-label">accuracy</span></div>
                         <div class="metric" data-target="25" data-suffix=""><span class="metric-value">0</span><span class="metric-suffix"></span><span class="metric-label">bots deployed</span></div>
                         <div class="metric" data-target="1000" data-suffix="+"><span class="metric-value">0</span><span class="metric-suffix">+</span><span class="metric-label">hrs/year saved</span></div>
                     </div>
-                    <p class="intro-location">Based in Lucknow, India - open to remote & relocation</p>
+                    <p class="intro-location" data-anim><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Based in Lucknow, India - open to remote &amp; relocation</p>
                     <div class="intro-expand">
                         <div class="intro-expand-content" id="introExpandContent">
                             <div class="intro-expand-inner">
@@ -96,13 +104,15 @@
                             <svg class="intro-expand-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>
                         </button>
                     </div>
-                    <div class="intro-ctas">
+                    <div class="intro-ctas" data-anim>
                         <a href="#work" class="btn btn-primary">View my work</a>
                         <a href="#contact" class="btn btn-secondary">Get in touch</a>
                     </div>
                 </div>
-                <div class="intro-photo-col">
-                    <img src="image.jpg" alt="Harshit Chaurasia" class="intro-photo" loading="eager">
+                <div class="intro-photo-col" data-anim>
+                    <div class="intro-photo-frame">
+                        <img src="image-opt.jpg" alt="Harshit Chaurasia" class="intro-photo" width="520" height="457" loading="eager" decoding="async" fetchpriority="high">
+                    </div>
                 </div>
             </div>
         </section>
@@ -111,7 +121,7 @@
         <section class="section" id="work">
             <div class="container">
                 <div class="work-header">
-                    <h2 class="section-title">Work</h2>
+                    <h2 class="section-title" data-num="01">Selected Work</h2>
                     <button class="projects-expand-btn" id="projectsExpandBtn" type="button">
                         <svg class="expand-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="7 13 12 18 17 13"/><polyline points="7 6 12 11 17 6"/></svg>
                         <span class="expand-label">Expand all</span>
@@ -138,10 +148,6 @@
                             Open-source tool that strips personally identifiable information before pasting text into LLMs.
                             Detects 35+ PII types (Aadhaar, PAN, bank accounts, emails, phones) using spaCy NER + regex. Zero data stored.
                         </p>
-
-                        <div class="project-screenshot placeholder-img">
-                            <span class="placeholder-label">Screenshot coming soon</span>
-                        </div>
 
                         <div class="project-demo">
                             <div class="demo-interactive" id="piiDemo">
@@ -191,8 +197,23 @@
                             97% accuracy, 85% faster resolution. Bi-encoder for retrieval, cross-encoder for re-ranking.
                         </p>
 
-                        <div class="project-screenshot placeholder-img">
-                            <span class="placeholder-label">Screenshot coming soon</span>
+                        <div class="project-visual visual-ticket" aria-hidden="true">
+                            <div class="vt-node vt-in">
+                                <span class="vt-tag vt-tag-in">Incoming ticket</span>
+                                <span class="vt-text">"VPN keeps dropping after the latest client update on Win11."</span>
+                            </div>
+                            <div class="vt-pipe">
+                                <span class="vt-pipe-line"></span>
+                                <span class="vt-chip">BERT bi-encoder</span>
+                                <span class="vt-chip">cross-encoder re-rank</span>
+                                <span class="vt-pipe-line"></span>
+                            </div>
+                            <div class="vt-node vt-out">
+                                <span class="vt-tag vt-tag-out">Auto-routed</span>
+                                <span class="vt-route">Network &rsaquo; VPN &rsaquo; Tier 2</span>
+                                <div class="vt-conf"><span class="vt-conf-bar"></span></div>
+                                <span class="vt-conf-label">97% confidence &middot; 0.4s</span>
+                            </div>
                         </div>
 
                         <div class="project-tech">
@@ -211,8 +232,24 @@
                         </p>
                         <p class="project-aside">My favorite project - the compliance bot alone freed up an entire team's Friday.</p>
 
-                        <div class="project-screenshot placeholder-img">
-                            <span class="placeholder-label">Screenshot coming soon</span>
+                        <div class="project-visual visual-rpa" aria-hidden="true">
+                            <div class="vr-head">
+                                <span class="vr-title">Orchestrator</span>
+                                <span class="vr-live"><span class="vr-live-dot"></span>8 bots running</span>
+                            </div>
+                            <div class="vr-grid">
+                                <span class="vr-bot"><span class="vr-dot"></span>Software Deployment</span>
+                                <span class="vr-bot"><span class="vr-dot"></span>O365 Licensing</span>
+                                <span class="vr-bot"><span class="vr-dot"></span>Compliance Monitor</span>
+                                <span class="vr-bot"><span class="vr-dot"></span>Patch Validation</span>
+                                <span class="vr-bot"><span class="vr-dot"></span>Asset Reconcile</span>
+                                <span class="vr-bot"><span class="vr-dot"></span>Ticket Triage</span>
+                            </div>
+                            <div class="vr-stats">
+                                <span><strong>1,000+</strong> hrs/yr saved</span>
+                                <span><strong>92%</strong> success rate</span>
+                                <span><strong>95%</strong> less manual work</span>
+                            </div>
                         </div>
 
                         <div class="project-tech">
@@ -269,7 +306,7 @@
         <!-- Experience -->
         <section class="section section-alt" id="experience">
             <div class="container">
-                <h2 class="section-title">Experience</h2>
+                <h2 class="section-title" data-num="02">Experience</h2>
                 <p class="exp-narrative">Started in IT operations, saw 25+ processes begging to be automated, built the business case for an RPA practice, then taught myself ML to solve the problems automation couldn't.</p>
                 <div class="exp-company">
                     <div class="exp-company-header">
@@ -326,7 +363,7 @@
         </section>
         <section class="section" id="skills">
             <div class="container">
-                <h2 class="section-title">Skills &amp; Certifications</h2>
+                <h2 class="section-title" data-num="03">Skills &amp; Certifications</h2>
                 <div class="skills-grid">
                     <div class="skill-group">
                         <h4 class="skill-group-label">AI / ML</h4>
@@ -374,27 +411,24 @@
         <!-- Currently -->
         <section class="section section-alt" id="currently">
             <div class="container">
-                <h2 class="section-title">Currently</h2>
+                <h2 class="section-title" data-num="04">Currently</h2>
                 <div class="currently-content">
                     <div class="currently-item">
                         <span class="currently-icon">🔬</span>
                         <div>
                             <strong>Exploring:</strong> Agentic AI patterns for self-healing enterprise workflows
-                            <!-- YOUR TODO: Update this with what you're actually working on right now -->
                         </div>
                     </div>
                     <div class="currently-item">
                         <span class="currently-icon">🛠️</span>
                         <div>
                             <strong>Building:</strong> Open-source tools for ML pipeline automation
-                            <!-- YOUR TODO: Replace with your current side project -->
                         </div>
                     </div>
                     <div class="currently-item">
                         <span class="currently-icon">📚</span>
                         <div>
                             <strong>Learning:</strong> RAG pipelines and knowledge graph integration
-                            <!-- YOUR TODO: Replace with what you're actually studying -->
                         </div>
                     </div>
                 </div>
@@ -404,7 +438,7 @@
         <!-- Contact -->
         <section class="section contact-section" id="contact">
             <div class="container">
-                <h2 class="section-title">Let's Work Together</h2>
+                <h2 class="section-title" data-num="05">Let's Work Together</h2>
                 <p class="contact-desc">I build ML systems and automation platforms that work at scale - 300K tickets classified monthly, 25 manual workflows eliminated, &#x20B9;60L+ saved. Looking for ML Engineering, Automation, or Cloud roles.</p>
 
                 <div class="contact-cta-row">

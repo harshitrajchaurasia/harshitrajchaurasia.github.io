@@ -1,6 +1,6 @@
 HARSHIT CHAURASIA
 Senior Automation Engineer  |  AI/ML & Cloud Solutions
-+91-9889483489  |  harshit1chaurasia@outlook.com  |  linkedin.com/in/harshit-raj-chaurasia  |  github.com/YOUR-HANDLE
++91-9889483489  |  harshit1chaurasia@outlook.com  |  linkedin.com/in/harshit-raj-chaurasia  |  github.com/harshitrajchaurasia
 Lucknow, India  |  English (Fluent), Hindi (Native)  |  Open to Remote & Relocation
 PROFESSIONAL SUMMARY
 Automation and AI Engineer with 4.5+ years at TCS, specializing in building ML systems and enterprise automation platforms at scale. Designed a BERT-based classification system processing 300K+ monthly transactions at 97% accuracy, and led a zero-downtime 5TB GCP migration serving 800K+ endpoints. Copyright holder for an enterprise RPA platform; 1st and 2nd place winner at TCS AI Hackathon 2025.
