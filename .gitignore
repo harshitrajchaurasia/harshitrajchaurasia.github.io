@@ -12,3 +12,11 @@ Thumbs.db
 
 # Unused assets
 circle-image.png
+
+# Job application materials (keep private, never publish to GitHub Pages)
+cover-letters/
+jds/
+
+# Internal dev/planning notes (not site content, keep private)
+CLAUDE.md
+docs/
