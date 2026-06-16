@@ -24,3 +24,7 @@ docs/
 # Playwright MCP test output
 .playwright-mcp/
 *-loader.png
+
+# Python bytecode
+__pycache__/
+*.pyc
