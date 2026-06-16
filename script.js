@@ -76,7 +76,7 @@
     const terminalBody = document.getElementById('terminalBody');
     const bootScript = [
         { type: 'cmd', text: 'whoami' },
-        { type: 'out', text: 'Harshit Chaurasia - Automation & AI Engineer' },
+        { type: 'out', text: 'Harshit Chaurasia - Automation & AI/ML Engineer' },
         { type: 'cmd', text: 'cat mission.txt' },
         { type: 'out', text: 'I build automation and ML systems that move at enterprise scale,\nplus privacy-first tools so your data stays yours.' },
         { type: 'cmd', text: './explore --start', caret: true }
