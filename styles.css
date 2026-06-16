@@ -617,6 +617,8 @@ em { font-style: normal; color: var(--sec); }
 .footer-inner { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
 .footer-brand { font-weight: 800; }
 .footer-meta { font-size: .76rem; color: var(--text-3); margin-left: auto; }
+.footer-link { color: var(--text-2); text-decoration: none; border-bottom: 1px dotted var(--line-2); transition: color .18s var(--ease), border-color .18s var(--ease); }
+.footer-link:hover, .footer-link:focus-visible { color: var(--cyan); border-color: var(--cyan); }
 .footer-top { width: 38px; height: 38px; display: grid; place-items: center; cursor: pointer; background: var(--surface); border: 1px solid var(--line); border-radius: 9px; color: var(--text-2); transition: color .2s, border-color .2s, transform .2s; }
 .footer-top:hover { color: var(--term-green); border-color: var(--term-green); transform: translateY(-3px); }
 @media (max-width: 620px) { .footer-meta { margin-left: 0; order: 3; flex-basis: 100%; } }
