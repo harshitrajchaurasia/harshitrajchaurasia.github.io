@@ -38,7 +38,7 @@ for page in PAGES:
 index = (ROOT / "index.html").read_text(encoding="utf-8")
 for card in re.findall(r'<article class="proj.*?</article>', index, re.S):
     if not re.search(r'<li data-c="\w+">', card):
-        errors.append("index.html: project without skills: " + re.search(r"<h3>(.*?)</h3>", card).group(1))
+        errors.append("index.html: project without skills: " + re.search(r"<h4>(.*?)</h4>", card).group(1))
 
 print("\n".join(errors) or "OK")
 sys.exit(1 if errors else 0)

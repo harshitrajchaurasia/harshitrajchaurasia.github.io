@@ -79,6 +79,10 @@ a { color: inherit; }
 }
 .skip-link:focus { top: 1rem; }
 
+/* ---------- ICONS (inline sprite in index.html) ---------- */
+.ic { width: 1.1em; height: 1.1em; flex: none; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.proj-badge .ic, .proj-links .ic { width: 1em; height: 1em; }
+
 /* ---------- BUTTONS ---------- */
 .btn {
     display: inline-flex; align-items: center; gap: .5rem;
@@ -151,21 +155,19 @@ a { color: inherit; }
 
 .hero-pitch + .hero-pitch { margin-top: .8rem; }
 
-.hero-photo { position: relative; aspect-ratio: 1; }
-.hero-photo img {
-    position: absolute; inset: 14px; width: calc(100% - 28px); height: calc(100% - 28px);
-    object-fit: cover; border-radius: 50%;
-    border: 6px solid var(--bg);
+/* portrait card: rounded 4:5 crop, the seven-colour strip along its bottom edge */
+.hero-photo { position: relative; margin: 0; width: 100%; max-width: 340px; justify-self: end; }
+.photo-frame {
+    position: relative; overflow: hidden; border-radius: 24px;
+    border: 1px solid var(--line);
+    box-shadow: 0 30px 60px -32px color-mix(in srgb, var(--ink) 60%, transparent);
 }
-.ring {
-    position: absolute; inset: 0; border-radius: 50%;
-    background: conic-gradient(var(--rpa), var(--ml), var(--genai), var(--cloud), var(--dev), var(--ent), var(--prac), var(--rpa));
-    animation: spin 24s linear infinite;
+.photo-frame img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; transition: transform .6s var(--ease); }
+.hero-photo:hover .photo-frame img { transform: scale(1.04); }
+.photo-frame::after {
+    content: ""; position: absolute; inset: auto 0 0 0; height: 7px;
+    background: linear-gradient(90deg, var(--rpa) 0 14.28%, var(--ml) 0 28.57%, var(--genai) 0 42.85%, var(--cloud) 0 57.14%, var(--dev) 0 71.42%, var(--ent) 0 85.71%, var(--prac) 0);
 }
-@keyframes spin { to { transform: rotate(1turn); } }
-/* soft glow behind the portrait in the same colours */
-.ring::after { content: ""; position: absolute; inset: -4%; border-radius: 50%; background: inherit; filter: blur(28px); opacity: .45; z-index: -1; }
-.hero-photo:hover .ring { animation-duration: 6s; }
 
 /* page-load sequence: the spectrum draws in segment by segment, then the rest settles */
 .js .spectrum a::before { animation: draw .6s var(--ease) both; }
@@ -211,7 +213,7 @@ html:not(.js) .work-grid { grid-template-columns: 1fr; }
     margin-bottom: .5rem; padding: 0; background: none; border: 0; cursor: pointer;
     font: 700 .95rem var(--font-display); color: var(--ink); text-align: left;
 }
-.cat-head::before { content: ""; width: .8rem; height: .8rem; border-radius: 3px; background: var(--c); flex: none; }
+.cat-head .ic { width: 1.05rem; height: 1.05rem; color: var(--c); }
 .cat-head:hover, .cat-head[aria-pressed="true"] { color: var(--c); }
 .cat-list { display: flex; flex-wrap: wrap; gap: .35rem; }
 
@@ -230,7 +232,53 @@ html:not(.js) .work-grid { grid-template-columns: 1fr; }
 .skills-panel.hovering .skill:not(.lit) { opacity: .45; }
 
 /* projects */
-.projects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
+/* projects come in collapsible area groups: RPA, machine learning, GenAI, Google Cloud */
+:root { interpolate-size: allow-keywords; }   /* lets <details> animate to height: auto where supported */
+.proj-tools { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: .9rem; font-size: .92rem; color: var(--ink-2); }
+html:not(.js) .proj-tools { display: none; }
+.pgroup {
+    border: 1px solid var(--line); border-radius: 20px;
+    background: color-mix(in srgb, var(--c) 4%, var(--bg));
+    transition: border-color .25s, box-shadow .25s;
+}
+.pgroup + .pgroup { margin-top: .9rem; }
+.pgroup:hover, .pgroup[open] { border-color: color-mix(in srgb, var(--c) 35%, var(--line)); }
+.pgroup:not([open]):hover { box-shadow: 0 12px 28px -18px color-mix(in srgb, var(--c) 70%, transparent); }
+.pgroup-sum { display: grid; gap: .75rem; padding: 1rem 1.15rem; cursor: pointer; list-style: none; border-radius: 20px; }
+.pgroup-sum::-webkit-details-marker { display: none; }
+.pgroup-head {
+    display: flex; align-items: center; gap: .6rem; margin: 0;
+    font-size: 1.3rem; font-weight: 800; letter-spacing: -0.02em;
+}
+/* chevron after the count; turns over when the area opens */
+.pgroup-head::after {
+    content: ""; flex: none; width: .55rem; height: .55rem; margin: 0 .3rem 0 .9rem;
+    border-right: 2px solid var(--ink-2); border-bottom: 2px solid var(--ink-2);
+    transform: translateY(-25%) rotate(45deg); transition: transform .3s var(--ease);
+}
+.pgroup[open] .pgroup-head::after { transform: translateY(25%) rotate(-135deg); }
+.pgroup-head .ic { width: 2.2rem; height: 2.2rem; padding: .45rem; border-radius: 11px; color: var(--c); background: color-mix(in srgb, var(--c) 14%, transparent); transition: transform .3s var(--ease); }
+.pgroup-sum:hover .pgroup-head .ic { transform: rotate(-8deg) scale(1.08); }
+.pgroup-n { margin-left: auto; padding: .15rem .65rem; border-radius: 999px; font: 600 .8rem var(--font-text); letter-spacing: 0; color: var(--c); background: color-mix(in srgb, var(--c) 12%, transparent); }
+
+/* closed area: project names as chips */
+.pgroup-peek { display: flex; flex-wrap: wrap; gap: .45rem; }
+.pgroup[open] .pgroup-peek { display: none; }
+.pgroup-peek button {
+    display: inline-flex; align-items: center; gap: .45rem; cursor: pointer;
+    padding: .38rem .8rem; border-radius: 999px;
+    font: 600 .85rem var(--font-text); color: var(--ink);
+    background: var(--surface); border: 1px solid var(--line);
+    transition: transform .2s var(--ease), border-color .2s, box-shadow .2s;
+}
+.pgroup-peek button::before { content: ""; width: .5rem; height: .5rem; border-radius: 50%; background: var(--c); }
+.pgroup-peek b { padding: 0 .45rem; border-radius: 999px; font: 800 .78rem var(--font-display); color: var(--c); background: color-mix(in srgb, var(--c) 13%, transparent); }
+.pgroup-peek button:hover { transform: translateY(-2px); border-color: var(--c); box-shadow: 0 6px 14px -8px var(--c); }
+
+.pgroup::details-content { block-size: 0; overflow: hidden; transition: block-size .45s var(--ease), content-visibility .45s allow-discrete; }
+.pgroup[open]::details-content { block-size: auto; }
+.pgroup .pgrid { padding: .35rem 1.15rem 1.5rem; }
+.pgrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
 .proj {
     position: relative; display: flex; flex-direction: column; gap: .75rem;
     padding: 1.5rem 1.5rem 1.35rem;
@@ -245,9 +293,9 @@ html:not(.js) .work-grid { grid-template-columns: 1fr; }
     border-color: color-mix(in srgb, var(--c) 40%, var(--line)); border-top-color: var(--c);
     box-shadow: 0 16px 36px -16px color-mix(in srgb, var(--c) 60%, transparent);
 }
-.proj-wide { grid-column: 1 / -1; }
-.proj h3 { font-size: 1.4rem; font-weight: 700; }
+.proj h4 { margin: 0; font: 700 1.4rem/1.15 var(--font-display); letter-spacing: -0.02em; }
 .proj-badge {
+    display: inline-flex; align-items: center; gap: .35rem;
     align-self: flex-start; font-size: .8rem; font-weight: 700; color: var(--c);
     padding: .15rem .6rem; border-radius: 999px; background: color-mix(in srgb, var(--c) 12%, transparent);
 }
@@ -271,14 +319,9 @@ html:not(.js) .work-grid { grid-template-columns: 1fr; }
 .projects.filtering .proj:not(.match) { opacity: .28; filter: grayscale(1); transform: scale(.98); }
 .projects.filtering .proj.match { box-shadow: 0 0 0 2px var(--c), 0 14px 34px -16px color-mix(in srgb, var(--c) 60%, transparent); }
 
-/* the strongest projects come first; the rest wait behind "Show more", but a selected skill pulls its matches out */
-.js .projects:not(.all) .proj.extra:not(.match) { display: none; }
-.js .projects:not(.all) .proj.extra.match { animation: rise .45s var(--ease) backwards; }
-.more-btn { margin-top: 1.25rem; }
-html:not(.js) .more-btn { display: none; }
 
 .proj-links { display: flex; flex-wrap: wrap; gap: 1.25rem; font-weight: 600; font-size: .95rem; }
-.proj-links a { color: var(--c); text-underline-offset: 3px; }
+.proj-links a { display: inline-flex; align-items: center; gap: .35rem; color: var(--c); text-underline-offset: 3px; }
 
 /* PII demo */
 .demo { border: 1px solid var(--line); border-radius: 12px; }
@@ -298,7 +341,7 @@ html:not(.js) .more-btn { display: none; }
 
 /* ---------- EXPERIENCE ---------- */
 .exp-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(2rem, 4vw, 3rem); }
-.role-dates { font-weight: 600; color: var(--ink-2); }
+.role-dates { display: flex; align-items: center; gap: .45rem; font-weight: 600; color: var(--ink-2); }
 .role h3:not(.sub-head) { font-size: 1.6rem; margin-top: .3rem; }
 .role-org { font-weight: 600; margin-top: .2rem; }
 .role-points { margin-top: 1.1rem; display: grid; gap: .6rem; }
@@ -312,19 +355,28 @@ html:not(.js) .more-btn { display: none; }
 .awards li:nth-child(5)::before { background: var(--dev); }
 .role-points li:nth-child(2)::before { background: var(--ml); }
 .role-points li:nth-child(3)::before { background: var(--prac); }
-.sub-head { font-size: 1.15rem; margin: 2rem 0 .8rem; }
+.sub-head { display: flex; align-items: center; gap: .5rem; font-size: 1.15rem; margin: 2rem 0 .8rem; }
+.sub-head .ic { width: 1.15rem; height: 1.15rem; color: var(--ml); }
 .recog .sub-head:first-child, .cert-col .sub-head:first-child { margin-top: 0; }
 .awards { display: grid; gap: .55rem; }
 .edu { color: var(--ink-2); }
 .certs { display: grid; gap: .45rem; }
 .certs li {
-    display: flex; align-items: center; gap: .65rem;
-    padding: .45rem .8rem; border-radius: 10px; font-size: .92rem; font-weight: 500;
+    display: flex; align-items: center; gap: .8rem;
+    padding: .55rem .8rem .55rem .55rem; border-radius: 14px;
     background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--c);
     transition: transform .2s var(--ease), box-shadow .2s;
 }
 .certs li:hover { transform: translateX(4px); box-shadow: 0 6px 16px -10px var(--c); }
-.certs img { flex: none; }
+/* logos keep their brand colours on a white tile, readable in both themes */
+.cert-logo {
+    flex: none; display: grid; place-items: center; width: 2.6rem; height: 2.6rem;
+    border-radius: 10px; background: #fff; border: 1px solid var(--line);
+}
+.cert-logo img { width: 1.65rem; height: 1.65rem; }
+.cert-name { display: grid; font-size: .92rem; font-weight: 600; line-height: 1.3; }
+.cert-name small { font-size: .74rem; font-weight: 600; color: var(--ink-2); }
+.exam { margin-left: .3rem; padding: 0 .4rem; border-radius: 999px; font-weight: 700; color: var(--c); background: color-mix(in srgb, var(--c) 12%, transparent); }
 
 /* ---------- CONTACT ---------- */
 .contact { text-align: center; }
@@ -376,19 +428,25 @@ html:not(.js) .more-btn { display: none; }
 }
 @media (max-width: 860px) {
     .hero-grid { grid-template-columns: minmax(0, 1fr); }
-    .hero-photo { max-width: 220px; grid-row: 1; }
+    .hero-photo { max-width: 240px; grid-row: 1; justify-self: start; }
     .exp-grid { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 640px) {
     .topnav { display: none; }
-    .projects { grid-template-columns: minmax(0, 1fr); }
+    .pgrid { grid-template-columns: minmax(0, 1fr); }
+    .pgroup-sum { padding: .85rem .9rem; }
+    .pgroup .pgrid { padding: .3rem .8rem 1.2rem; }
+    .pgroup-head { font-size: 1.1rem; }
     .spectrum a { font-size: .7rem; }
     .spectrum a span { display: none; }
+    .hero-photo { max-width: 150px; }
+    .photo-frame { border-radius: 18px; }
 }
 
 /* ---------- REDUCED MOTION ---------- */
 @media (prefers-reduced-motion: reduce) {
-    html { scroll-behavior: auto; }
+    /* smooth scrolling for anchor links stays on: it is short, user-initiated and keeps place */
     *, *::before, *::after { animation: none !important; transition: none !important; }
+    .pgroup::details-content { transition: none !important; }   /* pseudo-element, not matched by * */
 }
 .js .tags li { cursor: pointer; }

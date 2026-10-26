@@ -43,6 +43,26 @@
     </script>
 </head>
 <body>
+    <!-- icon set, used as <svg class="ic"><use href="#i-name"/></svg> -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <symbol id="i-rpa" viewBox="0 0 24 24"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2M20 14h2M15 13v2M9 13v2"/></symbol>
+        <symbol id="i-ml" viewBox="0 0 24 24"><circle cx="5" cy="6" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="19" cy="6" r="2"/><circle cx="19" cy="18" r="2"/><path d="M6.6 7.2l3.8 3.6M6.6 16.8l3.8-3.6M13.6 10.8l3.8-3.6M13.6 13.2l3.8 3.6"/></symbol>
+        <symbol id="i-genai" viewBox="0 0 24 24"><path d="M9.94 15.5A2 2 0 0 0 8.5 14.06l-6.14-1.58a.5.5 0 0 1 0-.96L8.5 9.94A2 2 0 0 0 9.94 8.5l1.58-6.14a.5.5 0 0 1 .96 0l1.58 6.14a2 2 0 0 0 1.44 1.44l6.14 1.58a.5.5 0 0 1 0 .96l-6.14 1.58a2 2 0 0 0-1.44 1.44l-1.58 6.14a.5.5 0 0 1-.96 0z"/></symbol>
+        <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></symbol>
+        <symbol id="i-dev" viewBox="0 0 24 24"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></symbol>
+        <symbol id="i-ent" viewBox="0 0 24 24"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2M10 6h4M10 10h4M10 14h4M10 18h4"/></symbol>
+        <symbol id="i-prac" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+        <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6M18 9h1.5a2.5 2.5 0 0 0 0-5H18M4 22h16M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></symbol>
+        <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.48 12.89 17 22l-5-3-5 3 1.52-9.11"/></symbol>
+        <symbol id="i-flask" viewBox="0 0 24 24"><path d="M10 2v7.53a2 2 0 0 1-.21.9L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.07-10.13a2 2 0 0 1-.21-.9V2M8.5 2h7M7 16h10"/></symbol>
+        <symbol id="i-mail" viewBox="0 0 24 24"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></symbol>
+        <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></symbol>
+        <symbol id="i-github" viewBox="0 0 24 24"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65S8.93 17.38 9 18v4M9 18c-4.51 2-5-2-7-2"/></symbol>
+        <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></symbol>
+        <symbol id="i-briefcase" viewBox="0 0 24 24"><rect width="20" height="14" x="2" y="7" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></symbol>
+        <symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol>
+        <symbol id="i-external" viewBox="0 0 24 24"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h3"/></symbol>
+    </svg>
     <a href="#work" class="skip-link">Skip to projects</a>
 
     <header class="topbar">
@@ -57,7 +77,7 @@
                 <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
                 <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
             </button>
-            <a href="Harshit_Chaurasia_Resume.pdf" class="btn btn-solid btn-small" download>Resume</a>
+            <a href="Harshit_Chaurasia_Resume.pdf" class="btn btn-solid btn-small" download><svg class="ic" aria-hidden="true"><use href="#i-download"/></svg>Resume</a>
         </div>
     </header>
 
@@ -86,14 +106,15 @@
 
                     <div class="hero-ctas">
                         <a href="#work" class="btn btn-solid">See the work</a>
-                        <a href="mailto:harshit1chaurasia@outlook.com" class="btn btn-line">Email me</a>
+                        <a href="mailto:harshit1chaurasia@outlook.com" class="btn btn-line"><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg>Email me</a>
                     </div>
                 </div>
 
-                <div class="hero-photo">
-                    <div class="ring" aria-hidden="true"></div>
-                    <img src="image-opt.jpg" alt="Portrait of Harshit Chaurasia" width="520" height="457" fetchpriority="high">
-                </div>
+                <figure class="hero-photo">
+                    <div class="photo-frame">
+                        <img src="portrait.jpg" alt="Harshit Chaurasia holding an award trophy" width="480" height="600" fetchpriority="high">
+                    </div>
+                </figure>
             </div>
         </section>
 
@@ -116,149 +137,158 @@
                     </aside>
 
                     <div class="work-main">
-                    <div class="projects" id="projects">
-                        <article class="proj" style="--c:var(--ml)" tabindex="0">
-                            <p class="proj-badge">Copyright 2024</p>
-                            <h3>ML ticket classifier</h3>
-                            <p class="proj-result"><strong>160K+</strong> tickets a month classified at 97% accuracy</p>
-                            <p>Reads incoming IT tickets and change requests and picks the right queue. A bi-encoder shortlists candidate categories, a cross-encoder re-ranks them, and the model ships as a container on Cloud Run through a CI/CD pipeline.</p>
-                            <ul class="tags">
-                                <li data-c="ml">Machine Learning</li><li data-c="ml">NLP</li><li data-c="ml">BERT</li><li data-c="ml">Bi-Encoder</li><li data-c="ml">Cross-Encoder</li><li data-c="ml">Embeddings</li><li data-c="ml">Scikit-Learn</li>
-                                <li data-c="dev">Python</li><li data-c="cloud">Cloud Run</li><li data-c="dev">Docker</li><li data-c="dev">Linux</li><li data-c="dev">Git</li><li data-c="dev">GitHub</li><li data-c="dev">GitLab</li><li data-c="dev">CI/CD</li><li data-c="dev">Rundeck</li>
-                            </ul>
-                        </article>
-
-                        <article class="proj" style="--c:var(--rpa)" tabindex="0">
-                            <p class="proj-badge">Copyright 2025</p>
-                            <h3>Enterprise RPA platform</h3>
-                            <p class="proj-result"><strong>40+</strong> production bots at 98% SLA compliance</p>
-                            <p>A UiPath platform for deployment, Office 365 licensing, ITSM and compliance work. Queue-based processing with structured exception handling and automated tests: 92% job success, 95% less manual effort and 1,000+ hours saved every month.</p>
-                            <ul class="tags">
-                                <li data-c="rpa">UiPath Studio</li><li data-c="rpa">REFramework</li><li data-c="rpa">UiPath Orchestrator</li><li data-c="rpa">Queues</li><li data-c="rpa">Exception Handling</li><li data-c="rpa">UiPath Test Suite</li><li data-c="dev">VBA</li>
-                            </ul>
-                        </article>
-
-                        <article class="proj proj-wide" style="--c:var(--ml)" tabindex="0">
-                            <p class="proj-badge">Open source</p>
-                            <h3>PII Shield</h3>
-                            <p class="proj-result"><strong>35+</strong> kinds of personal data removed before text reaches an LLM</p>
-                            <p>Finds names, Aadhaar and PAN numbers, bank accounts, emails and phone numbers with spaCy NER and pattern rules, then masks them. Nothing you paste is stored.</p>
-                            <ul class="tags">
-                                <li data-c="ml">NLP</li><li data-c="ml">spaCy</li><li data-c="dev">Python</li><li data-c="dev">FastAPI</li><li data-c="dev">Docker</li><li data-c="cloud">Cloud Run</li>
-                            </ul>
-                            <div class="proj-links">
-                                <a href="https://github.com/harshitrajchaurasia/pii-shield" target="_blank" rel="noopener">Source on GitHub</a>
-                                <a href="https://pii-shield-49982461185.us-central1.run.app" target="_blank" rel="noopener">Open the full app</a>
-                            </div>
-                            <details class="demo">
-                                <summary>Try it here</summary>
-                                <div class="demo-body">
-                                    <label for="piiInput" class="demo-label">Text with personal details</label>
-                                    <textarea id="piiInput" rows="4">Hi, I'm Rahul Sharma, Aadhaar 2341 5678 9012, rahul.sharma@gmail.com, +91 98765 43210</textarea>
-                                    <button type="button" class="btn btn-solid btn-small" id="piiRedactBtn">Redact</button>
-                                    <p class="demo-label">Redacted text</p>
-                                    <div class="demo-output" id="piiOutput" aria-live="polite">The redacted version shows up here.</div>
-                                    <p class="demo-stats" id="piiStats"></p>
-                                </div>
-                            </details>
-                        </article>
-
-                        <article class="proj" style="--c:var(--ml)" tabindex="0">
-                            <h3>Network cost forecasting</h3>
-                            <p class="proj-result"><strong>INR 60 lakh</strong> (about USD 70K) saved in FY24</p>
-                            <p>Time series models forecast usage on every network link and recommend where to upgrade or downgrade. Projected savings reach INR 2+ crore (about USD 230K) by FY26.</p>
-                            <ul class="tags">
-                                <li data-c="ml">Time Series Forecasting</li><li data-c="ml">BigQuery ML</li><li data-c="ml">Scikit-Learn</li><li data-c="dev">Python</li><li data-c="cloud">BigQuery</li><li data-c="cloud">PySpark</li>
-                            </ul>
-                        </article>
-
-                        <article class="proj" style="--c:var(--ent)" tabindex="0">
-                            <h3>Endpoint compliance engine</h3>
-                            <p class="proj-result">Compliance up from <strong>70% to 95%</strong> across 800K+ devices</p>
-                            <p>A rules engine checks Active Directory data for policy violations. Fixes and notifications were piloted through Power Automate flows.</p>
-                            <ul class="tags">
-                                <li data-c="dev">Python</li><li data-c="cloud">SQL</li><li data-c="ent">Active Directory</li><li data-c="rpa">Power Automate Desktop</li><li data-c="rpa">Cloud Flows</li>
-                            </ul>
-                        </article>
-
-                        <article class="proj" style="--c:var(--genai)" tabindex="0">
-                            <p class="proj-badge">Proof of concept</p>
-                            <h3>Agentic service-desk assistant</h3>
-                            <p class="proj-result">Showed tickets can resolve themselves</p>
-                            <p>An agent that pulls answers out of service-desk databases and uses them to close tickets, orchestrated with UiPath Maestro and grounded with retrieval-augmented generation.</p>
-                            <ul class="tags">
-                                <li data-c="genai">Agentic AI</li><li data-c="genai">RAG</li><li data-c="genai">OpenAI GPT</li><li data-c="rpa">UiPath Maestro</li><li data-c="rpa">UiPath AI Center</li><li data-c="rpa">Document Understanding</li>
-                            </ul>
-                        </article>
-
-                        <article class="proj" style="--c:var(--ml)" tabindex="0">
-                            <p class="proj-badge">TCS AI Hackathon 2025, 1st place</p>
-                            <h3>Pipeline pump optimizer</h3>
-                            <p class="proj-result">Less energy spent moving oil and gas</p>
-                            <p>A machine learning model that recommends pump settings to cut energy use along oil and gas pipelines.</p>
-                            <ul class="tags">
-                                <li data-c="ml">Machine Learning</li><li data-c="ml">Scikit-Learn</li><li data-c="dev">Python</li>
-                            </ul>
-                        </article>
-
-                        <!-- shown on "Show more", or when a selected skill matches them -->
-                        <article class="proj extra" style="--c:var(--genai)" tabindex="0">
-                            <h3>GenAI document extraction</h3>
-                            <p class="proj-result">Messy procurement PDFs turned into clean inventory records</p>
-                            <p>LLM pipelines on Vertex AI read unstructured procurement documents and output normalized inventory data for compliance reporting, connected to enterprise systems over REST APIs.</p>
-                            <ul class="tags">
-                                <li data-c="genai">LLMs</li><li data-c="genai">Gemini</li><li data-c="genai">Vertex AI</li><li data-c="genai">LangChain</li><li data-c="genai">RAG</li><li data-c="genai">Prompt Engineering</li><li data-c="ent">REST APIs</li>
-                            </ul>
-                        </article>
-
-                        <article class="proj extra" style="--c:var(--cloud)" tabindex="0">
-                            <h3>Cloud migration to GCP</h3>
-                            <p class="proj-result"><strong>5TB+</strong> of workloads moved in 6 months</p>
-                            <p>A phased move from on-premises servers to Google Cloud, with infrastructure as code and PySpark ETL pipelines orchestrated by Cloud Composer. No major production disruption.</p>
-                            <ul class="tags">
-                                <li data-c="cloud">GCP</li><li data-c="cloud">BigQuery</li><li data-c="cloud">Dataflow</li><li data-c="cloud">Dataproc</li><li data-c="cloud">Cloud Composer</li><li data-c="cloud">Terraform</li><li data-c="cloud">PySpark</li><li data-c="cloud">ETL Pipelines</li>
-                            </ul>
-                        </article>
-
-                        <article class="proj extra" style="--c:var(--rpa)" tabindex="0">
-                            <h3>Ticket routing automation</h3>
-                            <p class="proj-result"><strong>5,000+</strong> tickets a day assigned automatically</p>
-                            <p>Routes tickets to roster-based support teams, so 200+ engineers no longer watch queues and assign work by hand.</p>
-                            <ul class="tags">
-                                <li data-c="dev">Python</li><li data-c="rpa">Selenium WebDriver</li><li data-c="cloud">SQL</li>
-                            </ul>
-                        </article>
-
-                        <article class="proj extra" style="--c:var(--ent)" tabindex="0">
-                            <h3>Office 365 license automation</h3>
-                            <p class="proj-result">License provisioning and revocation with no manual steps</p>
-                            <p>Provisions and revokes Office 365 licenses automatically across the Microsoft stack, improving license utilization and governance.</p>
-                            <ul class="tags">
-                                <li data-c="ent">Microsoft Graph API</li><li data-c="ent">Office 365</li><li data-c="ent">Active Directory</li><li data-c="ent">SharePoint</li><li data-c="ent">Outlook</li><li data-c="dev">PowerShell</li><li data-c="dev">Python</li><li data-c="rpa">Power Apps</li><li data-c="cloud">Azure</li>
-                            </ul>
-                        </article>
-
-                        <article class="proj extra" style="--c:var(--prac)" tabindex="0">
-                            <h3>RPA practice, started from zero</h3>
-                            <p class="proj-result"><strong>25+</strong> legacy app automations piloted</p>
-                            <p>Mapped processes and proved them out with Python and Selenium pilots, then ran the practice: bot lifecycle and SLA management, and mentoring junior developers through code review in Agile sprints.</p>
-                            <ul class="tags">
-                                <li data-c="prac">Process Analysis</li><li data-c="prac">Bot Lifecycle Management</li><li data-c="prac">SLA Management</li><li data-c="prac">Code Review</li><li data-c="prac">Agile</li><li data-c="dev">Python</li><li data-c="rpa">Selenium WebDriver</li>
-                            </ul>
-                        </article>
-
-                        <article class="proj extra" style="--c:var(--genai)" tabindex="0">
-                            <p class="proj-badge">TCS AI Hackathon 2025, 2nd place</p>
-                            <h3>IoT energy agent</h3>
-                            <p class="proj-result">An AI agent that watches live sensors</p>
-                            <p>Reads real-time IoT sensor data from facilities and recommends where energy can be saved, built as a multi-step agent graph.</p>
-                            <ul class="tags">
-                                <li data-c="genai">Agentic AI</li><li data-c="genai">LangGraph</li><li data-c="genai">LangChain</li><li data-c="genai">Gemini</li><li data-c="genai">OpenAI GPT</li>
-                            </ul>
-                        </article>
-
+                    <div class="proj-tools">
+                        <p>Projects by area. Open an area, or pick a project name to jump to it.</p>
+                        <button type="button" class="clear-btn" id="toggleGroups">Expand all</button>
                     </div>
-                    <button type="button" class="btn btn-line more-btn" id="moreProjects" aria-expanded="false">Show more projects</button>
+                    <div class="projects" id="projects">
+                        <details class="pgroup" style="--c:var(--rpa)" aria-label="RPA and automation projects">
+                            <summary class="pgroup-sum"><h3 class="pgroup-head"><svg class="ic" aria-hidden="true"><use href="#i-rpa"/></svg>RPA &amp; automation<span class="pgroup-n">5 projects</span></h3></summary>
+                            <div class="pgrid">
+                            <article class="proj" style="--c:var(--rpa)" tabindex="0">
+                                <p class="proj-badge"><svg class="ic" aria-hidden="true"><use href="#i-award"/></svg>Copyright 2025</p>
+                                <h4>Enterprise RPA platform</h4>
+                                <p class="proj-result"><strong>40+</strong> production bots at 98% SLA compliance</p>
+                                <p>A UiPath platform for deployment, Office 365 licensing, ITSM and compliance work. Queue-based processing with structured exception handling and automated tests: 92% job success, 95% less manual effort and 1,000+ hours saved every month.</p>
+                                <ul class="tags">
+                                    <li data-c="rpa">UiPath Studio</li><li data-c="rpa">REFramework</li><li data-c="rpa">UiPath Orchestrator</li><li data-c="rpa">Queues</li><li data-c="rpa">Exception Handling</li><li data-c="rpa">UiPath Test Suite</li><li data-c="dev">VBA</li>
+                                </ul>
+                            </article>
+                            <article class="proj" style="--c:var(--ent)" tabindex="0">
+                                <h4>Endpoint compliance engine</h4>
+                                <p class="proj-result">Compliance up from <strong>70% to 95%</strong> across 800K+ devices</p>
+                                <p>A rules engine checks Active Directory data for policy violations. Fixes and notifications were piloted through Power Automate flows.</p>
+                                <ul class="tags">
+                                    <li data-c="dev">Python</li><li data-c="cloud">SQL</li><li data-c="ent">Active Directory</li><li data-c="rpa">Power Automate Desktop</li><li data-c="rpa">Cloud Flows</li>
+                                </ul>
+                            </article>
+                            <article class="proj" style="--c:var(--rpa)" tabindex="0">
+                                <h4>Ticket routing automation</h4>
+                                <p class="proj-result"><strong>5,000+</strong> tickets a day assigned automatically</p>
+                                <p>Routes tickets to roster-based support teams, so 200+ engineers no longer watch queues and assign work by hand.</p>
+                                <ul class="tags">
+                                    <li data-c="dev">Python</li><li data-c="rpa">Selenium WebDriver</li><li data-c="cloud">SQL</li>
+                                </ul>
+                            </article>
+                            <article class="proj" style="--c:var(--ent)" tabindex="0">
+                                <h4>Office 365 license automation</h4>
+                                <p class="proj-result">License provisioning and revocation with no manual steps</p>
+                                <p>Provisions and revokes Office 365 licenses automatically across the Microsoft stack, improving license utilization and governance.</p>
+                                <ul class="tags">
+                                    <li data-c="ent">Microsoft Graph API</li><li data-c="ent">Office 365</li><li data-c="ent">Active Directory</li><li data-c="ent">SharePoint</li><li data-c="ent">Outlook</li><li data-c="dev">PowerShell</li><li data-c="dev">Python</li><li data-c="rpa">Power Apps</li><li data-c="cloud">Azure</li>
+                                </ul>
+                            </article>
+                            <article class="proj" style="--c:var(--prac)" tabindex="0">
+                                <h4>RPA practice, started from zero</h4>
+                                <p class="proj-result"><strong>25+</strong> legacy app automations piloted</p>
+                                <p>Mapped processes and proved them out with Python and Selenium pilots, then ran the practice: bot lifecycle and SLA management, and mentoring junior developers through code review in Agile sprints.</p>
+                                <ul class="tags">
+                                    <li data-c="prac">Process Analysis</li><li data-c="prac">Bot Lifecycle Management</li><li data-c="prac">SLA Management</li><li data-c="prac">Code Review</li><li data-c="prac">Agile</li><li data-c="dev">Python</li><li data-c="rpa">Selenium WebDriver</li>
+                                </ul>
+                            </article>
+                            </div>
+                        </details>
+                        <details class="pgroup" style="--c:var(--ml)" aria-label="Machine learning projects">
+                            <summary class="pgroup-sum"><h3 class="pgroup-head"><svg class="ic" aria-hidden="true"><use href="#i-ml"/></svg>Machine learning<span class="pgroup-n">4 projects</span></h3></summary>
+                            <div class="pgrid">
+                            <article class="proj" style="--c:var(--ml)" tabindex="0">
+                                <p class="proj-badge"><svg class="ic" aria-hidden="true"><use href="#i-award"/></svg>Copyright 2024</p>
+                                <h4>ML ticket classifier</h4>
+                                <p class="proj-result"><strong>160K+</strong> tickets a month classified at 97% accuracy</p>
+                                <p>Reads incoming IT tickets and change requests and picks the right queue. A bi-encoder shortlists candidate categories, a cross-encoder re-ranks them, and the model ships as a container on Cloud Run through a CI/CD pipeline.</p>
+                                <ul class="tags">
+                                    <li data-c="ml">Machine Learning</li><li data-c="ml">NLP</li><li data-c="ml">BERT</li><li data-c="ml">Bi-Encoder</li><li data-c="ml">Cross-Encoder</li><li data-c="ml">Embeddings</li><li data-c="ml">Scikit-Learn</li>
+                                    <li data-c="dev">Python</li><li data-c="cloud">Cloud Run</li><li data-c="dev">Docker</li><li data-c="dev">Linux</li><li data-c="dev">Git</li><li data-c="dev">GitHub</li><li data-c="dev">GitLab</li><li data-c="dev">CI/CD</li><li data-c="dev">Rundeck</li>
+                                </ul>
+                            </article>
+                            <article class="proj" style="--c:var(--ml)" tabindex="0">
+                                <h4>Network cost forecasting</h4>
+                                <p class="proj-result"><strong>INR 60 lakh</strong> (about USD 70K) saved in FY24</p>
+                                <p>Time series models forecast usage on every network link and recommend where to upgrade or downgrade. Projected savings reach INR 2+ crore (about USD 230K) by FY26.</p>
+                                <ul class="tags">
+                                    <li data-c="ml">Time Series Forecasting</li><li data-c="ml">BigQuery ML</li><li data-c="ml">Scikit-Learn</li><li data-c="dev">Python</li><li data-c="cloud">BigQuery</li><li data-c="cloud">PySpark</li>
+                                </ul>
+                            </article>
+                            <article class="proj" style="--c:var(--ml)" tabindex="0">
+                                <p class="proj-badge"><svg class="ic" aria-hidden="true"><use href="#i-trophy"/></svg>TCS AI Hackathon 2025, 1st place</p>
+                                <h4>Pipeline pump optimizer</h4>
+                                <p class="proj-result">Less energy spent moving oil and gas</p>
+                                <p>A machine learning model that recommends pump settings to cut energy use along oil and gas pipelines.</p>
+                                <ul class="tags">
+                                    <li data-c="ml">Machine Learning</li><li data-c="ml">Scikit-Learn</li><li data-c="dev">Python</li>
+                                </ul>
+                            </article>
+                            <article class="proj" style="--c:var(--ml)" tabindex="0">
+                                <p class="proj-badge"><svg class="ic" aria-hidden="true"><use href="#i-github"/></svg>Open source</p>
+                                <h4>PII Shield</h4>
+                                <p class="proj-result"><strong>35+</strong> kinds of personal data removed before text reaches an LLM</p>
+                                <p>Finds names, Aadhaar and PAN numbers, bank accounts, emails and phone numbers with spaCy NER and pattern rules, then masks them. Nothing you paste is stored.</p>
+                                <ul class="tags">
+                                    <li data-c="ml">NLP</li><li data-c="ml">spaCy</li><li data-c="dev">Python</li><li data-c="dev">FastAPI</li><li data-c="dev">Docker</li><li data-c="cloud">Cloud Run</li>
+                                </ul>
+                                <div class="proj-links">
+                                    <a href="https://github.com/harshitrajchaurasia/pii-shield" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-github"/></svg>Source on GitHub</a>
+                                    <a href="https://pii-shield-49982461185.us-central1.run.app" target="_blank" rel="noopener"><svg class="ic" aria-hidden="true"><use href="#i-external"/></svg>Open the full app</a>
+                                </div>
+                                <details class="demo">
+                                    <summary>Try it here</summary>
+                                    <div class="demo-body">
+                                        <label for="piiInput" class="demo-label">Text with personal details</label>
+                                        <textarea id="piiInput" rows="4">Hi, I'm Rahul Sharma, Aadhaar 2341 5678 9012, rahul.sharma@gmail.com, +91 98765 43210</textarea>
+                                        <button type="button" class="btn btn-solid btn-small" id="piiRedactBtn">Redact</button>
+                                        <p class="demo-label">Redacted text</p>
+                                        <div class="demo-output" id="piiOutput" aria-live="polite">The redacted version shows up here.</div>
+                                        <p class="demo-stats" id="piiStats"></p>
+                                    </div>
+                                </details>
+                            </article>
+                            </div>
+                        </details>
+                        <details class="pgroup" style="--c:var(--genai)" aria-label="GenAI and agents projects">
+                            <summary class="pgroup-sum"><h3 class="pgroup-head"><svg class="ic" aria-hidden="true"><use href="#i-genai"/></svg>GenAI &amp; agents<span class="pgroup-n">3 projects</span></h3></summary>
+                            <div class="pgrid">
+                            <article class="proj" style="--c:var(--genai)" tabindex="0">
+                                <p class="proj-badge"><svg class="ic" aria-hidden="true"><use href="#i-flask"/></svg>Proof of concept</p>
+                                <h4>Agentic service-desk assistant</h4>
+                                <p class="proj-result">Showed tickets can resolve themselves</p>
+                                <p>An agent that pulls answers out of service-desk databases and uses them to close tickets, orchestrated with UiPath Maestro and grounded with retrieval-augmented generation.</p>
+                                <ul class="tags">
+                                    <li data-c="genai">Agentic AI</li><li data-c="genai">RAG</li><li data-c="genai">OpenAI GPT</li><li data-c="rpa">UiPath Maestro</li><li data-c="rpa">UiPath AI Center</li><li data-c="rpa">Document Understanding</li>
+                                </ul>
+                            </article>
+                            <article class="proj" style="--c:var(--genai)" tabindex="0">
+                                <p class="proj-badge"><svg class="ic" aria-hidden="true"><use href="#i-trophy"/></svg>TCS AI Hackathon 2025, 2nd place</p>
+                                <h4>IoT energy agent</h4>
+                                <p class="proj-result">An AI agent that watches live sensors</p>
+                                <p>Reads real-time IoT sensor data from facilities and recommends where energy can be saved, built as a multi-step agent graph.</p>
+                                <ul class="tags">
+                                    <li data-c="genai">Agentic AI</li><li data-c="genai">LangGraph</li><li data-c="genai">LangChain</li><li data-c="genai">Gemini</li><li data-c="genai">OpenAI GPT</li>
+                                </ul>
+                            </article>
+                            <article class="proj" style="--c:var(--genai)" tabindex="0">
+                                <h4>GenAI document extraction</h4>
+                                <p class="proj-result">Messy procurement PDFs turned into clean inventory records</p>
+                                <p>LLM pipelines on Vertex AI read unstructured procurement documents and output normalized inventory data for compliance reporting, connected to enterprise systems over REST APIs.</p>
+                                <ul class="tags">
+                                    <li data-c="genai">LLMs</li><li data-c="genai">Gemini</li><li data-c="genai">Vertex AI</li><li data-c="genai">LangChain</li><li data-c="genai">RAG</li><li data-c="genai">Prompt Engineering</li><li data-c="ent">REST APIs</li>
+                                </ul>
+                            </article>
+                            </div>
+                        </details>
+                        <details class="pgroup" style="--c:var(--cloud)" aria-label="Google Cloud projects">
+                            <summary class="pgroup-sum"><h3 class="pgroup-head"><svg class="ic" aria-hidden="true"><use href="#i-cloud"/></svg>Google Cloud<span class="pgroup-n">1 project</span></h3></summary>
+                            <div class="pgrid">
+                            <article class="proj" style="--c:var(--cloud)" tabindex="0">
+                                <h4>Cloud migration to GCP</h4>
+                                <p class="proj-result"><strong>5TB+</strong> of workloads moved in 6 months</p>
+                                <p>A phased move from on-premises servers to Google Cloud, with infrastructure as code and PySpark ETL pipelines orchestrated by Cloud Composer. No major production disruption.</p>
+                                <ul class="tags">
+                                    <li data-c="cloud">GCP</li><li data-c="cloud">BigQuery</li><li data-c="cloud">Dataflow</li><li data-c="cloud">Dataproc</li><li data-c="cloud">Cloud Composer</li><li data-c="cloud">Terraform</li><li data-c="cloud">PySpark</li><li data-c="cloud">ETL Pipelines</li>
+                                </ul>
+                            </article>
+                            </div>
+                        </details>
+                    </div>
                     </div>
                 </div>
             </div>
@@ -272,7 +302,7 @@
                 </div>
                 <div class="exp-grid">
                     <div class="role">
-                        <p class="role-dates">2021 - present</p>
+                        <p class="role-dates"><svg class="ic" aria-hidden="true"><use href="#i-briefcase"/></svg>2021 - present</p>
                         <h3>Senior RPA Developer &amp; ML Engineer</h3>
                         <p class="role-org">Tata Consultancy Services</p>
                         <ul class="role-points">
@@ -281,12 +311,12 @@
                             <li>Lead junior developers on development, framework design and code reviews.</li>
                         </ul>
 
-                        <h3 class="sub-head">Education</h3>
+                        <h3 class="sub-head"><svg class="ic" aria-hidden="true"><use href="#i-cap"/></svg>Education</h3>
                         <p class="edu">Bachelor of Computer Applications, Shri Ramswaroop Memorial University, 2018 - 2021</p>
                     </div>
 
                     <div class="recog">
-                        <h3 class="sub-head">Recognition</h3>
+                        <h3 class="sub-head"><svg class="ic" aria-hidden="true"><use href="#i-trophy"/></svg>Recognition</h3>
                         <ul class="awards">
                             <li><strong>2 TCS copyright awards</strong> for the ticket classifier (2024) and the RPA platform (2025)</li>
                             <li><strong>1st and 2nd place</strong>, TCS AI Hackathon 2025</li>
@@ -297,15 +327,15 @@
                     </div>
 
                     <div class="cert-col">
-                        <h3 class="sub-head">Certifications</h3>
+                        <h3 class="sub-head"><svg class="ic" aria-hidden="true"><use href="#i-award"/></svg>Certifications</h3>
                         <ul class="certs">
-                            <li style="--c:var(--rpa)"><img src="assets/certs/uipath.svg" alt="" width="18" height="18">UiPath Automation Developer Professional</li>
-                            <li style="--c:var(--rpa)"><img src="assets/certs/uipath.svg" alt="" width="18" height="18">UiPath Automation Developer Associate</li>
-                            <li style="--c:var(--rpa)"><img src="assets/certs/uipath.svg" alt="" width="18" height="18">UiPath Agentic Automation Associate</li>
-                            <li style="--c:var(--cloud)"><img src="assets/certs/powerautomate.svg" alt="" width="18" height="18">Microsoft Power Automate RPA Developer (PL-500)</li>
-                            <li style="--c:var(--cloud)"><img src="assets/certs/azure.svg" alt="" width="18" height="18">Microsoft Azure Administrator (AZ-104)</li>
-                            <li style="--c:var(--cloud)"><img src="assets/certs/azure.svg" alt="" width="18" height="18">Microsoft Azure Developer (AZ-204)</li>
-                            <li style="--c:var(--cloud)"><img src="assets/certs/googlecloud.svg" alt="" width="18" height="18">Google Cloud Associate Cloud Engineer</li>
+                            <li style="--c:var(--rpa)"><span class="cert-logo"><img src="assets/certs/uipath-mark.svg" alt="" width="26" height="26"></span><span class="cert-name"><small>UiPath</small>Automation Developer Professional</span></li>
+                            <li style="--c:var(--rpa)"><span class="cert-logo"><img src="assets/certs/uipath-mark.svg" alt="" width="26" height="26"></span><span class="cert-name"><small>UiPath</small>Automation Developer Associate</span></li>
+                            <li style="--c:var(--rpa)"><span class="cert-logo"><img src="assets/certs/uipath-mark.svg" alt="" width="26" height="26"></span><span class="cert-name"><small>UiPath</small>Agentic Automation Associate</span></li>
+                            <li style="--c:var(--cloud)"><span class="cert-logo"><img src="assets/certs/powerautomate.svg" alt="" width="26" height="26"></span><span class="cert-name"><small>Microsoft <b class="exam">PL-500</b></small>Power Automate RPA Developer</span></li>
+                            <li style="--c:var(--cloud)"><span class="cert-logo"><img src="assets/certs/azure.svg" alt="" width="26" height="26"></span><span class="cert-name"><small>Microsoft <b class="exam">AZ-104</b></small>Azure Administrator</span></li>
+                            <li style="--c:var(--cloud)"><span class="cert-logo"><img src="assets/certs/azure.svg" alt="" width="26" height="26"></span><span class="cert-name"><small>Microsoft <b class="exam">AZ-204</b></small>Azure Developer</span></li>
+                            <li style="--c:var(--cloud)"><span class="cert-logo"><img src="assets/certs/googlecloud.svg" alt="" width="26" height="26"></span><span class="cert-name"><small>Google Cloud</small>Associate Cloud Engineer</span></li>
                         </ul>
                     </div>
                 </div>
@@ -319,9 +349,9 @@
                 <p class="contact-sub">Email is the quickest way to reach me. LinkedIn works too.</p>
                 <a class="contact-mail" href="mailto:harshit1chaurasia@outlook.com">harshit1chaurasia@outlook.com</a>
                 <div class="contact-links">
-                    <a href="https://www.linkedin.com/in/harshit-raj-chaurasia" target="_blank" rel="noopener" class="btn btn-line">LinkedIn</a>
-                    <a href="https://github.com/harshitrajchaurasia" target="_blank" rel="noopener" class="btn btn-line">GitHub</a>
-                    <a href="Harshit_Chaurasia_Resume.pdf" class="btn btn-line" download>Download resume (PDF)</a>
+                    <a href="https://www.linkedin.com/in/harshit-raj-chaurasia" target="_blank" rel="noopener" class="btn btn-line"><svg class="ic" aria-hidden="true"><use href="#i-linkedin"/></svg>LinkedIn</a>
+                    <a href="https://github.com/harshitrajchaurasia" target="_blank" rel="noopener" class="btn btn-line"><svg class="ic" aria-hidden="true"><use href="#i-github"/></svg>GitHub</a>
+                    <a href="Harshit_Chaurasia_Resume.pdf" class="btn btn-line" download><svg class="ic" aria-hidden="true"><use href="#i-download"/></svg>Download resume (PDF)</a>
                 </div>
 
                 <!-- live GitHub activity, filled from github-stats.json (refreshed nightly); hidden until data loads -->
