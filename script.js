@@ -39,13 +39,14 @@
     const statusText = document.getElementById('skillsStatusText');
     const clearBtn = document.getElementById('clearFilter');
     const cards = projectsEl ? Array.from(projectsEl.querySelectorAll('.proj')) : [];
-    const moreBtn = document.getElementById('moreProjects');
+    const groups = projectsEl ? Array.from(projectsEl.querySelectorAll('.pgroup')) : [];
+    const groupsBtn = document.getElementById('toggleGroups');
     const IDLE = 'Pick a skill to see where I used it';
 
     const skills = new Map();   // name -> { cat, cards: Set }
     cards.forEach(card => {
         const tags = card.querySelectorAll('.tags li');
-        if (!tags.length) console.warn('Project has no skills:', card.querySelector('h3').textContent);
+        if (!tags.length) console.warn('Project has no skills:', card.querySelector('h4').textContent);
         card._skills = new Set();
         tags.forEach(li => {
             const name = li.textContent.trim(), cat = li.dataset.c;
@@ -71,7 +72,8 @@
             const head = document.createElement('button');
             head.type = 'button';
             head.className = 'cat-head';
-            head.textContent = label;
+            head.innerHTML = '<svg class="ic" aria-hidden="true"><use href="#i-' + cat + '"/></svg>';
+            head.append(label);
             head.setAttribute('aria-pressed', 'false');
             head.addEventListener('click', () => toggle({ type: 'cat', v: cat }));
             catBtns.set(cat, head);
@@ -121,8 +123,8 @@
             statusText.textContent = !sel ? IDLE : label + ': ' + n + (n === 1 ? ' project' : ' projects');
         }
         if (clearBtn) clearBtn.hidden = !sel;
-        // while filtering, every match is already shown, so "Show more" has nothing to add
-        if (moreBtn) moreBtn.hidden = !!sel;
+        // a match inside a closed area would be invisible, so open every area that has one
+        if (sel) groups.forEach(g => { if (g.querySelector('.proj.match')) g.open = true; });
     }
     if (clearBtn) clearBtn.addEventListener('click', () => select(null));
     document.addEventListener('keydown', e => { if (e.key === 'Escape' && selected) select(null); });
@@ -144,19 +146,51 @@
         });
     });
 
-    // "Show more" reveals the projects past the featured ones
-    if (moreBtn && projectsEl) {
-        const extra = projectsEl.querySelectorAll('.extra').length;
-        const label = all => all ? 'Show fewer projects' : 'Show ' + extra + ' more projects';
-        moreBtn.textContent = label(false);
-        moreBtn.addEventListener('click', () => {
-            const all = projectsEl.classList.toggle('all');
-            moreBtn.textContent = label(all);
-            moreBtn.setAttribute('aria-expanded', String(all));
-            // collapsing pulls the page up; keep the button where the reader is looking
-            if (!all) moreBtn.scrollIntoView({ block: 'center' });
+    // ---------- PROJECT AREAS (collapsible <details>) ----------
+    // a closed area still lists its project names; picking one opens the area and scrolls to that card
+    groups.forEach(g => {
+        const peek = document.createElement('span');
+        peek.className = 'pgroup-peek';
+        g.querySelectorAll('.proj').forEach(card => {
+            const chip = document.createElement('button');
+            chip.type = 'button';
+            chip.textContent = card.querySelector('h4').textContent;
+            // the card's headline number (40+, 160K+ ...) rides along so results show while closed
+            const num = card.querySelector('.proj-result strong');
+            if (num) {
+                const b = document.createElement('b');
+                b.textContent = num.textContent;
+                chip.appendChild(b);
+            }
+            chip.style.setProperty('--c', card.style.getPropertyValue('--c'));
+            chip.addEventListener('click', e => {
+                e.preventDefault();   // a click inside <summary> would otherwise toggle the area
+                const go = (tries = 0) => {
+                    // the opening transition keeps the cards hidden for its first frame; retry until shown
+                    if (card.checkVisibility && !card.checkVisibility() && tries < 30) {
+                        requestAnimationFrame(() => go(tries + 1));
+                        return;
+                    }
+                    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    card.focus({ preventScroll: true });
+                };
+                // a closed area's cards can't take focus yet; 'toggle' fires once it has opened
+                if (g.open) go();
+                else { g.addEventListener('toggle', () => go(), { once: true }); g.open = true; }
+            });
+            peek.appendChild(chip);
         });
+        g.querySelector('summary').appendChild(peek);
+        g.addEventListener('toggle', syncGroupsBtn);
+    });
+    function syncGroupsBtn() {
+        if (groupsBtn) groupsBtn.textContent = groups.every(g => g.open) ? 'Collapse all' : 'Expand all';
     }
+    if (groupsBtn) groupsBtn.addEventListener('click', () => {
+        const open = !groups.every(g => g.open);
+        groups.forEach(g => { g.open = open; });
+    });
+    syncGroupsBtn();
 
     // hero spectrum segments jump to the work section with that area selected
     document.querySelectorAll('[data-jump-cat]').forEach(a => {
