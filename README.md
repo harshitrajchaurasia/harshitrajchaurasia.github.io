@@ -13,7 +13,8 @@ Highlights of the build:
 - **Skills linked to projects.** Every project card lists its skills; the skills panel is built from those tags, so a skill only appears if a project used it. Pick a skill to highlight its projects, point at a project to light up its skills.
 - **Seven category colours** (RPA, ML, GenAI, Cloud, Code, Enterprise, Practice) shared by the hero bar, the skills panel and the project cards.
 - **Light by default, with a dark toggle** via `data-theme`, resolved before first paint.
-- **Featured projects first.** The strongest seven show by default; the rest (`.extra`) sit behind "Show more", and a skill filter pulls out any that match.
+- **Projects by area.** RPA, machine learning, GenAI and Google Cloud, each a collapsible `<details>`. A closed area lists its projects as chips with their headline number; a chip opens the area and jumps to the card, and a skill filter opens every area with a match.
+- **Icons** come from one inline SVG sprite in `index.html`; no icon library.
 - **Accessibility:** AA contrast, keyboard support, and a `prefers-reduced-motion` path that turns animation off.
 
 ## Structure
