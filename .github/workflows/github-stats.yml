@@ -37,6 +37,7 @@ jobs:
             git config user.name  'github-actions[bot]'
             git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
             git add github-stats.json
-            git commit -m 'chore: refresh github-stats.json [skip ci]'
+            # no [skip ci]: Cloudflare Pages honours it and would never redeploy the new numbers
+            git commit -m 'chore: refresh github-stats.json'
             git push
           fi
