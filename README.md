@@ -1,6 +1,6 @@
 # Harshit Chaurasia - portfolio
 
-Personal portfolio for **Harshit Chaurasia** - AI & Automation Engineer. Hand-written vanilla HTML, CSS, and JavaScript. No build step, no framework, no dependencies.
+Personal portfolio for **Harshit Chaurasia** - Senior RPA Developer & ML Engineer. Hand-written vanilla HTML, CSS, and JavaScript. No build step, no framework, no dependencies.
 
 **Live:** [harshit.saakura.dev](https://harshit.saakura.dev) (primary) - [harshitrajchaurasia.github.io](https://harshitrajchaurasia.github.io) (mirror)
 
@@ -12,7 +12,8 @@ Highlights of the build:
 
 - **Skills linked to projects.** Every project card lists its skills; the skills panel is built from those tags, so a skill only appears if a project used it. Pick a skill to highlight its projects, point at a project to light up its skills.
 - **Seven category colours** (RPA, ML, GenAI, Cloud, Code, Enterprise, Practice) shared by the hero bar, the skills panel and the project cards.
-- **Light and dark themes** via `data-theme`, resolved before first paint.
+- **Light by default, with a dark toggle** via `data-theme`, resolved before first paint.
+- **Featured projects first.** The strongest seven show by default; the rest (`.extra`) sit behind "Show more", and a skill filter pulls out any that match.
 - **Accessibility:** AA contrast, keyboard support, and a `prefers-reduced-motion` path that turns animation off.
 
 ## Structure
@@ -21,8 +22,9 @@ Highlights of the build:
 index.html        Main portfolio (loads styles.css + script.js)
 styles.css        All styling and the color-token system
 script.js         All behavior, one IIFE, no modules
-links/index.html  Self-hosted "all links" page (standalone, CSS inlined)
-404.html          GitHub Pages 404 page
+links/index.html  "All links" page (uses /styles.css plus a small inline block)
+404.html          404 page (absolute paths, served at any depth)
+github-stats.json GitHub numbers for the Contact section, refreshed nightly by .github/workflows/github-stats.yml
 assets/           Cert badges and other static assets
 ```
 
@@ -44,7 +46,7 @@ python .github/scripts/check_site.py   # no internal project names, ASCII-only c
 
 ## Deploy
 
-Commit to `master` and push. One push updates both targets: Cloudflare rebuilds the primary domain and GitHub Pages rebuilds the mirror, each in about a minute. There is no CI.
+Commit to `master` and push. One push updates both targets: Cloudflare rebuilds the primary domain and GitHub Pages rebuilds the mirror, each in about a minute. The only workflow is the nightly stats refresh.
 
 ## License
 
