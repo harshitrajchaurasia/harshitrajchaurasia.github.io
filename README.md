@@ -26,6 +26,7 @@ links/index.html  "All links" page (uses /styles.css plus a small inline block)
 404.html          404 page (absolute paths, served at any depth)
 github-stats.json GitHub numbers for the Contact section, refreshed nightly by .github/workflows/github-stats.yml
 assets/           Cert badges and other static assets
+.github/          Nightly stats workflow (workflows/) and its script plus the pre-push check (scripts/)
 ```
 
 ## Run locally
@@ -41,12 +42,19 @@ After editing CSS or JS, append a cache-buster (for example `index.html?v=2`) wh
 ## Check before pushing
 
 ```bash
-python .github/scripts/check_site.py   # no internal project names, ASCII-only copy, every project has skills
+python .github/scripts/check_site.py   # no internal project names or phone number, ASCII-only copy, every project has skills
 ```
 
 ## Deploy
 
-Commit to `master` and push. One push updates both targets: Cloudflare rebuilds the primary domain and GitHub Pages rebuilds the mirror, each in about a minute. The only workflow is the nightly stats refresh.
+Commit to `master` and push. One push updates both targets, each in about a minute:
+
+- **harshit.saakura.dev:** Cloudflare Workers Builds serves the repo root as static assets. Every committed file is public there, `.github/` included.
+- **harshitrajchaurasia.github.io:** GitHub Pages.
+
+The only workflow is the nightly stats refresh, which commits `github-stats.json` straight to `master`, so pull before you push. Never put `[skip ci]` in a commit message: Cloudflare skips that build and the primary domain falls behind the mirror.
+
+History was rewritten on 2026-10-26. A clone made before then should be re-cloned (or `git fetch` then `git reset --hard origin/master`).
 
 ## License
 
