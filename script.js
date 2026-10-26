@@ -41,7 +41,7 @@
     const cards = projectsEl ? Array.from(projectsEl.querySelectorAll('.proj')) : [];
     const groups = projectsEl ? Array.from(projectsEl.querySelectorAll('.pgroup')) : [];
     const groupsBtn = document.getElementById('toggleGroups');
-    const IDLE = 'Pick a skill to see where I used it';
+    const IDLE = 'Open an area, pick a skill to see where I used it';
 
     const skills = new Map();   // name -> { cat, cards: Set }
     cards.forEach(card => {
@@ -59,24 +59,24 @@
     });
 
     const skillBtns = new Map();  // name -> button
-    const catBtns = new Map();    // cat -> button
+    const catEls = new Map();     // cat -> <details>; each area collapses, closed by default
     if (groupsEl) {
         CATS.forEach(([cat, label]) => {
             const names = [...skills.keys()]
                 .filter(n => skills.get(n).cat === cat)
                 .sort((a, b) => skills.get(b).cards.size - skills.get(a).cards.size || a.localeCompare(b));
             if (!names.length) return;
-            const group = document.createElement('div');
+            const group = document.createElement('details');
             group.className = 'cat';
             group.style.setProperty('--c', 'var(--' + cat + ')');
-            const head = document.createElement('button');
-            head.type = 'button';
+            const head = document.createElement('summary');
             head.className = 'cat-head';
             head.innerHTML = '<svg class="ic" aria-hidden="true"><use href="#i-' + cat + '"/></svg>';
-            head.append(label);
-            head.setAttribute('aria-pressed', 'false');
-            head.addEventListener('click', () => toggle({ type: 'cat', v: cat }));
-            catBtns.set(cat, head);
+            const n = document.createElement('small');
+            n.className = 'cat-n';
+            n.textContent = names.length + (names.length === 1 ? ' skill' : ' skills');
+            head.append(label, n);
+            catEls.set(cat, group);
             const list = document.createElement('div');
             list.className = 'cat-list';
             names.forEach(n => {
@@ -117,7 +117,12 @@
         });
         if (projectsEl) projectsEl.classList.toggle('filtering', !!sel);
         skillBtns.forEach((b, name) => b.setAttribute('aria-pressed', String(!!sel && sel.type === 'skill' && sel.v === name)));
-        catBtns.forEach((b, cat) => b.setAttribute('aria-pressed', String(!!sel && sel.type === 'cat' && sel.v === cat)));
+        // open the area holding the picked skill (or the picked area) so the selection is visible
+        const selCat = sel && (sel.type === 'cat' ? sel.v : skills.get(sel.v).cat);
+        catEls.forEach((g, cat) => {
+            g.classList.toggle('picked', !!sel && sel.type === 'cat' && cat === selCat);
+            if (cat === selCat) g.open = true;
+        });
         if (statusText) {
             const label = sel && (sel.type === 'skill' ? sel.v : catName[sel.v]);
             statusText.textContent = !sel ? IDLE : label + ': ' + n + (n === 1 ? ' project' : ' projects');
@@ -134,6 +139,8 @@
         if (!panel) return;
         panel.classList.toggle('hovering', !!card);
         skillBtns.forEach((b, name) => b.classList.toggle('lit', !!card && card._skills.has(name)));
+        // a closed area can't show its lit skills, so its header glows instead
+        catEls.forEach(g => g.classList.toggle('has-lit', !!g.querySelector('.skill.lit')));
     }
     cards.forEach(card => {
         card.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') light(card); });
@@ -163,6 +170,7 @@
                 chip.appendChild(b);
             }
             chip.style.setProperty('--c', card.style.getPropertyValue('--c'));
+            if (card.querySelector('.live')) chip.classList.add('has-live');
             chip.addEventListener('click', e => {
                 e.preventDefault();   // a click inside <summary> would otherwise toggle the area
                 const go = (tries = 0) => {
@@ -197,6 +205,30 @@
         a.addEventListener('click', () => select({ type: 'cat', v: a.dataset.jumpCat }));
     });
 
+    // ---------- COPY EMAIL ----------
+    document.querySelectorAll('[data-copy]').forEach(btn => {
+        const label = btn.querySelector('span'), use = btn.querySelector('use'), text = label.textContent;
+        btn.addEventListener('click', () => {
+            (navigator.clipboard ? navigator.clipboard.writeText(btn.dataset.copy) : Promise.reject()).then(() => {
+                label.textContent = 'Copied';
+                use.setAttribute('href', '#i-check');
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    label.textContent = text;
+                    use.setAttribute('href', '#i-copy');
+                    btn.classList.remove('copied');
+                }, 2000);
+            }, () => { location.href = 'mailto:' + btn.dataset.copy; });   // clipboard blocked: fall back to the mail app
+        });
+    });
+
+    // ---------- LIVE DEMO LINK ----------
+    // "Try the live demo" link: open the demo instead of only scrolling to its closed summary
+    const piiDemo = document.getElementById('piiDemo');
+    document.querySelectorAll('a[href="#piiDemo"]').forEach(a => a.addEventListener('click', () => {
+        if (piiDemo) piiDemo.open = true;
+    }));
+
     // ---------- GITHUB ACTIVITY ----------
     // github-stats.json is refreshed nightly; keys: contributions, streak, repos, since, updated
     (function ghActivity() {
@@ -207,9 +239,9 @@
             .then(d => {
                 if (!d || !d.updated) return;     // no real data yet -> stay hidden
                 box.querySelectorAll('[data-gh]').forEach(el => {
-                    const v = d[el.getAttribute('data-gh')];
-                    // a missing value or a 0 streak reads as a negative; hide that tile instead
-                    if (v === undefined || v === null || v === 0) { el.closest('.gh-stat').hidden = true; return; }
+                    const key = el.getAttribute('data-gh'), v = d[key];
+                    // a missing value or a short streak reads as a negative; hide that tile instead
+                    if (v === undefined || v === null || v === 0 || (key === 'streak' && v < 7)) { el.closest('.gh-stat').hidden = true; return; }
                     el.textContent = (typeof v === 'number') ? v.toLocaleString() : v;
                 });
                 box.hidden = false;

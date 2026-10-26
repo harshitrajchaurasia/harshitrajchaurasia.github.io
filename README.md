@@ -14,7 +14,10 @@ Highlights of the build:
 - **Seven category colours** (RPA, ML, GenAI, Cloud, Code, Enterprise, Practice) shared by the hero bar, the skills panel and the project cards.
 - **Light by default, with a dark toggle** via `data-theme`, resolved before first paint.
 - **Projects by area.** RPA, machine learning, GenAI and Google Cloud, each a collapsible `<details>`. A closed area lists its projects as chips with their headline number; a chip opens the area and jumps to the card, and a skill filter opens every area with a match.
+- **Recruiter-first hero.** Availability sentence, one line of headline numbers, and a Copy email button.
+- **Case studies** ("How it works") inside the two flagship project cards, plus a live PII Shield demo.
 - **Icons** come from one inline SVG sprite in `index.html`; no icon library.
+- **Phone layout:** section links in the top bar, photo beside the role line, thumb-sized chips.
 - **Accessibility:** AA contrast, keyboard support, and a `prefers-reduced-motion` path that turns animation off.
 
 ## Structure
@@ -27,6 +30,9 @@ links/index.html  "All links" page (uses /styles.css plus a small inline block)
 404.html          404 page (absolute paths, served at any depth)
 github-stats.json GitHub numbers for the Contact section, refreshed nightly by .github/workflows/github-stats.yml
 assets/           Cert badges and other static assets
+portrait.jpg/.webp Hero photo (WebP served first via <picture>)
+og-card.png       1200x630 link preview, rendered from .github/og-card.html with headless Chrome
+robots.txt, sitemap.xml  Search engine hints
 .github/          Nightly stats workflow (workflows/) and its script plus the pre-push check (scripts/)
 ```
 
