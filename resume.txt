@@ -1,57 +1,54 @@
-HARSHIT CHAURASIA
-Senior Automation Developer & AI/ML Engineer | RPA · Cloud · Machine Learning
-[phone removed] · harshit1chaurasia@outlook.com · linkedin.com/in/harshit-raj-chaurasia · harshitrajchaurasia.github.io ·
-Lucknow, India · Open to Remote & Relocation
+Harshit Chaurasia
+harshit1chaurasia@outlook.com
+linkedin.com/in/harshit-raj-chaurasia · harshitrajchaurasia.github.io
 PROFESSIONAL SUMMARY
-Automation and AI Engineer with 5 years of experience at Tata Consultancy Services, building enterprise-grade RPA, cloud, and
-ML-driven solutions. Architect of a BERT-based ticket classifier processing 160K+ monthly transactions at 97% accuracy and
-1,000+ operational hours savings per month. Recognized with two TCS Copyright Awards (2024, 2025) for original intellectual
-property.
-PROFESSIONAL EXPERIENCE
-TATA CONSULTANCY SERVICES (TCS)
-Senior RPA Developer & AI Engineer 2021 - Present
-• Enterprise RPA 1.0 Platform (Copyright 2025): Architected an end-to-end automation platform covering O365 licensing,
-ITSM automation, and testing. Delivered production-grade automation bots with 92% operational job success rate,
-reducing manual effort by 95% and saving 1000+ operational hours monthly.
-• Smart Ticket Classifier (Copyright 2024): An ML-powered ticket and change-request classification platform using BERT (BiEncoder + Cross-Encoder), processing 160K+ monthly transactions at 97% accuracy. Automated catalog selection
-workflows and reduced average resolution time by 85%.
-• Network Bandwidth Eagle Eye: Developed time-series forecasting models for network link optimization, saving INR 60 lakh
-in FY’24 with projected savings of INR 2+ crore by FY’26 through intelligent upgrade/downgrade recommendations.
-• Ticket Routing Automation: Built a Python, Selenium, and SQL-based automation framework to route 5000+ daily tickets to
-roster-based support teams. Eliminated manual queue monitoring and assignment workflows for 200+ engineers, improving
-operational efficiency and ticket response turnaround time.
-• On-Premises to Cloud Migration: Led phased migration of 5TB+ enterprise data workloads to Google Cloud Platform
-(BigQuery, Dataflow, Dataproc), completing the transition without major production disruption and reducing infrastructure
-costs.
-• Smart Security Compliance Drive: Engineered an automated endpoint compliance framework to detect policy violations,
-trigger notification workflows, and enforce governance controls resulting in significant improvement in compliance across
-devices and reduced security audit findings.
-• Procurement & Software Inventory As a Service: Integrated enterprise management and security platforms with AIpowered document extraction pipelines using Google Cloud Gemini APIs to process unstructured PDF data and generate
-normalized inventory records for compliance reporting.
-• Office 365 License Assignment Automation: Built automation for provisioning and revoking Office 365 licenses, eliminating
-manual processes and improving enterprise license utilization, governance, and operational efficiency.
-• Built Agentic AI Proof-of-Concept (POC) using UiPath AI Center for automated knowledge extraction from service desk
-databases, demonstrating feasibility for self-healing ticket resolution.
+Senior RPA Developer & ML Engineer with 5+ years at TCS building enterprise RPA, Machine Learning, GenAI and Agentic AI solutions
+on UiPath, Power Automate & GCP. Architected a Smart Ticket ML Classifier processing 160K+ monthly tickets at 97% accuracy and a
+copyrighted UiPath RPA platform with 40+ automations processing 30,000+ monthly transactions at 98% SLA compliance. Led a team
+of junior developers on development, framework design and code reviews.
 TECHNICAL SKILLS
-Automation & RPA: UiPath Studio, Microsoft Power Automate, Selenium WebDriver
-AI & ML: Machine Learning, Scikit-Learn, BERT, NLP, Generative AI, Time Series Forecasting, Vector Databases
-RAG, Agentic AI (Gemini, GPT), Vertex AI, Prompt Engineering, Embeddings, Large Language Models (LLMs)
-Cloud & Data: Google Cloud Platform (BigQuery, Dataflow, Dataproc), Azure, SQL, ETL Pipelines, PySpark
-Orchestration: Rundeck, Cloud Composer, UiPath Orchestrator
-Programming: Python, PowerShell
-DevOps & Tools: Docker, Linux, Git, GitHub, GitLab, CI/CD
-Enterprise Systems & Integration: REST APIs, Active Directory, SharePoint, Outlook
+RPA & Automation: UiPath Studio, REFramework, UiPath Orchestrator, Queues, Exception Handling, UiPath Test Suite, UiPath AI
+Center, UiPath Maestro, Document Understanding, Power Automate Desktop, Cloud Flows, Power Apps, Selenium WebDriver
+AI & ML: Machine Learning, NLP, BERT, Bi-Encoder, Cross-Encoder, Embeddings, Scikit-Learn, Time Series Forecasting, BigQuery ML
+GenAI & Agentic AI: LLMs, Agentic AI, LangGraph, LangChain, RAG, Prompt Engineering, Gemini, OpenAI GPT, Vertex AI
+Cloud & Data: GCP, BigQuery, Dataflow, Dataproc, Cloud Composer, Cloud Run, Azure, Terraform, PySpark, ETL Pipelines, SQL
+Programming & DevOps: Python, PowerShell, VBA, Docker, Linux, Git, GitHub, GitLab, CI/CD, Rundeck
+Enterprise Integration: REST APIs, Microsoft Graph API, Active Directory, Office 365, SharePoint, Outlook
+Practices: Bot Lifecycle Management, SLA Management, Code Review, Process Analysis, Agile
+PROFESSIONAL EXPERIENCE
+TATA CONSULTANCY SERVICES (TCS) · Senior RPA Developer & ML Engineer Lucknow, India | 2021 - Present
+• Enterprise RPA 1.0 Platform (Copyright 2025): Architected a platform on UiPath Studio, REFramework and UiPath Orchestrator
+(queue-based processing, exception handling, VBA, UiPath Test Suite) for deployment, O365 licensing, ITSM and compliance; 40+
+production bots, 98% SLA compliance, 92% job success rate, 95% less manual effort, 1,000+ hours saved monthly.
+• Smart Ticket Classifier (Copyright 2024): Built an NLP / Machine Learning classifier with BERT (Bi-Encoder + Cross-Encoder
+embeddings) and Scikit-Learn in Python on Google Cloud Run (Docker, Linux, Git/GitHub/GitLab CI/CD, Rundeck); classifies 160K+
+monthly tickets at 97% accuracy.
+• Agentic AI POC: Built an Agentic AI knowledge-extraction agent over service-desk databases with UiPath Maestro, UiPath AI
+Center, Document Understanding, RAG and OpenAI GPT, proving self-healing ticket resolution.
+• Network Bandwidth Eagle Eye: Built time series forecasting models (Python, Scikit-Learn, PySpark) with BigQuery ML
+(ARIMA_PLUS) for link sizing; saved INR 60 lakh (~USD 70K) in FY'24, projected INR 2+ crore (~USD 230K) by FY'26.
+• GenAI Document Extraction: Built LLM pipelines with Gemini on Vertex AI, LangChain, RAG and prompt engineering turning
+unstructured procurement PDFs into normalized inventory records, integrated with enterprise platforms via REST APIs.
+• Compliance Rules Engine: Built a Python + SQL rules engine on Active Directory data with Power Automate Desktop & Cloud
+Flows; raised endpoint compliance from 70% to 95% across 800K+ devices.
+• Cloud Migration: Led 6-month migration of 5TB+ workloads to GCP (BigQuery, Dataflow, Dataproc) using Terraform and PySpark
+ETL pipelines orchestrated by Cloud Composer, with no major disruption.
+• Ticket Routing Automation: Built a Python, Selenium WebDriver and SQL automation routing 5,000+ daily tickets to roster-based
+teams, eliminating manual assignment for 200+ engineers.
+• Office 365 License Automation: Automated license provisioning and revocation with Microsoft Graph API, PowerShell, Power
+Apps, Azure, Python, Active Directory, SharePoint and Outlook, improving utilization and governance.
+• Legacy Apps: Piloted 25+ legacy app automations with Python & Selenium after process analysis, founding the RPA practice.
+• RPA Practice Leadership: Owned bot lifecycle management & SLA management; mentored juniors via code review in Agile sprints.
 CERTIFICATIONS
-UiPath - Automation Developer Associate, Automation Developer Professional, Agentic Automation Associate
-Microsoft - Power Automate RPA Developer Associate, Azure Administrator (AZ-104), Azure Developer (AZ-204)
-Google - Cloud Associate Engineer
-AWARDS & RECOGNITION
-• Copyright Award 2025 - Enterprise RPA 1.0 Platform (intellectual property recognition by TCS)
-• Copyright Award 2024 - Smart Ticket Classifier (intellectual property recognition by TCS)
-• Best Performance Improvement Project - Unit Level (1,000+ employees), Sep 2024
-• Received 30+ awards & 28+ appreciations for automation, innovation, and delivery excellence across enterprise operations
-HACKATHON WINS
-• 1st Place - TCS AI Hackathon 2025: Energy Optimizer for Oil & Gas Pipelines
-• 2nd Place - TCS AI Hackathon 2025: IoT AI Agent for Facility Energy Management
+• UiPath Certified Professional - Automation Developer Professional | UiPath Certified Professional - Automation Developer
+Associate | UiPath Certified Professional - Agentic Automation Associate
+• Microsoft Certified: Power Automate RPA Developer Associate (PL-500) | Microsoft Certified: Azure Administrator Associate
+(AZ‑104) | Microsoft Certified: Azure Developer Associate (AZ‑204)
+• Google Cloud Certified - Associate Cloud Engineer
+HACKATHONS, AWARDS & RECOGNITION
+• TCS AI Hackathon 2025 - 1st Place: Machine Learning pump optimizer for oil & gas pipelines (Python, Scikit-Learn) | 2nd Place:
+Agentic AI IoT energy agent (LangGraph, LangChain, Gemini, OpenAI GPT)
+• 2x TCS Copyright Awards | Runner-up, TCS Engineering Expo | Best Performance Improvement Project 2024 | 4x Star of Month | 2x
+Star of Quarter | 30+ awards
 EDUCATION
-Bachelor of Computer Applications (BCA) - Shri Ramswaroop Memorial University, 2018 - 2021 
+Bachelor of Computer Applications (BCA) - Shri Ramswaroop Memorial University, Lucknow | 2018 - 2021

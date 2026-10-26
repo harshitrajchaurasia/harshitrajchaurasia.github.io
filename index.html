@@ -3,542 +3,335 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Harshit Chaurasia - harshit.sh</title>
-    <meta name="description" content="Harshit Chaurasia - Automation & AI/ML Engineer. 5 years at TCS building RPA platforms, ML systems, and privacy tools. Detail-oriented, data-driven, occasionally zer0CO0L.">
-    <meta property="og:title" content="Harshit Chaurasia - harshit.sh">
-    <meta property="og:description" content="AI & Automation Engineer. ML systems, RPA platforms, and privacy-first tools at enterprise scale.">
+    <title>Harshit Chaurasia - RPA & ML Engineer</title>
+    <meta name="description" content="Harshit Chaurasia, Senior RPA Developer and ML Engineer at TCS. UiPath automation, machine learning, GenAI agents and Google Cloud, with every skill linked to the project that used it.">
+    <link rel="canonical" href="https://harshit.saakura.dev/">
+    <meta property="og:title" content="Harshit Chaurasia - RPA & ML Engineer">
+    <meta property="og:description" content="Automation and machine learning that runs in production: UiPath bots, ticket classifiers, forecasting models and AI agents.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://harshitrajchaurasia.github.io">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230b0e16'/%3E%3Ctext x='14' y='66' font-family='monospace' font-size='44' font-weight='800' fill='%235eead4'%3E%26gt;_%3C/text%3E%3C/svg%3E">
+    <meta property="og:url" content="https://harshit.saakura.dev/">
     <meta property="og:image" content="https://harshitrajchaurasia.github.io/image.jpg">
-    <meta name="twitter:title" content="Harshit Chaurasia - harshit.sh">
-    <meta name="twitter:description" content="AI & Automation Engineer. ML systems, RPA platforms, and privacy-first tools at enterprise scale.">
-    <meta name="twitter:image" content="https://harshitrajchaurasia.github.io/image.jpg">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="theme-color" content="#0b0e16">
+    <meta name="theme-color" content="#fafafd">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%2316163a'/%3E%3Crect x='14' y='70' width='10' height='14' fill='%23c2410c'/%3E%3Crect x='24' y='70' width='10' height='14' fill='%237c3aed'/%3E%3Crect x='34' y='70' width='10' height='14' fill='%23be185d'/%3E%3Crect x='44' y='70' width='10' height='14' fill='%232563eb'/%3E%3Crect x='54' y='70' width='10' height='14' fill='%230f766e'/%3E%3Crect x='64' y='70' width='10' height='14' fill='%23a16207'/%3E%3Crect x='74' y='70' width='12' height='14' fill='%234d7c0f'/%3E%3Ctext x='50' y='58' text-anchor='middle' font-family='sans-serif' font-size='44' font-weight='800' fill='%23fff'%3EHC%3C/text%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="image" href="image-opt.jpg" fetchpriority="high">
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Harshit Chaurasia",
-      "url": "https://harshitrajchaurasia.github.io",
-      "jobTitle": "Senior RPA Developer & AI/ML Engineer",
+      "url": "https://harshit.saakura.dev/",
+      "jobTitle": "Senior RPA Developer & ML Engineer",
       "worksFor": { "@type": "Organization", "name": "Tata Consultancy Services" },
-      "knowsAbout": ["Machine Learning", "BERT", "NLP", "RPA", "UiPath", "Python", "GCP", "Azure", "PII Redaction", "Data Privacy"],
-      "sameAs": ["https://github.com/harshitrajchaurasia", "https://www.linkedin.com/in/harshit-raj-chaurasia", "https://steamcommunity.com/id/erosiousharsh2"],
+      "knowsAbout": ["UiPath", "RPA", "Machine Learning", "NLP", "BERT", "Agentic AI", "LangGraph", "RAG", "Google Cloud", "BigQuery", "Python", "Power Automate"],
+      "sameAs": ["https://github.com/harshitrajchaurasia", "https://www.linkedin.com/in/harshit-raj-chaurasia"],
       "alumniOf": { "@type": "CollegeOrUniversity", "name": "Shri Ramswaroop Memorial University" }
     }
     </script>
     <script>
-      (function(){
-        var d=document.documentElement;
+      (function () {
+        var d = document.documentElement;
         d.classList.add('js');
-        var t=localStorage.getItem('theme');
-        if(!t)t=window.matchMedia('(prefers-color-scheme:light)').matches?'light':'dark';
-        d.setAttribute('data-theme',t);
-        // first-visit boot loader: flag before paint, with a failsafe unlock
-        try{
-          var seen=sessionStorage.getItem('booted');
-          var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-          if(!seen&&!reduce){
-            d.classList.add('booting');
-            setTimeout(function(){d.classList.remove('booting');},4500);
-          }
-        }catch(e){}
+        var t = null;
+        try { t = localStorage.getItem('theme-v2'); } catch (e) {}
+        if (!t) t = 'light';
+        d.setAttribute('data-theme', t);
       })();
     </script>
 </head>
 <body>
-    <a href="#whoami" class="skip-link">Skip to main content</a>
+    <a href="#work" class="skip-link">Skip to projects</a>
 
-    <!-- ============ BOOT LOADER (first visit only) ============ -->
-    <div class="boot-loader" id="bootLoader" aria-hidden="true">
-        <div class="bl-inner">
-            <pre class="bl-log" id="bootLog"></pre>
-            <div class="bl-bar" aria-hidden="true"><i id="bootBar"></i></div>
-            <p class="bl-skip">press any key to skip</p>
-        </div>
-    </div>
-
-    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
-    <div class="bg-grid" aria-hidden="true"></div>
-    <div class="bg-glow" aria-hidden="true"></div>
-    <div class="grain" aria-hidden="true"></div>
-
-    <!-- ============ TOP BAR ============ -->
-    <header class="topbar" id="topbar">
-        <div class="topbar-inner">
-            <a href="#top" class="brand" aria-label="Home">
-                <span class="brand-dot"></span>
-                <span class="brand-text">harshit<span class="brand-ext">.sh</span></span>
-            </a>
+    <header class="topbar">
+        <div class="wrap topbar-inner">
+            <a href="#top" class="brand">Harshit Chaurasia</a>
             <nav class="topnav" aria-label="Primary">
-                <a href="#projects"><span class="topnav-slash">/</span>projects</a>
-                <a href="#journey"><span class="topnav-slash">/</span>journey</a>
-                <a href="#off-the-clock"><span class="topnav-slash">/</span>off-the-clock</a>
-                <a href="#contact"><span class="topnav-slash">/</span>contact</a>
+                <a href="#work">Work</a>
+                <a href="#experience">Experience</a>
+                <a href="#contact">Contact</a>
             </nav>
-            <div class="topbar-actions">
-                <button class="cmdk-trigger" id="cmdkTrigger" type="button" aria-label="Open command palette">
-                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
-                    <span class="cmdk-label">Jump to...</span>
-                    <kbd class="cmdk-kbd"><span class="cmdk-mod">⌘</span>K</kbd>
-                </button>
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" type="button">
-                    <svg class="theme-icon icon-sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-                    <svg class="theme-icon icon-moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
-                </button>
-                <a href="Harshit_Chaurasia_Resume.pdf" download class="btn-resume"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg><span class="resume-long">resume</span><span class="resume-ext">.pdf</span></a>
-            </div>
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch between light and dark theme">
+                <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+                <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg>
+            </button>
+            <a href="Harshit_Chaurasia_Resume.pdf" class="btn btn-solid btn-small" download>Resume</a>
         </div>
     </header>
 
     <main id="top">
 
-        <!-- ============ HERO / BOOT TERMINAL ============ -->
-        <section class="hero" id="hero">
-            <div class="container hero-grid">
-                <div class="hero-left">
-                    <div class="terminal" id="bootTerminal" aria-label="Terminal introduction">
-                        <div class="terminal-bar">
-                            <span class="tdot tdot-r"></span><span class="tdot tdot-y"></span><span class="tdot tdot-g"></span>
-                            <span class="terminal-path">harshit@portfolio: ~</span>
-                        </div>
-                        <div class="terminal-body" id="terminalBody">
-                            <!-- typed lines injected by JS; static fallback below -->
-                            <div class="term-line"><span class="term-prompt">harshit@portfolio</span><span class="term-sep">:</span><span class="term-dir">~</span><span class="term-dollar">$</span> <span class="term-cmd">whoami</span></div>
-                            <div class="term-out">Harshit Chaurasia - Automation &amp; AI/ML Engineer</div>
-                            <div class="term-line"><span class="term-prompt">harshit@portfolio</span><span class="term-sep">:</span><span class="term-dir">~</span><span class="term-dollar">$</span> <span class="term-cmd">cat mission.txt</span></div>
-                            <div class="term-out">I build automation and ML systems that move at enterprise scale,<br>plus privacy-first tools so your data stays yours.</div>
-                            <div class="term-line"><span class="term-prompt">harshit@portfolio</span><span class="term-sep">:</span><span class="term-dir">~</span><span class="term-dollar">$</span> <span class="term-cmd">./explore --start</span><span class="term-caret" aria-hidden="true">▋</span></div>
-                        </div>
-                    </div>
+        <!-- ============ HERO ============ -->
+        <section class="hero">
+            <div class="wrap hero-grid">
+                <div class="hero-text">
+                    <h1 class="hero-name">Harshit Chaurasia</h1>
+                    <p class="hero-role">Senior RPA Developer &amp; ML Engineer at Tata Consultancy Services</p>
 
-                    <h1 class="hero-name">Harshit Chaurasia<span class="hero-name-cursor" aria-hidden="true">_</span></h1>
-                    <p class="hero-roles">
-                        <span class="role-chip" style="--c:var(--green)">Automation / RPA</span>
-                        <span class="role-chip" style="--c:var(--cyan)">AI / ML</span>
-                        <span class="role-chip" style="--c:var(--violet)">Cloud</span>
-                        <span class="role-chip" style="--c:var(--pink)">Privacy</span>
-                    </p>
-                    <p class="hero-blurb">Detail-oriented and analytical: I value accuracy, efficiency, and data-driven decisions. 5 years at TCS building RPA platforms and ML systems that turn messy enterprise work into something that just runs.</p>
+                    <!-- one segment per skill area; clicking jumps to the matching projects -->
+                    <ul class="spectrum" aria-label="Skill areas">
+                        <li><a href="#work" data-jump-cat="rpa" style="--c:var(--rpa)"><span>RPA</span></a></li>
+                        <li><a href="#work" data-jump-cat="ml" style="--c:var(--ml)"><span>ML</span></a></li>
+                        <li><a href="#work" data-jump-cat="genai" style="--c:var(--genai)"><span>GenAI</span></a></li>
+                        <li><a href="#work" data-jump-cat="cloud" style="--c:var(--cloud)"><span>Cloud</span></a></li>
+                        <li><a href="#work" data-jump-cat="dev" style="--c:var(--dev)"><span>Code</span></a></li>
+                        <li><a href="#work" data-jump-cat="ent" style="--c:var(--ent)"><span>Enterprise</span></a></li>
+                        <li><a href="#work" data-jump-cat="prac" style="--c:var(--prac)"><span>Practice</span></a></li>
+                    </ul>
+
+                    <p class="hero-pitch">I've spent five years at TCS automating IT operations. It started with UiPath bots. When rules stopped being enough, I moved on to machine learning: a ticket classifier that now handles 160K+ tickets a month, network cost forecasting, and lately AI agents.</p>
+                    <p class="hero-pitch">Two of those systems are copyrighted by TCS, and my two entries took 1st and 2nd place at the TCS AI Hackathon 2025.</p>
 
                     <div class="hero-ctas">
-                        <a href="#projects" class="btn btn-primary"><span>see what I built</span><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
-                        <a href="#contact" class="btn btn-ghost">get in touch</a>
+                        <a href="#work" class="btn btn-solid">See the work</a>
+                        <a href="mailto:harshit1chaurasia@outlook.com" class="btn btn-line">Email me</a>
                     </div>
                 </div>
 
-                <aside class="hero-right">
-                    <div class="id-card">
-                        <div class="id-card-glow" aria-hidden="true"></div>
-                        <div class="id-photo">
-                            <img src="image-opt.jpg" alt="Harshit Chaurasia" width="520" height="457" loading="eager" decoding="async" fetchpriority="high">
-                            <span class="id-scan" aria-hidden="true"></span>
-                        </div>
-                        <div class="id-meta">
-                            <span class="id-status"><span class="id-status-dot"></span>online · building things</span>
-                            <div class="id-rows">
-                                <span class="id-key">loc</span><span class="id-val">Lucknow, India</span>
-                                <span class="id-key">org</span><span class="id-val">Tata Consultancy Services</span>
-                                <span class="id-key">focus</span><span class="id-val">ML · RPA · Cloud · Privacy</span>
-                                <span class="id-key">alias</span><span class="id-val id-alias" id="aliasReveal" title="some things you have to earn...">[ classified ]</span>
-                            </div>
-                        </div>
-                    </div>
-                </aside>
-            </div>
-
-            <div class="metrics" data-anim>
-                <div class="metric" data-target="5" data-suffix="+"><span class="metric-value">0</span><span class="metric-suffix">+</span><span class="metric-label">years @ Tata Consultancy</span></div>
-                <div class="metric" data-target="7" data-suffix=""><span class="metric-value">0</span><span class="metric-suffix"></span><span class="metric-label">cloud &amp; automation certs</span></div>
-                <div class="metric" data-target="2" data-suffix="×"><span class="metric-value">0</span><span class="metric-suffix">×</span><span class="metric-label">TCS AI Hackathon wins · 2025</span></div>
-                <div class="metric"><span class="metric-value">©2</span><span class="metric-suffix"></span><span class="metric-label">TCS-granted copyrights</span></div>
-            </div>
-
-            <!-- live GitHub activity (populated from github-stats.json by a nightly Action) -->
-            <div class="gh-stats" id="ghStats" hidden>
-                <div class="gh-head">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                    <span class="gh-user">github.com/harshitrajchaurasia</span>
-                    <span class="gh-live">live</span>
-                </div>
-                <div class="gh-grid">
-                    <div class="gh-stat"><span class="gh-num" data-gh="contributions">--</span><span class="gh-lbl">contributions · past year</span></div>
-                    <div class="gh-stat"><span class="gh-num" data-gh="streak">--</span><span class="gh-lbl">day commit streak</span></div>
-                    <div class="gh-stat"><span class="gh-num" data-gh="repos">--</span><span class="gh-lbl">public repos</span></div>
-                    <div class="gh-stat"><span class="gh-num" data-gh="since">--</span><span class="gh-lbl">on GitHub since</span></div>
+                <div class="hero-photo">
+                    <div class="ring" aria-hidden="true"></div>
+                    <img src="image-opt.jpg" alt="Portrait of Harshit Chaurasia" width="520" height="457" fetchpriority="high">
                 </div>
             </div>
         </section>
 
-        <!-- ============ WHOAMI ============ -->
-        <section class="section" id="whoami" style="--sec:var(--cyan)">
-            <div class="container">
+        <!-- ============ WORK: skills <-> projects ============ -->
+        <section class="section" id="work">
+            <div class="wrap">
                 <div class="sec-head">
-                    <span class="sec-num">01</span>
-                    <h2 class="sec-title">whoami</h2>
-                    <span class="sec-rule" aria-hidden="true"></span>
-                </div>
-                <div class="whoami-grid">
-                    <p class="whoami-lead">I'm an engineer who likes the hard, unglamorous middle of a problem: the data that doesn't fit, the workflow nobody wants to own, the edge case that breaks everything at 2&nbsp;AM.</p>
-                    <div class="whoami-body">
-                        <p>I build enterprise RPA, cloud, and ML systems, and I kept noticing the same manual work being done by hand. So I automated it - then taught myself ML to solve the problems automation alone couldn't.</p>
-                        <p>Today I ship BERT classifiers, forecasting models, automation bots, and privacy tooling at enterprise scale - and I care just as much about <em>why</em> a number moved as the number itself.</p>
-                        <ul class="whoami-facts">
-                            <li><span>$</span> 5 yrs @ Tata Consultancy Services</li>
-                            <li><span>$</span> 2x TCS Copyright holder (2024 &amp; 2025)</li>
-                            <li><span>$</span> 1st &amp; 2nd place, TCS AI Hackathon 2025</li>
-                            <li><span>$</span> 30+ awards · 28+ appreciations</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ============ PROJECTS ============ -->
-        <section class="section" id="projects" style="--sec:var(--green)">
-            <div class="container">
-                <div class="sec-head">
-                    <span class="sec-num">02</span>
-                    <h2 class="sec-title">projects</h2>
-                    <span class="sec-rule" aria-hidden="true"></span>
-                    <span class="sec-aside">things I actually shipped</span>
+                    <h2>Work</h2>
+                    <p class="sec-sub">Every skill below was used in at least one of these projects. Pick a skill to see where, or point at a project to see what it was built with.</p>
                 </div>
 
-                <!-- PII Shield: hero project, interactive -->
-                <article class="proj proj-feature" id="pii">
-                    <div class="proj-feature-head">
-                        <div>
-                            <span class="proj-kicker">// open source · privacy</span>
-                            <h3 class="proj-title">PII&nbsp;Shield</h3>
-                            <p class="proj-desc">Strips personal information out of text <em>before</em> it ever reaches an LLM. Detects 35+ PII types - Aadhaar, PAN, bank accounts, emails, phones - with spaCy NER + regex. Nothing is stored. Ever.</p>
-                            <p class="proj-why">// built it because pasting customer data into an LLM is a breach waiting to happen.</p>
+                <div class="work-grid">
+                    <!-- built by script.js from the tags on each project, so a skill can only appear if a project uses it -->
+                    <aside class="skills-panel" id="skillsPanel" aria-label="Skills">
+                        <div class="skills-status" id="skillsStatus" aria-live="polite">
+                            <span id="skillsStatusText">Pick a skill to see where I used it</span>
+                            <button type="button" class="clear-btn" id="clearFilter" hidden>Show all</button>
                         </div>
-                        <div class="proj-links">
-                            <a href="https://pii-shield-49982461185.us-central1.run.app" target="_blank" rel="noopener" class="btn btn-sm btn-primary">live demo <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
-                            <a href="https://github.com/harshitrajchaurasia/pii-shield" target="_blank" rel="noopener" class="btn btn-sm btn-ghost"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg> source</a>
-                        </div>
-                    </div>
-
-                    <div class="demo" id="piiDemo">
-                        <div class="demo-pane">
-                            <span class="demo-tag demo-tag-in"><span class="demo-tag-dot"></span>raw input</span>
-                            <textarea class="demo-input" id="piiInput" rows="4" placeholder="Paste something with personal info...&#10;e.g. Hi, I'm Rahul Sharma, Aadhaar 2341 5678 9012, rahul@gmail.com, +91 98765 43210"></textarea>
-                            <button class="demo-run" id="piiRedactBtn" type="button">
-                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                                <span>shield it</span>
-                                <kbd>⌘↵</kbd>
-                            </button>
-                        </div>
-                        <div class="demo-pane">
-                            <span class="demo-tag demo-tag-out"><span class="demo-tag-dot"></span>shielded output</span>
-                            <div class="demo-output" id="piiOutput"><p class="demo-placeholder">→ redacted text appears here, safe to paste anywhere.</p></div>
-                            <div class="demo-stats" id="piiStats"></div>
-                        </div>
-                    </div>
-                    <div class="proj-tech"><span>Python</span><span>FastAPI</span><span>spaCy&nbsp;NER</span><span>Regex</span><span>GCP&nbsp;Cloud&nbsp;Run</span><span>Docker</span></div>
-                </article>
-
-                <!-- two-up feature row -->
-                <div class="proj-duo">
-                    <article class="proj proj-card" style="--sec:var(--violet)">
-                        <span class="proj-badge">© Copyright 2024 · ML</span>
-                        <h3 class="proj-title">Smart Ticket Classifier</h3>
-                        <div class="case">
-                            <div class="case-row"><span class="case-k">problem</span><span class="case-v">160K+ tickets and change requests a month were triaged and routed by hand - slow, inconsistent, and a constant drain on senior engineers.</span></div>
-                            <div class="case-row"><span class="case-k">approach</span><span class="case-v">A BERT <strong>bi-encoder</strong> retrieves candidate queues, a <strong>cross-encoder</strong> re-ranks them - tuned for precision over recall so a misroute stays rarer than a near-miss.</span></div>
-                            <div class="case-row"><span class="case-k">result</span><span class="case-v"><strong>97%</strong> accuracy, <strong>85%</strong> faster resolution, catalog selection fully automated - granted a TCS copyright.</span></div>
-                        </div>
-                        <div class="route-viz" aria-hidden="true">
-                            <div class="rv-in">"VPN keeps dropping after the Win11 client update."</div>
-                            <div class="rv-flow"><span>bi-encoder</span><span class="rv-arrow">→</span><span>re-rank</span></div>
-                            <div class="rv-out"><span class="rv-route">Network > VPN > Tier&nbsp;2</span><span class="rv-conf"><i style="--w:97%"></i></span><span class="rv-meta">97% · 0.4s</span></div>
-                        </div>
-                        <div class="proj-tech"><span>BERT</span><span>Bi-Encoder</span><span>Cross-Encoder</span><span>Python</span></div>
-                        <span class="proj-repo"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Copyright 2024 · TCS - copyright-protected</span>
-                    </article>
-
-                    <article class="proj proj-card" style="--sec:var(--amber)">
-                        <span class="proj-badge">© Copyright 2025</span>
-                        <h3 class="proj-title">Enterprise RPA 1.0 Platform</h3>
-                        <div class="case">
-                            <div class="case-row"><span class="case-k">problem</span><span class="case-v">Core IT-ops workflows - O365 licensing, ITSM automation, and testing - were slow, manual, and error-prone.</span></div>
-                            <div class="case-row"><span class="case-k">approach</span><span class="case-v">Architected an end-to-end UiPath platform (<strong>REFramework + Orchestrator</strong>): production bots with monitoring and self-recovery.</span></div>
-                            <div class="case-row"><span class="case-k">result</span><span class="case-v"><strong>1,000+ hrs/month</strong> saved, <strong>95%</strong> less manual effort, <strong>92%</strong> bot success rate - TCS granted it copyright.</span></div>
-                        </div>
-                        <p class="proj-why">// favorite ship - the compliance bot alone freed up an entire team's Friday.</p>
-                        <div class="bot-grid" aria-hidden="true">
-                            <span><i></i>Deployment</span><span><i></i>O365 Licensing</span>
-                            <span><i></i>Compliance</span><span><i></i>Patch Validate</span>
-                            <span><i></i>Asset Recon</span><span><i></i>Ticket Triage</span>
-                        </div>
-                        <div class="proj-tech"><span>UiPath</span><span>Power&nbsp;Automate</span><span>Python</span><span>SQL</span></div>
-                        <span class="proj-repo"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Proprietary · TCS - copyright-protected</span>
-                    </article>
-                </div>
-
-                <!-- compact grid -->
-                <h4 class="proj-more-label"><span>$</span> ls ./more-projects</h4>
-                <div class="proj-mini-grid">
-                    <article class="proj-mini">
-                        <span class="mini-tag">TCS</span>
-                        <h4>Network Bandwidth Eagle Eye</h4>
-                        <p>Time-series forecasting that flagged overpaid network links. Saved ₹60L in FY24, ₹2Cr+ projected by FY26.</p>
-                    </article>
-                    <article class="proj-mini">
-                        <span class="mini-tag">TCS</span>
-                        <h4>Ticket Routing Automation</h4>
-                        <p>Python, Selenium &amp; SQL framework routing 5000+ daily tickets to roster-based teams - cut manual queue monitoring for 200+ engineers.</p>
-                    </article>
-                    <article class="proj-mini">
-                        <span class="mini-tag">TCS</span>
-                        <h4>5TB Cloud Migration</h4>
-                        <p>Phased on-prem to GCP move (BigQuery, Dataflow, Dataproc) of 5TB+ workloads - no major production disruption, lower infra cost.</p>
-                    </article>
-                    <article class="proj-mini">
-                        <span class="mini-tag">TCS</span>
-                        <h4>Procurement &amp; Inventory aaS</h4>
-                        <p>AI document extraction with Google Cloud Gemini - turns unstructured PDFs into normalized inventory records for compliance reporting.</p>
-                    </article>
-                    <article class="proj-mini">
-                        <span class="mini-tag">TCS</span>
-                        <h4>Smart Security Compliance</h4>
-                        <p>Automated endpoint compliance - detects policy violations, triggers governance workflows, and cuts security audit findings.</p>
-                    </article>
-                    <article class="proj-mini">
-                        <span class="mini-tag">TCS</span>
-                        <h4>O365 License Automation</h4>
-                        <p>Provisions and revokes Office 365 licenses automatically - better utilization, governance, and far less manual effort.</p>
-                    </article>
-                    <article class="proj-mini">
-                        <span class="mini-tag">Hackathon</span>
-                        <h4>TCS AI Hackathon 2025</h4>
-                        <p>🥇 Energy optimizer for oil &amp; gas pipelines. 🥈 GenAI agent on real-time IoT sensor data.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- ============ JOURNEY ============ -->
-        <section class="section" id="journey" style="--sec:var(--violet)">
-            <div class="container">
-                <div class="sec-head">
-                    <span class="sec-num">03</span>
-                    <h2 class="sec-title">journey</h2>
-                    <span class="sec-rule" aria-hidden="true"></span>
-                    <span class="sec-aside">git log --reverse</span>
-                </div>
-                <p class="journey-intro">Ops → automation → ML. Each step solved a problem the last one couldn't.</p>
-
-                <div class="timeline">
-                    <div class="tl-node">
-                        <span class="tl-dot"></span>
-                        <div class="tl-head">
-                            <h3 class="tl-role">Senior RPA Developer &amp; AI/ML Engineer</h3>
-                            <span class="tl-meta">TCS · 2021 - Present</span>
-                        </div>
-                        <ul class="tl-points">
-                            <li><strong>Foundation:</strong> 5 years building enterprise-grade RPA, cloud, and ML-driven solutions across TCS operations</li>
-                            <li><strong>Enterprise RPA 1.0 Platform (Copyright 2025):</strong> architected an end-to-end UiPath platform (REFramework + Orchestrator) - 92% bot success, 95% less manual effort, 1,000+ hrs/month saved</li>
-                            <li><strong>Smart Ticket Classifier (Copyright 2024):</strong> BERT bi-encoder + cross-encoder over 160K+ monthly transactions at 97% accuracy, 85% faster resolution</li>
-                            <li><strong>Automation at scale:</strong> Python, Selenium &amp; SQL framework routing 5000+ daily tickets for 200+ engineers; AI document extraction with Gemini APIs</li>
-                            <li><strong>Forecasting &amp; cloud:</strong> time-series network optimization (₹60L saved, FY24) and a phased 5TB+ GCP migration</li>
-                            <li><strong>Agentic AI:</strong> POC on UiPath AI Center for self-healing ticket resolution</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="awards">
-                    <h4 class="awards-label"><span>★</span> awards &amp; recognition</h4>
-                    <ul class="awards-list">
-                        <li><strong>Copyright Award 2025</strong> - Enterprise RPA 1.0 Platform (IP recognition by TCS)</li>
-                        <li><strong>Copyright Award 2024</strong> - Smart Ticket Classifier (IP recognition by TCS)</li>
-                        <li><strong>1st Place</strong> - TCS AI Hackathon 2025, Energy Optimizer for Oil &amp; Gas Pipelines</li>
-                        <li><strong>2nd Place</strong> - TCS AI Hackathon 2025, IoT AI Agent for Facility Energy Management</li>
-                        <li><strong>Best Performance Improvement Project</strong> - Unit level (1,000+ employees), Sep 2024</li>
-                        <li>30+ awards &amp; 28+ appreciations for technical excellence across 5 years</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- ============ SKILLS ============ -->
-        <section class="section" id="skills" style="--sec:var(--amber)">
-            <div class="container">
-                <div class="sec-head">
-                    <span class="sec-num">04</span>
-                    <h2 class="sec-title">stack</h2>
-                    <span class="sec-rule" aria-hidden="true"></span>
-                </div>
-                <div class="stack-grid">
-                    <div class="stack-group">
-                        <h4 class="stack-label">Automation / RPA</h4>
-                        <div class="chips"><span>UiPath&nbsp;Studio</span><span>REFramework</span><span>Orchestrator</span><span>AI&nbsp;Center</span><span>Power&nbsp;Automate</span><span>Selenium</span></div>
-                    </div>
-                    <div class="stack-group">
-                        <h4 class="stack-label">AI / ML</h4>
-                        <div class="chips"><span>BERT</span><span>Scikit-Learn</span><span>NLP</span><span>LLMs</span><span>GenAI</span><span>RAG</span><span>Agentic&nbsp;AI</span><span>Vector&nbsp;DBs</span><span>Vertex&nbsp;AI</span><span>Time&nbsp;Series</span></div>
-                    </div>
-                    <div class="stack-group">
-                        <h4 class="stack-label">Cloud &amp; Data</h4>
-                        <div class="chips"><span>GCP</span><span>BigQuery</span><span>Dataflow</span><span>Dataproc</span><span>Azure</span><span>SQL</span><span>PySpark</span><span>ETL</span></div>
-                    </div>
-                    <div class="stack-group">
-                        <h4 class="stack-label">Orchestration</h4>
-                        <div class="chips"><span>Rundeck</span><span>Cloud&nbsp;Composer</span><span>UiPath&nbsp;Orchestrator</span></div>
-                    </div>
-                    <div class="stack-group">
-                        <h4 class="stack-label">Languages &amp; DevOps</h4>
-                        <div class="chips"><span>Python</span><span>PowerShell</span><span>Docker</span><span>Linux</span><span>Git</span><span>GitHub</span><span>GitLab</span><span>CI/CD</span></div>
-                    </div>
-                    <div class="stack-group">
-                        <h4 class="stack-label">Enterprise &amp; Integration</h4>
-                        <div class="chips"><span>REST&nbsp;APIs</span><span>Active&nbsp;Directory</span><span>SharePoint</span><span>Outlook</span></div>
-                    </div>
-                </div>
-                <div class="certs">
-                    <h4 class="stack-label">Certifications</h4>
-                    <div class="certs-list">
-                        <span class="cert"><img src="assets/certs/uipath.svg" alt="" width="14" height="14"> UiPath Automation Developer Associate</span>
-                        <span class="cert"><img src="assets/certs/uipath.svg" alt="" width="14" height="14"> UiPath Automation Developer Professional</span>
-                        <span class="cert"><img src="assets/certs/uipath.svg" alt="" width="14" height="14"> UiPath Agentic Automation Associate</span>
-                        <span class="cert"><img src="assets/certs/powerautomate.svg" alt="" width="14" height="14"> Power Automate RPA Developer Associate</span>
-                        <span class="cert"><img src="assets/certs/azure.svg" alt="" width="14" height="14"> Azure Administrator (AZ-104)</span>
-                        <span class="cert"><img src="assets/certs/azure.svg" alt="" width="14" height="14"> Azure Developer (AZ-204)</span>
-                        <span class="cert"><img src="assets/certs/googlecloud.svg" alt="" width="14" height="14"> GCP Associate Cloud Engineer</span>
-                    </div>
-                    <p class="edu"><span class="edu-key">edu</span> Bachelor of Computer Applications (BCA) - Shri Ramswaroop Memorial University, 2018 - 2021</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- ============ PASSIONS ============ -->
-        <section class="section" id="passions" style="--sec:var(--pink)">
-            <div class="container">
-                <div class="sec-head">
-                    <span class="sec-num">05</span>
-                    <h2 class="sec-title">what I geek out on</h2>
-                    <span class="sec-rule" aria-hidden="true"></span>
-                </div>
-                <div class="passion-grid">
-                    <article class="passion-card">
-                        <span class="passion-ico">🛡️</span>
-                        <h3>Privacy by default</h3>
-                        <p>I keep a deliberately tiny social footprint and build tools (like PII&nbsp;Shield) that put people back in control of their data. Privacy isn't a feature - it's the default.</p>
-                    </article>
-                    <article class="passion-card">
-                        <span class="passion-ico">⚡</span>
-                        <h3>Performance &amp; precision</h3>
-                        <p>I obsess over the difference between "it works" and "it's right." Latency, accuracy, the why behind a moved metric - that's the fun part.</p>
-                    </article>
-                    <article class="passion-card">
-                        <span class="passion-ico">🧩</span>
-                        <h3>Practical problem-solving</h3>
-                        <p>Give me the unowned, ugly workflow and a deadline. I like decomposing chaos into systems that quietly run themselves.</p>
-                    </article>
-                    <article class="passion-card">
-                        <span class="passion-ico">🤖</span>
-                        <h3>Where AI meets ops</h3>
-                        <p>Agentic AI, self-healing pipelines, RAG - I'm drawn to the seam where ML stops being a demo and starts doing real operational work.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- ============ OFF THE CLOCK ============ -->
-        <section class="section" id="off-the-clock" style="--sec:var(--cyan)">
-            <div class="container">
-                <div class="sec-head">
-                    <span class="sec-num">06</span>
-                    <h2 class="sec-title">off-the-clock</h2>
-                    <span class="sec-rule" aria-hidden="true"></span>
-                    <span class="sec-aside">AFK status: gaming</span>
-                </div>
-                <div class="otc-grid">
-                    <div class="otc-games">
-                        <div class="otc-head">
-                            <span class="otc-title">// now playing &amp; all-time favorites</span>
-                            <a href="https://steamcommunity.com/id/erosiousharsh2" target="_blank" rel="noopener" class="steam-link"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M11.98 0C5.82 0 .77 4.71.06 10.71l6.44 2.66a3.39 3.39 0 0 1 1.92-.59l2.86-4.15v-.06a4.52 4.52 0 1 1 4.52 4.52h-.1l-4.09 2.92c0 .05 0 .1.01.16a3.4 3.4 0 1 1-6.77-.16L.39 14.7A12 12 0 1 0 11.98 0zM7.54 18.21l-1.47-.61a2.56 2.56 0 0 0 3.36 1.32 2.56 2.56 0 0 0-.98-4.92l1.52.63a1.88 1.88 0 1 1-2.43 3.58zm9.97-8.66a3.01 3.01 0 1 0-6.02 0 3.01 3.01 0 0 0 6.02 0zm-5.27 0a2.27 2.27 0 1 1 4.53 0 2.27 2.27 0 0 1-4.53 0z"/></svg>Steam</a>
-                        </div>
-                        <div class="game-list">
-                            <span class="game" style="--g:var(--amber)"><i>FPS</i>Counter-Strike</span>
-                            <span class="game" style="--g:var(--cyan)"><i>FPS</i>Half-Life</span>
-                            <span class="game" style="--g:var(--violet)"><i>RPG</i>The Witcher</span>
-                            <span class="game" style="--g:var(--green)"><i>FPS</i>CoD: Ghosts</span>
-                            <span class="game" style="--g:var(--pink)"><i>Story</i>Detroit: Become Human</span>
-                            <span class="game" style="--g:var(--amber)"><i>Open World</i>GTA</span>
-                        </div>
-                        <p class="otc-note">Tactical shooters for the reflexes, story-driven RPGs for the writing. Same instinct as work: read the system, find the angle, execute clean.</p>
-                    </div>
-                    <aside class="otc-side">
-                        <div class="otc-mini">
-                            <span class="otc-mini-label">// the signal-to-noise rule</span>
-                            <p>You won't find me scattered across ten feeds. LinkedIn, GitHub, Steam, email - that's the whole footprint. Deliberate, not absent.</p>
-                        </div>
-                        <div class="otc-mini">
-                            <span class="otc-mini-label">// playstyle</span>
-                            <p>Tactical patience over rushing - read the map, hold the angle, take the shot once. Turns out that's how I debug, too.</p>
-                        </div>
+                        <div id="skillsGroups"></div>
                     </aside>
+
+                    <div class="work-main">
+                    <div class="projects" id="projects">
+                        <article class="proj" style="--c:var(--ml)" tabindex="0">
+                            <p class="proj-badge">Copyright 2024</p>
+                            <h3>ML ticket classifier</h3>
+                            <p class="proj-result"><strong>160K+</strong> tickets a month classified at 97% accuracy</p>
+                            <p>Reads incoming IT tickets and change requests and picks the right queue. A bi-encoder shortlists candidate categories, a cross-encoder re-ranks them, and the model ships as a container on Cloud Run through a CI/CD pipeline.</p>
+                            <ul class="tags">
+                                <li data-c="ml">Machine Learning</li><li data-c="ml">NLP</li><li data-c="ml">BERT</li><li data-c="ml">Bi-Encoder</li><li data-c="ml">Cross-Encoder</li><li data-c="ml">Embeddings</li><li data-c="ml">Scikit-Learn</li>
+                                <li data-c="dev">Python</li><li data-c="cloud">Cloud Run</li><li data-c="dev">Docker</li><li data-c="dev">Linux</li><li data-c="dev">Git</li><li data-c="dev">GitHub</li><li data-c="dev">GitLab</li><li data-c="dev">CI/CD</li><li data-c="dev">Rundeck</li>
+                            </ul>
+                        </article>
+
+                        <article class="proj" style="--c:var(--rpa)" tabindex="0">
+                            <p class="proj-badge">Copyright 2025</p>
+                            <h3>Enterprise RPA platform</h3>
+                            <p class="proj-result"><strong>40+</strong> production bots at 98% SLA compliance</p>
+                            <p>A UiPath platform for deployment, Office 365 licensing, ITSM and compliance work. Queue-based processing with structured exception handling and automated tests: 92% job success, 95% less manual effort and 1,000+ hours saved every month.</p>
+                            <ul class="tags">
+                                <li data-c="rpa">UiPath Studio</li><li data-c="rpa">REFramework</li><li data-c="rpa">UiPath Orchestrator</li><li data-c="rpa">Queues</li><li data-c="rpa">Exception Handling</li><li data-c="rpa">UiPath Test Suite</li><li data-c="dev">VBA</li>
+                            </ul>
+                        </article>
+
+                        <article class="proj proj-wide" style="--c:var(--ml)" tabindex="0">
+                            <p class="proj-badge">Open source</p>
+                            <h3>PII Shield</h3>
+                            <p class="proj-result"><strong>35+</strong> kinds of personal data removed before text reaches an LLM</p>
+                            <p>Finds names, Aadhaar and PAN numbers, bank accounts, emails and phone numbers with spaCy NER and pattern rules, then masks them. Nothing you paste is stored.</p>
+                            <ul class="tags">
+                                <li data-c="ml">NLP</li><li data-c="ml">spaCy</li><li data-c="dev">Python</li><li data-c="dev">FastAPI</li><li data-c="dev">Docker</li><li data-c="cloud">Cloud Run</li>
+                            </ul>
+                            <div class="proj-links">
+                                <a href="https://github.com/harshitrajchaurasia/pii-shield" target="_blank" rel="noopener">Source on GitHub</a>
+                                <a href="https://pii-shield-49982461185.us-central1.run.app" target="_blank" rel="noopener">Open the full app</a>
+                            </div>
+                            <details class="demo">
+                                <summary>Try it here</summary>
+                                <div class="demo-body">
+                                    <label for="piiInput" class="demo-label">Text with personal details</label>
+                                    <textarea id="piiInput" rows="4">Hi, I'm Rahul Sharma, Aadhaar 2341 5678 9012, rahul.sharma@gmail.com, +91 98765 43210</textarea>
+                                    <button type="button" class="btn btn-solid btn-small" id="piiRedactBtn">Redact</button>
+                                    <p class="demo-label">Redacted text</p>
+                                    <div class="demo-output" id="piiOutput" aria-live="polite">The redacted version shows up here.</div>
+                                    <p class="demo-stats" id="piiStats"></p>
+                                </div>
+                            </details>
+                        </article>
+
+                        <article class="proj" style="--c:var(--ml)" tabindex="0">
+                            <h3>Network cost forecasting</h3>
+                            <p class="proj-result"><strong>INR 60 lakh</strong> (about USD 70K) saved in FY24</p>
+                            <p>Time series models forecast usage on every network link and recommend where to upgrade or downgrade. Projected savings reach INR 2+ crore (about USD 230K) by FY26.</p>
+                            <ul class="tags">
+                                <li data-c="ml">Time Series Forecasting</li><li data-c="ml">BigQuery ML</li><li data-c="ml">Scikit-Learn</li><li data-c="dev">Python</li><li data-c="cloud">BigQuery</li><li data-c="cloud">PySpark</li>
+                            </ul>
+                        </article>
+
+                        <article class="proj" style="--c:var(--ent)" tabindex="0">
+                            <h3>Endpoint compliance engine</h3>
+                            <p class="proj-result">Compliance up from <strong>70% to 95%</strong> across 800K+ devices</p>
+                            <p>A rules engine checks Active Directory data for policy violations. Fixes and notifications were piloted through Power Automate flows.</p>
+                            <ul class="tags">
+                                <li data-c="dev">Python</li><li data-c="cloud">SQL</li><li data-c="ent">Active Directory</li><li data-c="rpa">Power Automate Desktop</li><li data-c="rpa">Cloud Flows</li>
+                            </ul>
+                        </article>
+
+                        <article class="proj" style="--c:var(--genai)" tabindex="0">
+                            <p class="proj-badge">Proof of concept</p>
+                            <h3>Agentic service-desk assistant</h3>
+                            <p class="proj-result">Showed tickets can resolve themselves</p>
+                            <p>An agent that pulls answers out of service-desk databases and uses them to close tickets, orchestrated with UiPath Maestro and grounded with retrieval-augmented generation.</p>
+                            <ul class="tags">
+                                <li data-c="genai">Agentic AI</li><li data-c="genai">RAG</li><li data-c="genai">OpenAI GPT</li><li data-c="rpa">UiPath Maestro</li><li data-c="rpa">UiPath AI Center</li><li data-c="rpa">Document Understanding</li>
+                            </ul>
+                        </article>
+
+                        <article class="proj" style="--c:var(--ml)" tabindex="0">
+                            <p class="proj-badge">TCS AI Hackathon 2025, 1st place</p>
+                            <h3>Pipeline pump optimizer</h3>
+                            <p class="proj-result">Less energy spent moving oil and gas</p>
+                            <p>A machine learning model that recommends pump settings to cut energy use along oil and gas pipelines.</p>
+                            <ul class="tags">
+                                <li data-c="ml">Machine Learning</li><li data-c="ml">Scikit-Learn</li><li data-c="dev">Python</li>
+                            </ul>
+                        </article>
+
+                        <!-- shown on "Show more", or when a selected skill matches them -->
+                        <article class="proj extra" style="--c:var(--genai)" tabindex="0">
+                            <h3>GenAI document extraction</h3>
+                            <p class="proj-result">Messy procurement PDFs turned into clean inventory records</p>
+                            <p>LLM pipelines on Vertex AI read unstructured procurement documents and output normalized inventory data for compliance reporting, connected to enterprise systems over REST APIs.</p>
+                            <ul class="tags">
+                                <li data-c="genai">LLMs</li><li data-c="genai">Gemini</li><li data-c="genai">Vertex AI</li><li data-c="genai">LangChain</li><li data-c="genai">RAG</li><li data-c="genai">Prompt Engineering</li><li data-c="ent">REST APIs</li>
+                            </ul>
+                        </article>
+
+                        <article class="proj extra" style="--c:var(--cloud)" tabindex="0">
+                            <h3>Cloud migration to GCP</h3>
+                            <p class="proj-result"><strong>5TB+</strong> of workloads moved in 6 months</p>
+                            <p>A phased move from on-premises servers to Google Cloud, with infrastructure as code and PySpark ETL pipelines orchestrated by Cloud Composer. No major production disruption.</p>
+                            <ul class="tags">
+                                <li data-c="cloud">GCP</li><li data-c="cloud">BigQuery</li><li data-c="cloud">Dataflow</li><li data-c="cloud">Dataproc</li><li data-c="cloud">Cloud Composer</li><li data-c="cloud">Terraform</li><li data-c="cloud">PySpark</li><li data-c="cloud">ETL Pipelines</li>
+                            </ul>
+                        </article>
+
+                        <article class="proj extra" style="--c:var(--rpa)" tabindex="0">
+                            <h3>Ticket routing automation</h3>
+                            <p class="proj-result"><strong>5,000+</strong> tickets a day assigned automatically</p>
+                            <p>Routes tickets to roster-based support teams, so 200+ engineers no longer watch queues and assign work by hand.</p>
+                            <ul class="tags">
+                                <li data-c="dev">Python</li><li data-c="rpa">Selenium WebDriver</li><li data-c="cloud">SQL</li>
+                            </ul>
+                        </article>
+
+                        <article class="proj extra" style="--c:var(--ent)" tabindex="0">
+                            <h3>Office 365 license automation</h3>
+                            <p class="proj-result">License provisioning and revocation with no manual steps</p>
+                            <p>Provisions and revokes Office 365 licenses automatically across the Microsoft stack, improving license utilization and governance.</p>
+                            <ul class="tags">
+                                <li data-c="ent">Microsoft Graph API</li><li data-c="ent">Office 365</li><li data-c="ent">Active Directory</li><li data-c="ent">SharePoint</li><li data-c="ent">Outlook</li><li data-c="dev">PowerShell</li><li data-c="dev">Python</li><li data-c="rpa">Power Apps</li><li data-c="cloud">Azure</li>
+                            </ul>
+                        </article>
+
+                        <article class="proj extra" style="--c:var(--prac)" tabindex="0">
+                            <h3>RPA practice, started from zero</h3>
+                            <p class="proj-result"><strong>25+</strong> legacy app automations piloted</p>
+                            <p>Mapped processes and proved them out with Python and Selenium pilots, then ran the practice: bot lifecycle and SLA management, and mentoring junior developers through code review in Agile sprints.</p>
+                            <ul class="tags">
+                                <li data-c="prac">Process Analysis</li><li data-c="prac">Bot Lifecycle Management</li><li data-c="prac">SLA Management</li><li data-c="prac">Code Review</li><li data-c="prac">Agile</li><li data-c="dev">Python</li><li data-c="rpa">Selenium WebDriver</li>
+                            </ul>
+                        </article>
+
+                        <article class="proj extra" style="--c:var(--genai)" tabindex="0">
+                            <p class="proj-badge">TCS AI Hackathon 2025, 2nd place</p>
+                            <h3>IoT energy agent</h3>
+                            <p class="proj-result">An AI agent that watches live sensors</p>
+                            <p>Reads real-time IoT sensor data from facilities and recommends where energy can be saved, built as a multi-step agent graph.</p>
+                            <ul class="tags">
+                                <li data-c="genai">Agentic AI</li><li data-c="genai">LangGraph</li><li data-c="genai">LangChain</li><li data-c="genai">Gemini</li><li data-c="genai">OpenAI GPT</li>
+                            </ul>
+                        </article>
+
+                    </div>
+                    <button type="button" class="btn btn-line more-btn" id="moreProjects" aria-expanded="false">Show more projects</button>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- ============ NOW ============ -->
-        <section class="section" id="now" style="--sec:var(--violet)">
-            <div class="container">
+        <!-- ============ EXPERIENCE ============ -->
+        <section class="section" id="experience">
+            <div class="wrap">
                 <div class="sec-head">
-                    <span class="sec-num">07</span>
-                    <h2 class="sec-title">now</h2>
-                    <span class="sec-rule" aria-hidden="true"></span>
-                    <span class="sec-aside">cat ~/.now</span>
+                    <h2>Experience</h2>
                 </div>
-                <div class="now-grid">
-                    <div class="now-item"><span class="now-ico">🔬</span><div><strong>Exploring</strong>Agentic AI patterns for self-healing enterprise workflows</div></div>
-                    <div class="now-item"><span class="now-ico">🛠️</span><div><strong>Building</strong>Open-source tooling for ML pipeline automation</div></div>
-                    <div class="now-item"><span class="now-ico">📚</span><div><strong>Learning</strong>RAG pipelines &amp; knowledge-graph integration</div></div>
+                <div class="exp-grid">
+                    <div class="role">
+                        <p class="role-dates">2021 - present</p>
+                        <h3>Senior RPA Developer &amp; ML Engineer</h3>
+                        <p class="role-org">Tata Consultancy Services</p>
+                        <ul class="role-points">
+                            <li>Started the team's RPA practice and grew it into a platform of 40+ production bots.</li>
+                            <li>Built the ML and GenAI work that grew out of it: classification, forecasting, document extraction and agents.</li>
+                            <li>Lead junior developers on development, framework design and code reviews.</li>
+                        </ul>
+
+                        <h3 class="sub-head">Education</h3>
+                        <p class="edu">Bachelor of Computer Applications, Shri Ramswaroop Memorial University, 2018 - 2021</p>
+                    </div>
+
+                    <div class="recog">
+                        <h3 class="sub-head">Recognition</h3>
+                        <ul class="awards">
+                            <li><strong>2 TCS copyright awards</strong> for the ticket classifier (2024) and the RPA platform (2025)</li>
+                            <li><strong>1st and 2nd place</strong>, TCS AI Hackathon 2025</li>
+                            <li><strong>Runner-up</strong>, TCS Engineering Expo</li>
+                            <li><strong>Best Performance Improvement Project</strong>, 2024</li>
+                            <li><strong>4x Star of the Month, 2x Star of the Quarter</strong>, 30+ awards in total</li>
+                        </ul>
+                    </div>
+
+                    <div class="cert-col">
+                        <h3 class="sub-head">Certifications</h3>
+                        <ul class="certs">
+                            <li style="--c:var(--rpa)"><img src="assets/certs/uipath.svg" alt="" width="18" height="18">UiPath Automation Developer Professional</li>
+                            <li style="--c:var(--rpa)"><img src="assets/certs/uipath.svg" alt="" width="18" height="18">UiPath Automation Developer Associate</li>
+                            <li style="--c:var(--rpa)"><img src="assets/certs/uipath.svg" alt="" width="18" height="18">UiPath Agentic Automation Associate</li>
+                            <li style="--c:var(--cloud)"><img src="assets/certs/powerautomate.svg" alt="" width="18" height="18">Microsoft Power Automate RPA Developer (PL-500)</li>
+                            <li style="--c:var(--cloud)"><img src="assets/certs/azure.svg" alt="" width="18" height="18">Microsoft Azure Administrator (AZ-104)</li>
+                            <li style="--c:var(--cloud)"><img src="assets/certs/azure.svg" alt="" width="18" height="18">Microsoft Azure Developer (AZ-204)</li>
+                            <li style="--c:var(--cloud)"><img src="assets/certs/googlecloud.svg" alt="" width="18" height="18">Google Cloud Associate Cloud Engineer</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- ============ CONTACT ============ -->
-        <section class="section contact" id="contact" style="--sec:var(--green)">
-            <div class="container">
-                <div class="sec-head">
-                    <span class="sec-num">08</span>
-                    <h2 class="sec-title">contact</h2>
-                    <span class="sec-rule" aria-hidden="true"></span>
+        <section class="section contact" id="contact">
+            <div class="wrap">
+                <h2 class="contact-title">Contact</h2>
+                <p class="contact-sub">Email is the quickest way to reach me. LinkedIn works too.</p>
+                <a class="contact-mail" href="mailto:harshit1chaurasia@outlook.com">harshit1chaurasia@outlook.com</a>
+                <div class="contact-links">
+                    <a href="https://www.linkedin.com/in/harshit-raj-chaurasia" target="_blank" rel="noopener" class="btn btn-line">LinkedIn</a>
+                    <a href="https://github.com/harshitrajchaurasia" target="_blank" rel="noopener" class="btn btn-line">GitHub</a>
+                    <a href="Harshit_Chaurasia_Resume.pdf" class="btn btn-line" download>Download resume (PDF)</a>
                 </div>
-                <div class="contact-term">
-                    <div class="contact-term-bar"><span class="tdot tdot-r"></span><span class="tdot tdot-y"></span><span class="tdot tdot-g"></span><span class="terminal-path">connect - bash</span></div>
-                    <div class="contact-term-body">
-                        <p class="ct-line"><span class="term-prompt">you</span><span class="term-dollar">$</span> <span class="term-cmd">echo "hello, harshit"</span></p>
-                        <p class="ct-resp">If something here landed - a hard problem worth chewing on, a team building real things, or just a good conversation about ML and automation - I'd like to hear from you. Email's the fastest line.</p>
-                        <div class="contact-links">
-                            <a href="mailto:harshit1chaurasia@outlook.com" class="c-link c-link-primary">
-                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
-                                harshit1chaurasia@outlook.com
-                            </a>
-                            <a href="https://www.linkedin.com/in/harshit-raj-chaurasia" target="_blank" rel="noopener" class="c-link">
-                                <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                                LinkedIn
-                            </a>
-                            <a href="https://github.com/harshitrajchaurasia" target="_blank" rel="noopener" class="c-link">
-                                <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                                GitHub
-                            </a>
-                            <a href="Harshit_Chaurasia_Resume.pdf" download class="c-link">
-                                <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                                resume.pdf
-                            </a>
-                        </div>
-                        <p class="ct-line ct-blink"><span class="term-prompt">you</span><span class="term-dollar">$</span> <span class="term-caret" aria-hidden="true">▋</span></p>
+
+                <!-- live GitHub activity, filled from github-stats.json (refreshed nightly); hidden until data loads -->
+                <div class="gh-stats" id="ghStats" hidden>
+                    <p class="gh-head">On GitHub</p>
+                    <div class="gh-grid">
+                        <div class="gh-stat"><span class="gh-num" data-gh="contributions">--</span><span class="gh-lbl">contributions in the past year</span></div>
+                        <div class="gh-stat"><span class="gh-num" data-gh="streak">--</span><span class="gh-lbl">day commit streak</span></div>
+                        <div class="gh-stat"><span class="gh-num" data-gh="repos">--</span><span class="gh-lbl">public repositories</span></div>
+                        <div class="gh-stat"><span class="gh-num" data-gh="since">--</span><span class="gh-lbl">on GitHub since</span></div>
                     </div>
                 </div>
             </div>
@@ -546,50 +339,11 @@
     </main>
 
     <footer class="footer">
-        <div class="container footer-inner">
-            <span class="footer-brand">harshit<span class="brand-ext">.sh</span></span>
-            <span class="footer-meta">© <span id="footerYear"></span> Harshit Chaurasia · hand-built with HTML/CSS/JS · <a class="footer-link" href="/links">all links</a></span>
-            <button class="footer-top" id="scrollTop" type="button" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" width="16" height="16"><path d="M18 15l-6-6-6 6"/></svg></button>
+        <div class="wrap footer-inner">
+            <span>&copy; <span id="footerYear">2026</span> Harshit Chaurasia. Hand-built with HTML, CSS and JavaScript.</span>
+            <a href="/links">All links</a>
         </div>
     </footer>
-
-    <!-- ============ COMMAND PALETTE ============ -->
-    <div class="cmdk" id="cmdk" hidden>
-        <div class="cmdk-backdrop" data-cmdk-close></div>
-        <div class="cmdk-panel" role="dialog" aria-modal="true" aria-label="Command palette">
-            <div class="cmdk-input-row">
-                <span class="cmdk-prompt">&gt;</span>
-                <input type="text" class="cmdk-input" id="cmdkInput" placeholder="jump to a section, or type a command..." autocomplete="off" spellcheck="false">
-                <kbd class="cmdk-esc">esc</kbd>
-            </div>
-            <ul class="cmdk-list" id="cmdkList" role="listbox"></ul>
-        </div>
-    </div>
-
-    <!-- ============ EASTER EGG: zer0CO0L ============ -->
-    <div class="egg" id="egg" hidden aria-hidden="true">
-        <div class="egg-scan"></div>
-        <div class="egg-card">
-            <p class="egg-l1">&gt; authenticating second identity...</p>
-            <p class="egg-l2">ACCESS&nbsp;GRANTED</p>
-            <h3 class="egg-handle">✪ zer0CO0L <span class="egg-crown">♛</span></h3>
-            <p class="egg-sub">the engineer logs off. the gamer logs on.</p>
-            <a href="https://steamcommunity.com/id/erosiousharsh2" target="_blank" rel="noopener" class="egg-btn">open Steam profile →</a>
-            <p class="egg-hint-close">press <kbd>esc</kbd> to return to reality</p>
-        </div>
-    </div>
-
-    <!-- scroll-spy rail -->
-    <nav class="rail" id="rail" aria-label="Sections">
-        <a href="#hero" class="rail-dot active" data-label="top"></a>
-        <a href="#whoami" class="rail-dot" data-label="whoami"></a>
-        <a href="#projects" class="rail-dot" data-label="projects"></a>
-        <a href="#journey" class="rail-dot" data-label="journey"></a>
-        <a href="#skills" class="rail-dot" data-label="stack"></a>
-        <a href="#passions" class="rail-dot" data-label="passions"></a>
-        <a href="#off-the-clock" class="rail-dot" data-label="off-the-clock"></a>
-        <a href="#contact" class="rail-dot" data-label="contact"></a>
-    </nav>
 
     <script src="script.js"></script>
 </body>

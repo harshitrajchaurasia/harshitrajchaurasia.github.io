@@ -1,4 +1,4 @@
-# harshit.sh
+# Harshit Chaurasia - portfolio
 
 Personal portfolio for **Harshit Chaurasia** - AI & Automation Engineer. Hand-written vanilla HTML, CSS, and JavaScript. No build step, no framework, no dependencies.
 
@@ -10,10 +10,10 @@ A single-page portfolio built as a static site. Everything is plain HTML/CSS/JS 
 
 Highlights of the build:
 
-- **Per-section accent theming.** Each section sets one CSS variable (`--sec`) and its entire palette - borders, glows, titles, hover states - flows from it.
-- **Light and dark themes** via `data-theme` and CSS custom properties, with the initial theme resolved before first paint to avoid a flash.
-- **Boot-terminal typewriter**, scroll-reveal, metric count-ups, a command palette, and a few details left for the curious to find.
-- **Accessibility as a requirement.** WCAG AA contrast throughout, full keyboard support, and a `prefers-reduced-motion` path that disables every animation.
+- **Skills linked to projects.** Every project card lists its skills; the skills panel is built from those tags, so a skill only appears if a project used it. Pick a skill to highlight its projects, point at a project to light up its skills.
+- **Seven category colours** (RPA, ML, GenAI, Cloud, Code, Enterprise, Practice) shared by the hero bar, the skills panel and the project cards.
+- **Light and dark themes** via `data-theme`, resolved before first paint.
+- **Accessibility:** AA contrast, keyboard support, and a `prefers-reduced-motion` path that turns animation off.
 
 ## Structure
 
@@ -35,6 +35,12 @@ python -m http.server 8731
 ```
 
 After editing CSS or JS, append a cache-buster (for example `index.html?v=2`) when reloading, since the dev server honors caching.
+
+## Check before pushing
+
+```bash
+python .github/scripts/check_site.py   # no internal project names, ASCII-only copy, every project has skills
+```
 
 ## Deploy
 
