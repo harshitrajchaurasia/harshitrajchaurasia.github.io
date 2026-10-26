@@ -34,8 +34,10 @@ jobs:
           if git diff --quiet -- github-stats.json; then
             echo "No change."
           else
-            git config user.name  'github-actions[bot]'
-            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            # an identity tied to no GitHub account: keeps the bot off the contributors list
+            # and off the owner's contribution graph (which the site's stats read)
+            git config user.name  'portfolio-stats'
+            git config user.email 'noreply@harshit.saakura.dev'
             git add github-stats.json
             # no [skip ci]: Cloudflare Pages honours it and would never redeploy the new numbers
             git commit -m 'chore: refresh github-stats.json'
