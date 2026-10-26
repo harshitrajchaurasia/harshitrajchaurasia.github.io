@@ -28,3 +28,6 @@ docs/
 # Python bytecode
 __pycache__/
 *.pyc
+
+# Local backups (kept on disk, never published)
+*.zip
