@@ -45,6 +45,7 @@
       .kind { font-size: .75rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--c); }
       .status { font-size: .74rem; font-weight: 600; color: var(--ink-2); border: 1px solid var(--line); border-radius: 99px; padding: .1rem .6rem; }
       .status.live { color: var(--dev); border-color: var(--dev); }
+      .status.lock { color: var(--ent); border-color: var(--ent); }
       .status.live::before { content: "\25CF  "; font-size: .6rem; vertical-align: .1em; }
       .card h3 { font-size: 1.55rem; font-weight: 800; letter-spacing: -0.03em; }
       .result { margin: -.2rem 0 0; font-weight: 600; }
@@ -79,7 +80,7 @@
     </div>
 
     <h1>Things I&rsquo;ve built.</h1>
-    <p class="lead">Senior RPA Developer &amp; ML Engineer. GenAI apps and ML services I designed and shipped myself, plus the enterprise automation work behind them.</p>
+    <p class="lead">Senior RPA Developer &amp; ML Engineer. GenAI apps and ML services I designed and shipped myself, plus the enterprise automation work behind them. Apps that call paid LLM APIs sit behind a login; email me and I&rsquo;ll send one.</p>
     <div class="bar" aria-hidden="true">
         <i style="--c:var(--rpa)"></i><i style="--c:var(--ml)"></i><i style="--c:var(--genai)"></i><i style="--c:var(--cloud)"></i><i style="--c:var(--dev)"></i><i style="--c:var(--ent)"></i><i style="--c:var(--prac)"></i>
     </div>
@@ -88,12 +89,12 @@
         <h2>Built &amp; shipped <small>4 projects</small></h2>
         <div class="grid">
             <article class="card" style="--c:var(--genai)">
-                <div class="card-top"><span class="kind">GenAI &middot; Agents</span><span class="status live">Live demo</span></div>
+                <div class="card-top"><span class="kind">GenAI &middot; Agents</span><span class="status lock">Login required</span></div>
                 <h3>LeadDesk AI</h3>
                 <p class="result">AI support desk for a lead-generation agency</p>
                 <p>An LLM triages each ticket. Lead-quality disputes are settled by deterministic rules on the lead record, not the model. Every ticket is routed to the right team, a reply is drafted for human approval, and the ticket lands on a Monday.com board. Runs on Grok or Claude, with PII masked before any model call.</p>
                 <ul class="tags"><li>Claude</li><li>Grok</li><li>Python</li><li>FastAPI</li><li>Streamlit</li><li>SQLite</li><li>Monday.com</li></ul>
-                <div class="links"><a href="https://leaddesk.saakura.dev" target="_blank" rel="noopener">Open the demo &rarr;</a></div>
+                <div class="links"><a href="https://leaddesk.saakura.dev" target="_blank" rel="noopener">Open the demo &rarr;</a><a href="mailto:harshit1chaurasia@outlook.com?subject=LeadDesk%20AI%20demo%20login">Ask for a login</a></div>
             </article>
 
             <article class="card" style="--c:var(--cloud)">
@@ -112,18 +113,18 @@
                 <p>Finds names, Aadhaar and PAN numbers, bank accounts, emails and phone numbers with spaCy NER and pattern rules, then masks them. Ships as a Python library and a FastAPI service with file upload and a job queue.</p>
                 <ul class="tags"><li>NLP</li><li>spaCy</li><li>Python</li><li>FastAPI</li><li>Docker</li><li>Cloud Run</li></ul>
                 <div class="links">
-                    <a href="/#piiDemo">Try it &rarr;</a>
+                    <a href="https://pii-shield.saakura.dev" target="_blank" rel="noopener">Open the app &rarr;</a>
                     <a href="https://github.com/harshitrajchaurasia/pii-shield" target="_blank" rel="noopener">Source on GitHub</a>
                 </div>
             </article>
 
             <article class="card" style="--c:var(--dev)">
-                <div class="card-top"><span class="kind">GenAI &middot; RAG</span><span class="status">On request</span></div>
+                <div class="card-top"><span class="kind">GenAI &middot; RAG</span><span class="status lock">Login required</span></div>
                 <h3>QuillShift</h3>
                 <p class="result">Upload documents and chat with them</p>
                 <p>Every session gets its own in-memory FAISS index, so users never see each other&rsquo;s documents. Answers stream back with suggested follow-ups, and it runs on Gemini or OpenAI, so users don&rsquo;t need their own API key.</p>
                 <ul class="tags"><li>LangChain</li><li>FAISS</li><li>Gemini</li><li>OpenAI</li><li>FastAPI</li><li>Cloud Run</li></ul>
-                <div class="links"><a href="mailto:harshit1chaurasia@outlook.com?subject=QuillShift%20demo">Ask for a demo &rarr;</a></div>
+                <div class="links"><a href="https://quillshift.saakura.dev" target="_blank" rel="noopener">Open the app &rarr;</a><a href="mailto:harshit1chaurasia@outlook.com?subject=QuillShift%20demo%20login">Ask for a login</a></div>
             </article>
         </div>
 
