@@ -4,7 +4,7 @@ Run: python .github/scripts/check_site.py"""
 import hashlib, re, sys, pathlib
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
-PAGES = ["index.html", "404.html", "links/index.html", "resume.txt"]
+PAGES = ["index.html", "404.html", "links/index.html", "projects/index.html", "resume.txt"]
 
 # Internal TCS project names, plus the phone number, kept as (length, sha256 prefix of the
 # lowercased text) so this public file doesn't publish what it is guarding against.
