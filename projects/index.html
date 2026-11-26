@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Projects - Harshit Chaurasia</title>
+    <meta name="description" content="Projects by Harshit Chaurasia: an AI support desk, a learning platform, PII redaction for LLMs, document chat, plus enterprise RPA and ML work.">
+    <link rel="canonical" href="https://harshit.saakura.dev/projects">
+    <meta property="og:title" content="Projects - Harshit Chaurasia">
+    <meta property="og:description" content="Things I've built: GenAI apps, ML services, and enterprise automation.">
+    <meta property="og:image" content="https://harshit.saakura.dev/og-card.png">
+    <meta name="theme-color" content="#fafafd">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%2316163a'/%3E%3Ctext x='50' y='64' text-anchor='middle' font-family='sans-serif' font-size='44' font-weight='800' fill='%23fff'%3EHC%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Instrument+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
+    <script>
+      (function () {
+        var t = null;
+        try { t = localStorage.getItem('theme-v2'); } catch (e) {}
+        document.documentElement.setAttribute('data-theme', t || 'light');
+      })();
+    </script>
+    <style>
+      .wrap { max-width: 1080px; margin: 0 auto; padding: clamp(1.5rem, 6vw, 4rem) var(--pad) 4rem; }
+      .top { display: flex; justify-content: space-between; align-items: center; gap: 1rem; }
+      .top a { color: var(--ink-2); text-decoration: none; font-weight: 600; font-size: .92rem; }
+      .top a:hover, .top a:focus-visible { color: var(--ink); }
+      .theme { background: none; border: 1px solid var(--line); color: var(--ink); border-radius: 99px; padding: .35rem .8rem; font: inherit; font-size: .85rem; cursor: pointer; }
+      h1 { font-size: clamp(2.4rem, 7vw, 4rem); font-weight: 800; letter-spacing: -0.045em; margin-top: 2.2rem; }
+      .lead { color: var(--ink-2); max-width: 40rem; margin: .8rem 0 0; font-size: 1.08rem; }
+      .bar { display: flex; gap: 4px; margin: 1.8rem 0 2.6rem; max-width: 420px; }
+      .bar i { flex: 1; height: 8px; border-radius: 3px; background: var(--c); }
+      h2 { font-size: 1.35rem; font-weight: 700; margin: 0 0 1.1rem; display: flex; align-items: baseline; gap: .6rem; }
+      h2 small { font-family: var(--font-text); font-size: .85rem; font-weight: 500; color: var(--ink-2); }
+      .grid { display: grid; gap: 1.1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr)); margin-bottom: 3.2rem; }
+      .card {
+        display: flex; flex-direction: column; gap: .7rem; padding: 1.5rem 1.5rem 1.3rem;
+        background: var(--surface); border: 1px solid var(--line); border-top: 5px solid var(--c); border-radius: 14px;
+        transition: border-color .2s, transform .25s var(--ease), box-shadow .25s;
+      }
+      .card:hover { border-color: var(--c); transform: translateY(-4px); box-shadow: 0 18px 36px -22px var(--c); }
+      .card-top { display: flex; justify-content: space-between; align-items: center; gap: .5rem; }
+      .kind { font-size: .75rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--c); }
+      .status { font-size: .74rem; font-weight: 600; color: var(--ink-2); border: 1px solid var(--line); border-radius: 99px; padding: .1rem .6rem; }
+      .status.live { color: var(--dev); border-color: var(--dev); }
+      .status.lock { color: var(--ent); border-color: var(--ent); }
+      .status.live::before { content: "\25CF  "; font-size: .6rem; vertical-align: .1em; }
+      .card h3 { font-size: 1.55rem; font-weight: 800; letter-spacing: -0.03em; }
+      .result { margin: -.2rem 0 0; font-weight: 600; }
+      .result strong { color: var(--c); }
+      .card p { margin: 0; color: var(--ink-2); }
+      .tags { display: flex; flex-wrap: wrap; gap: .4rem; list-style: none; padding: 0; margin: .3rem 0 0; }
+      .tags li { font-size: .76rem; font-weight: 600; padding: .2rem .55rem; border-radius: 6px; background: color-mix(in srgb, var(--c) 11%, transparent); }
+      .links { display: flex; flex-wrap: wrap; gap: .5rem 1.2rem; margin-top: auto; padding-top: .5rem; }
+      .links a { color: var(--c); font-weight: 700; text-decoration: none; font-size: .93rem; border-bottom: 2px solid transparent; }
+      .links a:hover, .links a:focus-visible { border-color: var(--c); }
+      .work { display: grid; gap: .6rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); list-style: none; padding: 0; margin: 0 0 3rem; }
+      .work a {
+        display: flex; justify-content: space-between; gap: .8rem; align-items: center; height: 100%;
+        padding: .85rem 1rem; border-radius: 10px; text-decoration: none; font-weight: 600;
+        background: var(--surface); border: 1px solid var(--line); border-left: 5px solid var(--c);
+        transition: border-color .2s, transform .2s var(--ease);
+      }
+      .work a:hover, .work a:focus-visible { border-color: var(--c); transform: translateX(3px); }
+      .work small { color: var(--ink-2); font-weight: 500; font-size: .8rem; white-space: nowrap; }
+      .cta { display: flex; flex-wrap: wrap; gap: .7rem; align-items: center; padding: 1.4rem 1.5rem; border-radius: 14px; background: var(--surface); border: 1px solid var(--line); }
+      .cta p { margin: 0 auto 0 0; font-weight: 600; }
+      .cta a { text-decoration: none; font-weight: 700; padding: .55rem 1rem; border-radius: 8px; border: 1px solid var(--ink); }
+      .cta a.solid { background: var(--ink); color: var(--bg); }
+      @media (prefers-reduced-motion: reduce) { .card, .work a { transition: none; } .card:hover, .work a:hover { transform: none; } }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="top">
+        <a href="/">&larr; Harshit Chaurasia</a>
+        <button type="button" class="theme" id="theme" aria-label="Toggle dark mode">Theme</button>
+    </div>
+
+    <h1>Things I&rsquo;ve built.</h1>
+    <p class="lead">Senior RPA Developer &amp; ML Engineer. GenAI apps and ML services I designed and shipped myself, plus the enterprise automation work behind them. Apps that call paid LLM APIs sit behind a login; email me and I&rsquo;ll send one.</p>
+    <div class="bar" aria-hidden="true">
+        <i style="--c:var(--rpa)"></i><i style="--c:var(--ml)"></i><i style="--c:var(--genai)"></i><i style="--c:var(--cloud)"></i><i style="--c:var(--dev)"></i><i style="--c:var(--ent)"></i><i style="--c:var(--prac)"></i>
+    </div>
+
+    <main>
+        <h2>Built &amp; shipped <small>4 projects</small></h2>
+        <div class="grid">
+            <article class="card" style="--c:var(--genai)">
+                <div class="card-top"><span class="kind">GenAI &middot; Agents</span><span class="status lock">Login required</span></div>
+                <h3>LeadDesk AI</h3>
+                <p class="result">AI support desk for a lead-generation agency</p>
+                <p>An LLM triages each ticket. Lead-quality disputes are settled by deterministic rules on the lead record, not the model. Every ticket is routed to the right team, a reply is drafted for human approval, and the ticket lands on a Monday.com board. Runs on Grok or Claude, with PII masked before any model call.</p>
+                <ul class="tags"><li>Claude</li><li>Grok</li><li>Python</li><li>FastAPI</li><li>Streamlit</li><li>SQLite</li><li>Monday.com</li></ul>
+                <div class="links"><a href="https://leaddesk.saakura.dev" target="_blank" rel="noopener">Open the demo &rarr;</a><a href="mailto:harshit1chaurasia@outlook.com?subject=LeadDesk%20AI%20demo%20login">Ask for a login</a></div>
+            </article>
+
+            <article class="card" style="--c:var(--cloud)">
+                <div class="card-top"><span class="kind">Product &middot; Cloud</span><span class="status live">Live</span></div>
+                <h3>Preptora</h3>
+                <p class="result">A learning platform with in-video quizzes</p>
+                <p>Course sales, coupons and refunds, adaptive video with resume, timestamped in-video quizzes, certificates, per-course Q&amp;A and reviews, and a self-serve admin and instructor console.</p>
+                <ul class="tags"><li>Next.js</li><li>React</li><li>Postgres</li><li>HLS video</li><li>Docker</li></ul>
+                <div class="links"><a href="https://preptora.in" target="_blank" rel="noopener">Visit preptora.in &rarr;</a></div>
+            </article>
+
+            <article class="card" style="--c:var(--ml)">
+                <div class="card-top"><span class="kind">ML &middot; Privacy</span><span class="status live">Live demo</span></div>
+                <h3>PII Shield</h3>
+                <p class="result"><strong>35+</strong> kinds of personal data removed before text reaches an LLM</p>
+                <p>Finds names, Aadhaar and PAN numbers, bank accounts, emails and phone numbers with spaCy NER and pattern rules, then masks them. Ships as a Python library and a FastAPI service with file upload and a job queue.</p>
+                <ul class="tags"><li>NLP</li><li>spaCy</li><li>Python</li><li>FastAPI</li><li>Docker</li><li>Cloud Run</li></ul>
+                <div class="links">
+                    <a href="https://pii-shield.saakura.dev" target="_blank" rel="noopener">Open the app &rarr;</a>
+                    <a href="https://github.com/harshitrajchaurasia/pii-shield" target="_blank" rel="noopener">Source on GitHub</a>
+                </div>
+            </article>
+
+            <article class="card" style="--c:var(--dev)">
+                <div class="card-top"><span class="kind">GenAI &middot; RAG</span><span class="status lock">Login required</span></div>
+                <h3>QuillShift</h3>
+                <p class="result">Upload documents and chat with them</p>
+                <p>Every session gets its own in-memory FAISS index, so users never see each other&rsquo;s documents. Answers stream back with suggested follow-ups, and it runs on Gemini or OpenAI, so users don&rsquo;t need their own API key.</p>
+                <ul class="tags"><li>LangChain</li><li>FAISS</li><li>Gemini</li><li>OpenAI</li><li>FastAPI</li><li>Docker</li></ul>
+                <div class="links"><a href="https://quillshift.saakura.dev" target="_blank" rel="noopener">Open the app &rarr;</a><a href="mailto:harshit1chaurasia@outlook.com?subject=QuillShift%20demo%20login">Ask for a login</a></div>
+            </article>
+        </div>
+
+        <h2>At work <small>details on the main page</small></h2>
+        <ul class="work">
+            <li><a href="/#projects" style="--c:var(--rpa)">Enterprise RPA platform <small>RPA</small></a></li>
+            <li><a href="/#projects" style="--c:var(--rpa)">Endpoint compliance engine <small>RPA</small></a></li>
+            <li><a href="/#projects" style="--c:var(--rpa)">Ticket routing automation <small>RPA</small></a></li>
+            <li><a href="/#projects" style="--c:var(--rpa)">Office 365 license automation <small>RPA</small></a></li>
+            <li><a href="/#projects" style="--c:var(--prac)">RPA practice, started from zero <small>Practice</small></a></li>
+            <li><a href="/#projects" style="--c:var(--ml)">ML ticket classifier <small>ML</small></a></li>
+            <li><a href="/#projects" style="--c:var(--ml)">Network cost forecasting <small>ML</small></a></li>
+            <li><a href="/#projects" style="--c:var(--ml)">Pipeline pump optimizer <small>ML</small></a></li>
+            <li><a href="/#projects" style="--c:var(--genai)">Agentic service-desk assistant <small>GenAI</small></a></li>
+            <li><a href="/#projects" style="--c:var(--genai)">IoT energy agent <small>GenAI</small></a></li>
+            <li><a href="/#projects" style="--c:var(--genai)">GenAI document extraction <small>GenAI</small></a></li>
+            <li><a href="/#projects" style="--c:var(--cloud)">Cloud migration to GCP <small>Cloud</small></a></li>
+        </ul>
+
+        <div class="cta">
+            <p>Want a walkthrough of any of these?</p>
+            <a class="solid" href="mailto:harshit1chaurasia@outlook.com">Email me</a>
+            <a href="/Harshit_Chaurasia_Resume.pdf" download>Resume</a>
+            <a href="https://www.linkedin.com/in/harshit-raj-chaurasia" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+    </main>
+</div>
+<script>
+  document.getElementById('theme').addEventListener('click', function () {
+    var r = document.documentElement, next = r.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    r.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme-v2', next); } catch (e) {}
+  });
+</script>
+</body>
+</html>
