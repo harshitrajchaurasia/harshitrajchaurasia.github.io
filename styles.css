@@ -560,3 +560,39 @@ html:not(.js) .proj-tools { display: none; }
     ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; }
 }
 .js .tags li { cursor: pointer; }
+
+/* ---------- SAKURA BACKDROP ---------- */
+/* saakura = cherry blossom. Static petals + blush, fading out from the top-right
+   corner so they never sit behind the hero text. Purely decorative. */
+:root, [data-theme="light"] {
+    --sakura-petals: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='200'><path d='M10 20C5.5 15 4.6 8 6.6 2.4L10 4.1l3.4-1.7C15.4 8 14.5 15 10 20z' fill='%23ec8fa8' opacity='0.45' transform='translate%2824 26%29 rotate%28-20 10 10%29 scale%280.8%29'/><path d='M10 20C5.5 15 4.6 8 6.6 2.4L10 4.1l3.4-1.7C15.4 8 14.5 15 10 20z' fill='%23ec8fa8' opacity='0.4' transform='translate%28150 84%29 rotate%28150 10 10%29 scale%280.7%29'/><path d='M10 20C5.5 15 4.6 8 6.6 2.4L10 4.1l3.4-1.7C15.4 8 14.5 15 10 20z' fill='%23ec8fa8' opacity='0.35' transform='translate%2878 150%29 rotate%2870 10 10%29 scale%280.6%29'/></svg>");
+    --sakura-blush: #fdeaf0;
+}
+[data-theme="dark"] {
+    --sakura-petals: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='200'><path d='M10 20C5.5 15 4.6 8 6.6 2.4L10 4.1l3.4-1.7C15.4 8 14.5 15 10 20z' fill='%23c25b7d' opacity='0.45' transform='translate%2824 26%29 rotate%28-20 10 10%29 scale%280.8%29'/><path d='M10 20C5.5 15 4.6 8 6.6 2.4L10 4.1l3.4-1.7C15.4 8 14.5 15 10 20z' fill='%23c25b7d' opacity='0.4' transform='translate%28150 84%29 rotate%28150 10 10%29 scale%280.7%29'/><path d='M10 20C5.5 15 4.6 8 6.6 2.4L10 4.1l3.4-1.7C15.4 8 14.5 15 10 20z' fill='%23c25b7d' opacity='0.35' transform='translate%2878 150%29 rotate%2870 10 10%29 scale%280.6%29'/></svg>");
+    --sakura-blush: #241a35;
+}
+body { position: relative; isolation: isolate; }
+body::before {
+    content: "";
+    position: absolute; top: 0; left: 0; right: 0; z-index: -1;
+    height: min(860px, 100vh);
+    pointer-events: none;
+    background: radial-gradient(ellipse 50% 65% at 95% 0%, var(--sakura-blush), transparent 70%);
+    -webkit-mask-image: linear-gradient(#000 55%, transparent);
+            mask-image: linear-gradient(#000 55%, transparent);
+}
+/* petals only in the top-right; gradients keep the full width */
+body::after {
+    content: "";
+    position: absolute; top: 0; right: 0; z-index: -1;
+    width: 45%; height: min(600px, 80vh);
+    pointer-events: none;
+    background: var(--sakura-petals);
+    -webkit-mask-image: radial-gradient(ellipse 85% 85% at 100% 0%, #000 15%, transparent 72%);
+            mask-image: radial-gradient(ellipse 85% 85% at 100% 0%, #000 15%, transparent 72%);
+}
+@media (max-width: 760px) {
+    /* text spans the full width on phones: keep petals to the top corner, above the intro copy */
+    body::after { width: 45%; height: 150px; }
+}
