@@ -58,9 +58,13 @@
       .note b { color: var(--ink); }
       .story .stack { font-size: .88rem; margin: 1rem 0 0; }
       .stack b { color: var(--ink); font-weight: 600; }
-      .go { display: flex; flex-wrap: wrap; gap: .4rem 1.6rem; margin-top: 1.1rem; }
-      .go a { font-weight: 600; color: var(--ink); text-decoration: underline; text-decoration-color: var(--c); text-decoration-thickness: 2px; text-underline-offset: 4px; }
-      .go a:hover, .go a:focus-visible { color: var(--c); }
+      .story h2 { display: flex; align-items: center; gap: .7rem; }
+      .ico { flex: none; display: grid; place-items: center; width: 2.6rem; height: 2.6rem; border-radius: 12px; color: var(--c); background: color-mix(in srgb, var(--c) 13%, transparent); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--c) 28%, transparent); }
+      .ico svg { width: 1.4rem; height: 1.4rem; }
+      .go { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.3rem; }
+      .go .btn-solid { background: var(--c); border-color: var(--c); color: var(--bg); }
+      .go .btn-line { border-color: color-mix(in srgb, var(--c) 55%, var(--line)); }
+      .go .btn-line:hover { background: var(--c); border-color: var(--c); color: var(--bg); }
 
       /* login request */
       .ask { margin-top: clamp(3rem, 7vw, 4.5rem); display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 2rem 4rem; align-items: start; }
@@ -74,7 +78,7 @@
       }
       .letter .ph { background: color-mix(in srgb, var(--ent) 16%, transparent); border-radius: 4px; padding: 0 .25rem; }
       .letter-head { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: .6rem; font-size: .88rem; color: var(--ink-2); }
-      .letter-head button { font: inherit; font-weight: 600; color: var(--ink); background: none; border: 1px solid var(--line); border-radius: 8px; padding: .3rem .75rem; cursor: pointer; white-space: nowrap; }
+      .letter-head button { font: inherit; font-weight: 600; color: var(--ink); background: none; border: 1px solid var(--line); border-radius: 999px; padding: .35rem .9rem; cursor: pointer; white-space: nowrap; }
       .letter-head button:hover { border-color: var(--ink); }
 
       /* day job: plain lists, details live on the main page */
@@ -135,14 +139,14 @@
                 <p class="access">Sign-in needed<small>calls Claude or Grok</small></p>
             </div>
             <div class="story">
-                <h2><a href="https://leaddesk.saakura.dev" target="_blank" rel="noopener">LeadDesk AI</a></h2>
+                <h2><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13h4l1.5 2.5h5L16 13h4"/><path d="M5.5 6h13L20 13v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-5z"/></svg></span><a href="https://leaddesk.saakura.dev" target="_blank" rel="noopener">LeadDesk AI</a></h2>
                 <p class="line">A support desk for an agency that sells leads to insurance agents.</p>
                 <p>Agents write in all day with the same few complaints: a lead was junk, a lead was sold twice, add a state to my campaign, cancel my account. LeadDesk reads each ticket, works out what it is and how upset the client is, sends it to the right team, drafts a reply for a person to approve, and puts an item on a Monday.com board.</p>
                 <p class="note"><b>The part I care about:</b> the model never decides whether a client gets a free replacement lead. That check runs in plain code against the lead record, because a wrong yes gives leads away and a wrong no loses the client.</p>
                 <p class="stack"><b>Built with</b> Python, FastAPI, Streamlit, SQLite, the Claude and Grok APIs, Monday.com GraphQL. 62 tests, all of them run offline.</p>
                 <div class="go">
-                    <a href="https://leaddesk.saakura.dev" target="_blank" rel="noopener">Open LeadDesk</a>
-                    <a href="mailto:harshit1chaurasia@outlook.com?subject=Login%20for%20LeadDesk%20AI&amp;body=Hi%20Harshit%2C%0A%0AI%27m%20%5Byour%20name%5D%2C%20%5Byour%20role%5D%20at%20%5Bcompany%5D.%20I%20saw%20your%20projects%20page%20and%20would%20like%20to%20try%20LeadDesk%20AI.%0A%0AI%27m%20mainly%20curious%20about%20%5Bwhat%20you%20want%20to%20look%20at%5D.%0A%0AThanks%2C%0A%5Byour%20name%5D">Ask for a login</a>
+                    <a class="btn btn-small btn-solid" href="https://leaddesk.saakura.dev" target="_blank" rel="noopener">Open LeadDesk</a>
+                    <a class="btn btn-small btn-line" href="mailto:harshit1chaurasia@outlook.com?subject=Login%20for%20LeadDesk%20AI&amp;body=Hi%20Harshit%2C%0A%0AI%27m%20%5Byour%20name%5D%2C%20%5Byour%20role%5D%20at%20%5Bcompany%5D.%20I%20saw%20your%20projects%20page%20and%20would%20like%20to%20try%20LeadDesk%20AI.%0A%0AI%27m%20mainly%20curious%20about%20%5Bwhat%20you%20want%20to%20look%20at%5D.%0A%0AThanks%2C%0A%5Byour%20name%5D">Ask for a login</a>
                 </div>
             </div>
         </article>
@@ -154,14 +158,14 @@
                 <p class="access">Open to everyone<small>runs on CPU, no API calls</small></p>
             </div>
             <div class="story">
-                <h2><a href="https://pii-shield.saakura.dev" target="_blank" rel="noopener">PII Shield</a></h2>
+                <h2><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span><a href="https://pii-shield.saakura.dev" target="_blank" rel="noopener">PII Shield</a></h2>
                 <p class="line">Strips <strong>35+</strong> kinds of personal data out of text before it reaches an LLM.</p>
                 <p>Paste in a support ticket or a chat log and it comes back with names, Aadhaar and PAN numbers, bank accounts, emails and phone numbers replaced by labels like [NAME] and [PHONE]. It's a Python library first, with a small FastAPI service and web page on top. Nothing you paste is stored.</p>
                 <p class="note"><b>Trade-off:</b> the hosted version runs the pattern rules only, which handles a sentence in about 2&nbsp;ms on a single CPU. The library also has a spaCy NER mode that catches more names, but it's slower and heavier, so it's off here.</p>
                 <p class="stack"><b>Built with</b> Python, spaCy, regex and dictionary rules, FastAPI, Docker. Open source.</p>
                 <div class="go">
-                    <a href="https://pii-shield.saakura.dev" target="_blank" rel="noopener">Try PII Shield</a>
-                    <a href="https://github.com/harshitrajchaurasia/pii-shield" target="_blank" rel="noopener">Read the code</a>
+                    <a class="btn btn-small btn-solid" href="https://pii-shield.saakura.dev" target="_blank" rel="noopener">Try PII Shield</a>
+                    <a class="btn btn-small btn-line" href="https://github.com/harshitrajchaurasia/pii-shield" target="_blank" rel="noopener">Read the code</a>
                 </div>
             </div>
         </article>
@@ -173,14 +177,14 @@
                 <p class="access">Sign-in needed<small>calls Gemini or OpenAI</small></p>
             </div>
             <div class="story">
-                <h2><a href="https://quillshift.saakura.dev" target="_blank" rel="noopener">QuillShift</a></h2>
+                <h2><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4c-6 0-11 4-12.5 11L6 20"/><path d="M20 4c0 6-4 10.5-10 11.5"/><path d="M11 10h4"/></svg></span><a href="https://quillshift.saakura.dev" target="_blank" rel="noopener">QuillShift</a></h2>
                 <p class="line">Upload a few documents, then ask them questions.</p>
                 <p>Drop in PDFs or Word files and chat with them. Answers stream in as they're written, and it suggests a few follow-up questions after each one. Every visitor gets their own index, so nobody can see anyone else's documents.</p>
                 <p class="note"><b>Trade-off:</b> the indexes live in memory and expire after two hours. That keeps it simple and cheap to run, but a restart wipes every session. Anything real would need a proper vector store.</p>
                 <p class="stack"><b>Built with</b> Python, FastAPI, LangChain, FAISS, Gemini or OpenAI models, Docker.</p>
                 <div class="go">
-                    <a href="https://quillshift.saakura.dev" target="_blank" rel="noopener">Open QuillShift</a>
-                    <a href="mailto:harshit1chaurasia@outlook.com?subject=Login%20for%20QuillShift&amp;body=Hi%20Harshit%2C%0A%0AI%27m%20%5Byour%20name%5D%2C%20%5Byour%20role%5D%20at%20%5Bcompany%5D.%20I%20saw%20your%20projects%20page%20and%20would%20like%20to%20try%20QuillShift.%0A%0AI%27m%20mainly%20curious%20about%20%5Bwhat%20you%20want%20to%20look%20at%5D.%0A%0AThanks%2C%0A%5Byour%20name%5D">Ask for a login</a>
+                    <a class="btn btn-small btn-solid" href="https://quillshift.saakura.dev" target="_blank" rel="noopener">Open QuillShift</a>
+                    <a class="btn btn-small btn-line" href="mailto:harshit1chaurasia@outlook.com?subject=Login%20for%20QuillShift&amp;body=Hi%20Harshit%2C%0A%0AI%27m%20%5Byour%20name%5D%2C%20%5Byour%20role%5D%20at%20%5Bcompany%5D.%20I%20saw%20your%20projects%20page%20and%20would%20like%20to%20try%20QuillShift.%0A%0AI%27m%20mainly%20curious%20about%20%5Bwhat%20you%20want%20to%20look%20at%5D.%0A%0AThanks%2C%0A%5Byour%20name%5D">Ask for a login</a>
                 </div>
             </div>
         </article>
