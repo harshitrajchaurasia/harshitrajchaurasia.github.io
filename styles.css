@@ -110,7 +110,7 @@ a, button, summary { -webkit-tap-highlight-color: transparent; }
 .brand { font: 700 1.15rem var(--font-display); text-decoration: none; letter-spacing: -0.01em; margin-right: auto; }
 .topnav { display: flex; gap: 1.5rem; }
 .topnav a { text-decoration: none; color: var(--ink-2); font-weight: 500; }
-.topnav a:hover { color: var(--ink); }
+.topnav a:hover, .topnav a[aria-current="page"] { color: var(--ink); }
 .theme-toggle {
     width: 2.4rem; height: 2.4rem; border-radius: 50%;
     display: grid; place-items: center; cursor: pointer;
@@ -527,10 +527,36 @@ html:not(.js) .proj-tools { display: none; }
     }
 }
 
+@media (max-width: 480px) {
+    /* four links + toggle + Resume overflow a phone; Experience sits right after Work anyway */
+    .topnav a[href$="#experience"] { display: none; }
+}
+
+/* ---------- LINK TO /projects ---------- */
+.more-projects {
+    display: flex; align-items: center; gap: 1rem; margin-top: 1.25rem; padding: 1rem 1.25rem;
+    border: 1px solid var(--line); border-radius: 14px; background: var(--surface); text-decoration: none;
+    transition: border-color .2s, transform .25s var(--ease), box-shadow .25s;
+}
+.more-projects:hover, .more-projects:focus-visible { border-color: var(--genai); transform: translateY(-2px); box-shadow: 0 14px 30px -20px var(--genai); }
+.more-bar { display: flex; flex-direction: column; gap: 3px; align-self: stretch; }
+.more-bar i { flex: 1; width: 5px; border-radius: 3px; background: var(--c); }
+.more-text { display: flex; flex-direction: column; margin-right: auto; }
+.more-text small { color: var(--ink-2); font-size: .9rem; }
+.more-go { font-weight: 700; color: var(--genai); white-space: nowrap; }
+.more-projects:hover .more-go span { display: inline-block; transform: translateX(3px); transition: transform .2s var(--ease); }
+
+/* ---------- PAGE-TO-PAGE ---------- */
+/* Cross-document view transition: pages cross-fade and the shared top bar stays put.
+   Browsers without support just navigate normally. */
+@view-transition { navigation: auto; }
+.topbar { view-transition-name: topbar; }
+
 /* ---------- REDUCED MOTION ---------- */
 @media (prefers-reduced-motion: reduce) {
     /* smooth scrolling for anchor links stays on: it is short, user-initiated and keeps place */
     *, *::before, *::after { animation: none !important; transition: none !important; }
     .pgroup::details-content, .cat::details-content { transition: none !important; }   /* pseudo-element, not matched by * */
+    ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; }
 }
 .js .tags li { cursor: pointer; }
