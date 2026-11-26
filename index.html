@@ -267,7 +267,7 @@
                                 <p class="proj-badge"><svg class="ic" aria-hidden="true"><use href="#i-github"/></svg>Open source</p>
                                 <h4>PII Shield</h4>
                                 <p class="proj-result"><strong>35+</strong> kinds of personal data removed before text reaches an LLM</p>
-                                <p>Finds names, Aadhaar and PAN numbers, bank accounts, emails and phone numbers with spaCy NER and pattern rules, then masks them. Nothing you paste is stored.</p>
+                                <p>Finds names, street addresses, SSNs, card and bank numbers, emails and phone numbers with spaCy NER and pattern rules, then masks them. Nothing you paste is stored.</p>
                                 <ul class="tags">
                                     <li data-c="ml">NLP</li><li data-c="ml">spaCy</li><li data-c="dev">Python</li><li data-c="dev">FastAPI</li><li data-c="dev">Docker</li><li data-c="cloud">Cloud Run</li>
                                 </ul>
@@ -280,7 +280,7 @@
                                     <summary><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg>Try it here</summary>
                                     <div class="demo-body">
                                         <label for="piiInput" class="demo-label">Text with personal details</label>
-                                        <textarea id="piiInput" rows="4">Hi, I'm Rahul Sharma, Aadhaar 2341 5678 9012, rahul.sharma@gmail.com, +91 98765 43210</textarea>
+                                        <textarea id="piiInput" rows="4">Hi, I'm Emily Johnson, SSN 123-45-6789, emily.johnson@gmail.com, (415) 555-0132</textarea>
                                         <button type="button" class="btn btn-solid btn-small" id="piiRedactBtn">Redact</button>
                                         <p class="demo-label">Redacted text</p>
                                         <div class="demo-output" id="piiOutput" aria-live="polite">The redacted version shows up here.</div>
