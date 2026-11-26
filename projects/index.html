@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Projects - Harshit Chaurasia</title>
-    <meta name="description" content="Projects by Harshit Chaurasia: an AI support desk, a learning platform, PII redaction for LLMs, document chat, plus enterprise RPA and ML work.">
+    <title>Side projects - Harshit Chaurasia</title>
+    <meta name="description" content="Side projects by Harshit Chaurasia: an AI support desk, PII redaction for LLM prompts, and chat over your own documents. Plus the RPA and ML work from his day job.">
     <link rel="canonical" href="https://harshit.saakura.dev/projects">
-    <meta property="og:title" content="Projects - Harshit Chaurasia">
-    <meta property="og:description" content="Things I've built: GenAI apps, ML services, and enterprise automation.">
+    <meta property="og:title" content="Side projects - Harshit Chaurasia">
+    <meta property="og:description" content="An AI support desk, PII redaction for LLM prompts, and chat over your own documents.">
     <meta property="og:image" content="https://harshit.saakura.dev/og-card.png">
     <meta name="theme-color" content="#fafafd">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%2316163a'/%3E%3Ctext x='50' y='64' text-anchor='middle' font-family='sans-serif' font-size='44' font-weight='800' fill='%23fff'%3EHC%3C/text%3E%3C/svg%3E">
@@ -23,49 +23,78 @@
       })();
     </script>
     <style>
-      .page { max-width: var(--maxw); margin: 0 auto; padding: clamp(1.5rem, 5vw, 3rem) var(--pad) 4rem; }
-      h1 { font-size: clamp(2.4rem, 7vw, 4rem); font-weight: 800; letter-spacing: -0.045em; }
-      .lead { color: var(--ink-2); max-width: 40rem; margin: .8rem 0 0; font-size: 1.08rem; }
-      .bar { display: flex; gap: 4px; margin: 1.8rem 0 2.6rem; max-width: 420px; }
-      .bar i { flex: 1; height: 8px; border-radius: 3px; background: var(--c); }
-      h2 { font-size: 1.35rem; font-weight: 700; margin: 0 0 1.1rem; display: flex; align-items: baseline; gap: .6rem; }
-      h2 small { font-family: var(--font-text); font-size: .85rem; font-weight: 500; color: var(--ink-2); }
-      .grid { display: grid; gap: 1.1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr)); margin-bottom: 3.2rem; }
-      .card {
-        display: flex; flex-direction: column; gap: .7rem; padding: 1.5rem 1.5rem 1.3rem;
-        background: var(--surface); border: 1px solid var(--line); border-top: 5px solid var(--c); border-radius: 14px;
-        transition: border-color .2s, transform .25s var(--ease), box-shadow .25s;
+      .page { max-width: var(--maxw); margin: 0 auto; padding: clamp(2rem, 6vw, 4.5rem) var(--pad) 5rem; }
+
+      /* intro: short, left-aligned, reads like a note rather than a banner */
+      .intro { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 26rem); gap: 1rem 4rem; align-items: end; }
+      .intro h1 { font-size: clamp(2.6rem, 7vw, 4.4rem); font-weight: 800; letter-spacing: -0.045em; }
+      .intro p { margin: 0; color: var(--ink-2); font-size: 1.05rem; }
+      .intro p + p { margin-top: .8rem; }
+      .bar { display: flex; gap: 4px; margin: 2rem 0 0; }
+      .bar i { flex: 1; height: 6px; border-radius: 2px; background: var(--c); }
+
+      /* entries: an index, not a card grid. date + status on the left, the story on the right */
+      .entries { margin-top: clamp(2.5rem, 6vw, 4rem); }
+      .entry {
+        display: grid; grid-template-columns: 11rem minmax(0, 1fr); gap: 1rem 3rem;
+        padding: 2.2rem 0 2.4rem; border-top: 1px solid var(--line);
       }
-      .card:hover { border-color: var(--c); transform: translateY(-4px); box-shadow: 0 18px 36px -22px var(--c); }
-      .card-top { display: flex; justify-content: space-between; align-items: center; gap: .5rem; }
-      .kind { font-size: .75rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--c); }
-      .status { font-size: .74rem; font-weight: 600; color: var(--ink-2); border: 1px solid var(--line); border-radius: 99px; padding: .1rem .6rem; }
-      .status.live { color: var(--dev); border-color: var(--dev); }
-      .status.lock { color: var(--ent); border-color: var(--ent); }
-      .status.live::before { content: "\25CF  "; font-size: .6rem; vertical-align: .1em; }
-      .card h3 { font-size: 1.55rem; font-weight: 800; letter-spacing: -0.03em; }
-      .result { margin: -.2rem 0 0; font-weight: 600; }
-      .result strong { color: var(--c); }
-      .card p { margin: 0; color: var(--ink-2); }
-      .tags { display: flex; flex-wrap: wrap; gap: .4rem; list-style: none; padding: 0; margin: .3rem 0 0; }
-      .tags li { font-size: .76rem; font-weight: 600; padding: .2rem .55rem; border-radius: 6px; background: color-mix(in srgb, var(--c) 11%, transparent); }
-      .links { display: flex; flex-wrap: wrap; gap: .5rem 1.2rem; margin-top: auto; padding-top: .5rem; }
-      .links a { color: var(--c); font-weight: 700; text-decoration: none; font-size: .93rem; border-bottom: 2px solid transparent; }
-      .links a:hover, .links a:focus-visible { border-color: var(--c); }
-      .work { display: grid; gap: .6rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); list-style: none; padding: 0; margin: 0 0 3rem; }
-      .work a {
-        display: flex; justify-content: space-between; gap: .8rem; align-items: center; height: 100%;
-        padding: .85rem 1rem; border-radius: 10px; text-decoration: none; font-weight: 600;
-        background: var(--surface); border: 1px solid var(--line); border-left: 5px solid var(--c);
-        transition: border-color .2s, transform .2s var(--ease);
+      .entry:last-child { border-bottom: 1px solid var(--line); }
+      .meta { font-size: .9rem; color: var(--ink-2); line-height: 1.5; }
+      .meta time { display: block; font: 700 1rem var(--font-display); color: var(--ink); margin-bottom: .35rem; }
+      .meta .area { display: flex; align-items: center; gap: .45rem; }
+      .meta .area::before { content: ""; width: .6rem; height: .6rem; border-radius: 2px; background: var(--c); }
+      .meta .access { margin: .9rem 0 0; font-weight: 600; color: var(--ink); }
+      .meta .access small { display: block; font-weight: 400; color: var(--ink-2); }
+
+      .story { max-width: 46rem; }
+      .story h2 { font-size: clamp(1.7rem, 3.6vw, 2.3rem); font-weight: 800; letter-spacing: -0.035em; }
+      .story h2 a { text-decoration: none; background: linear-gradient(var(--c), var(--c)) 0 100% / 0 3px no-repeat; transition: background-size .3s var(--ease); }
+      .story h2 a:hover, .story h2 a:focus-visible { background-size: 100% 3px; }
+      .story .line { font-size: 1.12rem; font-weight: 600; margin: .45rem 0 .9rem; }
+      .story .line strong { color: var(--c); }
+      .story p { color: var(--ink-2); margin: 0 0 .8rem; }
+      .note { border-left: 3px solid var(--c); padding: .1rem 0 .1rem 1rem; font-size: .95rem; }
+      .note b { color: var(--ink); }
+      .story .stack { font-size: .88rem; margin: 1rem 0 0; }
+      .stack b { color: var(--ink); font-weight: 600; }
+      .go { display: flex; flex-wrap: wrap; gap: .4rem 1.6rem; margin-top: 1.1rem; }
+      .go a { font-weight: 600; color: var(--ink); text-decoration: underline; text-decoration-color: var(--c); text-decoration-thickness: 2px; text-underline-offset: 4px; }
+      .go a:hover, .go a:focus-visible { color: var(--c); }
+
+      /* login request */
+      .ask { margin-top: clamp(3rem, 7vw, 4.5rem); display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr); gap: 2rem 4rem; align-items: start; }
+      .ask h2, .day h2 { font-size: clamp(1.6rem, 3.4vw, 2.1rem); font-weight: 800; letter-spacing: -0.03em; }
+      .ask p { color: var(--ink-2); margin: .8rem 0 0; }
+      .ask p a { color: var(--ink); font-weight: 600; }
+      .letter {
+        margin: 0; padding: 1.4rem 1.5rem; border-radius: 12px;
+        background: var(--surface); border: 1px solid var(--line);
+        font: .95rem/1.65 var(--font-text); white-space: pre-wrap; color: var(--ink);
       }
-      .work a:hover, .work a:focus-visible { border-color: var(--c); transform: translateX(3px); }
-      .work small { color: var(--ink-2); font-weight: 500; font-size: .8rem; white-space: nowrap; }
-      .cta { display: flex; flex-wrap: wrap; gap: .7rem; align-items: center; padding: 1.4rem 1.5rem; border-radius: 14px; background: var(--surface); border: 1px solid var(--line); }
-      .cta p { margin: 0 auto 0 0; font-weight: 600; }
-      .cta a { text-decoration: none; font-weight: 700; padding: .55rem 1rem; border-radius: 8px; border: 1px solid var(--ink); }
-      .cta a.solid { background: var(--ink); color: var(--bg); }
-      @media (prefers-reduced-motion: reduce) { .card, .work a { transition: none; } .card:hover, .work a:hover { transform: none; } }
+      .letter .ph { background: color-mix(in srgb, var(--ent) 16%, transparent); border-radius: 4px; padding: 0 .25rem; }
+      .letter-head { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: .6rem; font-size: .88rem; color: var(--ink-2); }
+      .letter-head button { font: inherit; font-weight: 600; color: var(--ink); background: none; border: 1px solid var(--line); border-radius: 8px; padding: .3rem .75rem; cursor: pointer; white-space: nowrap; }
+      .letter-head button:hover { border-color: var(--ink); }
+
+      /* day job: plain lists, details live on the main page */
+      .day { margin-top: clamp(3.5rem, 8vw, 5rem); }
+      .day > p { color: var(--ink-2); margin: .6rem 0 1.6rem; max-width: 40rem; }
+      .day > p a { color: var(--ink); font-weight: 600; }
+      .areas { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: 1.6rem 2.5rem; }
+      .areas h3 { font: 700 .95rem var(--font-text); display: flex; align-items: center; gap: .45rem; margin-bottom: .5rem; }
+      .areas h3::before { content: ""; width: .6rem; height: .6rem; border-radius: 2px; background: var(--c); }
+      .areas ul { list-style: none; margin: 0; padding: 0; color: var(--ink-2); font-size: .95rem; }
+      .areas li { padding: .3rem 0; border-bottom: 1px dashed var(--line); }
+
+      @media (max-width: 760px) {
+        .intro, .ask { grid-template-columns: minmax(0, 1fr); }
+        .entry { grid-template-columns: minmax(0, 1fr); gap: .9rem; }
+        .meta { display: flex; flex-wrap: wrap; align-items: baseline; gap: .2rem 1rem; }
+        .meta time { margin: 0; }
+        .meta .access { margin: 0; width: 100%; }
+        .meta .access small { display: inline; margin-left: .4rem; }
+      }
     </style>
 </head>
 <body>
@@ -85,78 +114,132 @@
         <a href="/Harshit_Chaurasia_Resume.pdf" class="btn btn-solid btn-small" download>Resume</a>
     </div>
 </header>
-<div class="page">
 
-    <h1>Things I&rsquo;ve built.</h1>
-    <p class="lead">Senior RPA Developer &amp; ML Engineer. GenAI apps and ML services I designed and shipped myself, plus the enterprise automation work behind them. Apps that call paid LLM APIs sit behind a login; email me and I&rsquo;ll send one.</p>
+<main class="page">
+    <section class="intro">
+        <h1>Side projects</h1>
+        <div>
+            <p>By day I build RPA and ML systems at TCS. These are the things I build on my own time, end to end: my code, my servers, and my bill for the API calls.</p>
+            <p>That last part is why two of them ask you to sign in. Ask, and I'll send you a login.</p>
+        </div>
+    </section>
     <div class="bar" aria-hidden="true">
         <i style="--c:var(--rpa)"></i><i style="--c:var(--ml)"></i><i style="--c:var(--genai)"></i><i style="--c:var(--cloud)"></i><i style="--c:var(--dev)"></i><i style="--c:var(--ent)"></i><i style="--c:var(--prac)"></i>
     </div>
 
-    <main>
-        <h2>Built &amp; shipped <small>3 projects</small></h2>
-        <div class="grid">
-            <article class="card" style="--c:var(--genai)">
-                <div class="card-top"><span class="kind">GenAI &middot; Agents</span><span class="status lock">Login required</span></div>
-                <h3>LeadDesk AI</h3>
-                <p class="result">AI support desk for a lead-generation agency</p>
-                <p>An LLM triages each ticket. Lead-quality disputes are settled by deterministic rules on the lead record, not the model. Every ticket is routed to the right team, a reply is drafted for human approval, and the ticket lands on a Monday.com board. Runs on Grok or Claude, with PII masked before any model call.</p>
-                <ul class="tags"><li>Claude</li><li>Grok</li><li>Python</li><li>FastAPI</li><li>Streamlit</li><li>SQLite</li><li>Monday.com</li></ul>
-                <div class="links"><a href="https://leaddesk.saakura.dev" target="_blank" rel="noopener">Open the demo &rarr;</a><a href="mailto:harshit1chaurasia@outlook.com?subject=LeadDesk%20AI%20demo%20login">Ask for a login</a></div>
-            </article>
-
-
-            <article class="card" style="--c:var(--ml)">
-                <div class="card-top"><span class="kind">ML &middot; Privacy</span><span class="status live">Live demo</span></div>
-                <h3>PII Shield</h3>
-                <p class="result"><strong>35+</strong> kinds of personal data removed before text reaches an LLM</p>
-                <p>Finds names, Aadhaar and PAN numbers, bank accounts, emails and phone numbers with spaCy NER and pattern rules, then masks them. Ships as a Python library and a FastAPI service with file upload and a job queue.</p>
-                <ul class="tags"><li>NLP</li><li>spaCy</li><li>Python</li><li>FastAPI</li><li>Docker</li><li>Cloud Run</li></ul>
-                <div class="links">
-                    <a href="https://pii-shield.saakura.dev" target="_blank" rel="noopener">Open the app &rarr;</a>
-                    <a href="https://github.com/harshitrajchaurasia/pii-shield" target="_blank" rel="noopener">Source on GitHub</a>
+    <div class="entries">
+        <article class="entry" style="--c:var(--genai)">
+            <div class="meta">
+                <time datetime="2026-11">Nov 2026</time>
+                <span class="area">GenAI, agents</span>
+                <p class="access">Sign-in needed<small>calls Claude or Grok</small></p>
+            </div>
+            <div class="story">
+                <h2><a href="https://leaddesk.saakura.dev" target="_blank" rel="noopener">LeadDesk AI</a></h2>
+                <p class="line">A support desk for an agency that sells leads to insurance agents.</p>
+                <p>Agents write in all day with the same few complaints: a lead was junk, a lead was sold twice, add a state to my campaign, cancel my account. LeadDesk reads each ticket, works out what it is and how upset the client is, sends it to the right team, drafts a reply for a person to approve, and puts an item on a Monday.com board.</p>
+                <p class="note"><b>The part I care about:</b> the model never decides whether a client gets a free replacement lead. That check runs in plain code against the lead record, because a wrong yes gives leads away and a wrong no loses the client.</p>
+                <p class="stack"><b>Built with</b> Python, FastAPI, Streamlit, SQLite, the Claude and Grok APIs, Monday.com GraphQL. 62 tests, all of them run offline.</p>
+                <div class="go">
+                    <a href="https://leaddesk.saakura.dev" target="_blank" rel="noopener">Open LeadDesk</a>
+                    <a href="mailto:harshit1chaurasia@outlook.com?subject=Login%20for%20LeadDesk%20AI&amp;body=Hi%20Harshit%2C%0A%0AI%27m%20%5Byour%20name%5D%2C%20%5Byour%20role%5D%20at%20%5Bcompany%5D.%20I%20saw%20your%20projects%20page%20and%20would%20like%20to%20try%20LeadDesk%20AI.%0A%0AI%27m%20mainly%20curious%20about%20%5Bwhat%20you%20want%20to%20look%20at%5D.%0A%0AThanks%2C%0A%5Byour%20name%5D">Ask for a login</a>
                 </div>
-            </article>
+            </div>
+        </article>
 
-            <article class="card" style="--c:var(--dev)">
-                <div class="card-top"><span class="kind">GenAI &middot; RAG</span><span class="status lock">Login required</span></div>
-                <h3>QuillShift</h3>
-                <p class="result">Upload documents and chat with them</p>
-                <p>Every session gets its own in-memory FAISS index, so users never see each other&rsquo;s documents. Answers stream back with suggested follow-ups, and it runs on Gemini or OpenAI, so users don&rsquo;t need their own API key.</p>
-                <ul class="tags"><li>LangChain</li><li>FAISS</li><li>Gemini</li><li>OpenAI</li><li>FastAPI</li><li>Docker</li></ul>
-                <div class="links"><a href="https://quillshift.saakura.dev" target="_blank" rel="noopener">Open the app &rarr;</a><a href="mailto:harshit1chaurasia@outlook.com?subject=QuillShift%20demo%20login">Ask for a login</a></div>
-            </article>
+        <article class="entry" style="--c:var(--ml)">
+            <div class="meta">
+                <time datetime="2026-03">Mar 2026</time>
+                <span class="area">ML, privacy</span>
+                <p class="access">Open to everyone<small>runs on CPU, no API calls</small></p>
+            </div>
+            <div class="story">
+                <h2><a href="https://pii-shield.saakura.dev" target="_blank" rel="noopener">PII Shield</a></h2>
+                <p class="line">Strips <strong>35+</strong> kinds of personal data out of text before it reaches an LLM.</p>
+                <p>Paste in a support ticket or a chat log and it comes back with names, Aadhaar and PAN numbers, bank accounts, emails and phone numbers replaced by labels like [NAME] and [PHONE]. It's a Python library first, with a small FastAPI service and web page on top. Nothing you paste is stored.</p>
+                <p class="note"><b>Trade-off:</b> the hosted version runs the pattern rules only, which handles a sentence in about 2&nbsp;ms on a single CPU. The library also has a spaCy NER mode that catches more names, but it's slower and heavier, so it's off here.</p>
+                <p class="stack"><b>Built with</b> Python, spaCy, regex and dictionary rules, FastAPI, Docker. Open source.</p>
+                <div class="go">
+                    <a href="https://pii-shield.saakura.dev" target="_blank" rel="noopener">Try PII Shield</a>
+                    <a href="https://github.com/harshitrajchaurasia/pii-shield" target="_blank" rel="noopener">Read the code</a>
+                </div>
+            </div>
+        </article>
+
+        <article class="entry" style="--c:var(--dev)">
+            <div class="meta">
+                <time datetime="2026-03">Mar 2026</time>
+                <span class="area">GenAI, RAG</span>
+                <p class="access">Sign-in needed<small>calls Gemini or OpenAI</small></p>
+            </div>
+            <div class="story">
+                <h2><a href="https://quillshift.saakura.dev" target="_blank" rel="noopener">QuillShift</a></h2>
+                <p class="line">Upload a few documents, then ask them questions.</p>
+                <p>Drop in PDFs or Word files and chat with them. Answers stream in as they're written, and it suggests a few follow-up questions after each one. Every visitor gets their own index, so nobody can see anyone else's documents.</p>
+                <p class="note"><b>Trade-off:</b> the indexes live in memory and expire after two hours. That keeps it simple and cheap to run, but a restart wipes every session. Anything real would need a proper vector store.</p>
+                <p class="stack"><b>Built with</b> Python, FastAPI, LangChain, FAISS, Gemini or OpenAI models, Docker.</p>
+                <div class="go">
+                    <a href="https://quillshift.saakura.dev" target="_blank" rel="noopener">Open QuillShift</a>
+                    <a href="mailto:harshit1chaurasia@outlook.com?subject=Login%20for%20QuillShift&amp;body=Hi%20Harshit%2C%0A%0AI%27m%20%5Byour%20name%5D%2C%20%5Byour%20role%5D%20at%20%5Bcompany%5D.%20I%20saw%20your%20projects%20page%20and%20would%20like%20to%20try%20QuillShift.%0A%0AI%27m%20mainly%20curious%20about%20%5Bwhat%20you%20want%20to%20look%20at%5D.%0A%0AThanks%2C%0A%5Byour%20name%5D">Ask for a login</a>
+                </div>
+            </div>
+        </article>
+    </div>
+
+    <section class="ask" id="login">
+        <div>
+            <h2>Asking for a login</h2>
+            <p>The "Ask for a login" links open an email with this already filled in. Swap out the highlighted bits and send it.</p>
+            <p>If nothing opens, copy the text and send it to <a href="mailto:harshit1chaurasia@outlook.com">harshit1chaurasia@outlook.com</a>.</p>
         </div>
+        <div>
+            <div class="letter-head"><span>Subject: Login for LeadDesk AI / QuillShift</span><button type="button" id="copyLetter">Copy text</button></div>
+            <pre class="letter" id="letter">Hi Harshit,
 
-        <h2>At work <small>details on the main page</small></h2>
-        <ul class="work">
-            <li><a href="/#projects" style="--c:var(--rpa)">Enterprise RPA platform <small>RPA</small></a></li>
-            <li><a href="/#projects" style="--c:var(--rpa)">Endpoint compliance engine <small>RPA</small></a></li>
-            <li><a href="/#projects" style="--c:var(--rpa)">Ticket routing automation <small>RPA</small></a></li>
-            <li><a href="/#projects" style="--c:var(--rpa)">Office 365 license automation <small>RPA</small></a></li>
-            <li><a href="/#projects" style="--c:var(--prac)">RPA practice, started from zero <small>Practice</small></a></li>
-            <li><a href="/#projects" style="--c:var(--ml)">ML ticket classifier <small>ML</small></a></li>
-            <li><a href="/#projects" style="--c:var(--ml)">Network cost forecasting <small>ML</small></a></li>
-            <li><a href="/#projects" style="--c:var(--ml)">Pipeline pump optimizer <small>ML</small></a></li>
-            <li><a href="/#projects" style="--c:var(--genai)">Agentic service-desk assistant <small>GenAI</small></a></li>
-            <li><a href="/#projects" style="--c:var(--genai)">IoT energy agent <small>GenAI</small></a></li>
-            <li><a href="/#projects" style="--c:var(--genai)">GenAI document extraction <small>GenAI</small></a></li>
-            <li><a href="/#projects" style="--c:var(--cloud)">Cloud migration to GCP <small>Cloud</small></a></li>
-        </ul>
+I'm <span class="ph">[your name]</span>, <span class="ph">[your role]</span> at <span class="ph">[company]</span>. I saw your projects page and would like to try <span class="ph">[LeadDesk AI / QuillShift]</span>.
 
-        <div class="cta">
-            <p>Want a walkthrough of any of these?</p>
-            <a class="solid" href="mailto:harshit1chaurasia@outlook.com">Email me</a>
-            <a href="/Harshit_Chaurasia_Resume.pdf" download>Resume</a>
-            <a href="https://www.linkedin.com/in/harshit-raj-chaurasia" target="_blank" rel="noopener">LinkedIn</a>
+I'm mainly curious about <span class="ph">[what you want to look at]</span>.
+
+Thanks,
+<span class="ph">[your name]</span></pre>
         </div>
-    </main>
-</div>
+    </section>
+
+    <section class="day">
+        <h2>At my day job</h2>
+        <p>Most of my work is enterprise automation and ML at TCS. I can't link to it, but the numbers and stack for each one are on <a href="/#work">the main page</a>.</p>
+        <div class="areas">
+            <div style="--c:var(--rpa)">
+                <h3>RPA and automation</h3>
+                <ul><li>Enterprise RPA platform</li><li>Endpoint compliance engine</li><li>Ticket routing automation</li><li>Office 365 license automation</li><li>An RPA practice, started from zero</li></ul>
+            </div>
+            <div style="--c:var(--ml)">
+                <h3>Machine learning</h3>
+                <ul><li>ML ticket classifier</li><li>Network cost forecasting</li><li>Pipeline pump optimizer</li></ul>
+            </div>
+            <div style="--c:var(--genai)">
+                <h3>GenAI and agents</h3>
+                <ul><li>Agentic service-desk assistant</li><li>IoT energy agent</li><li>GenAI document extraction</li></ul>
+            </div>
+            <div style="--c:var(--cloud)">
+                <h3>Google Cloud</h3>
+                <ul><li>Cloud migration to GCP</li></ul>
+            </div>
+        </div>
+    </section>
+</main>
 <script>
   document.getElementById('themeToggle').addEventListener('click', function () {
     var r = document.documentElement, next = r.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
     r.setAttribute('data-theme', next);
     try { localStorage.setItem('theme-v2', next); } catch (e) {}
+  });
+  document.getElementById('copyLetter').addEventListener('click', function () {
+    var btn = this, text = 'To: harshit1chaurasia@outlook.com\nSubject: Login for LeadDesk AI / QuillShift\n\n' + document.getElementById('letter').textContent;
+    navigator.clipboard.writeText(text).then(function () {
+      btn.textContent = 'Copied';
+      setTimeout(function () { btn.textContent = 'Copy text'; }, 1800);
+    }, function () { btn.textContent = 'Select and copy'; });
   });
 </script>
 </body>
