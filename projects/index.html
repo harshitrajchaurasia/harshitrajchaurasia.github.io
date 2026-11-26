@@ -132,26 +132,6 @@
     </div>
 
     <div class="entries">
-        <article class="entry" style="--c:var(--cloud)">
-            <div class="meta">
-                <time datetime="2026-11">Nov 2026</time>
-                <span class="area">GenAI, speech</span>
-                <p class="access">Sign-in needed<small>calls Claude or Grok</small></p>
-            </div>
-            <div class="story">
-                <h2><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h2M7 8v8M11 5v14M15 9v6M19 11v2"/></svg></span><a href="https://callsight.saakura.dev" target="_blank" rel="noopener">Callsight</a></h2>
-                <p class="line">Turns a recorded client call into a checked summary, alerts and follow-ups. The clients and calls in it are made up.</p>
-                <p>Upload a recording or paste a transcript. Whisper turns the speech into text on my own server, PII Shield masks names, phone numbers and card numbers, and then Claude or Grok writes a summary, a churn risk, upsell signals and follow-ups. Every point has to come with the exact words it's based on, and code checks those words are really in the call before anything raises an alert. You can also ask questions across all the calls, and each answer links back to where it was said.</p>
-                <p class="note"><b>Trade-off:</b> a quote that checks out proves the words were said, not that the score is right. On my 20 test calls, Grok obeyed a line hidden in one transcript telling it to score a cancelling client at 0%, and every quote it gave was real. So now a rule in plain code flags any low score on a call that mentions cancelling.</p>
-                <p class="stack"><b>Built with</b> Python, FastAPI, faster-whisper, PII Shield, the Claude and Grok APIs, fastembed, SQLite, Monday.com GraphQL. On the 20-call eval, Claude put churn risk in the right range 20 times out of 20, speech-to-text missed 3.6% of words, and none of the personal details read out on the test call reached the model. Open source, MIT licensed.</p>
-                <div class="go">
-                    <a class="btn btn-small btn-solid" href="https://callsight.saakura.dev" target="_blank" rel="noopener">Open Callsight</a>
-                    <a class="btn btn-small btn-line" href="https://github.com/harshitrajchaurasia/callsight" target="_blank" rel="noopener">Read the code</a>
-                    <a class="btn btn-small btn-line" href="mailto:harshit1chaurasia@outlook.com?subject=Login%20for%20Callsight&amp;body=Hi%20Harshit%2C%0A%0AI%27m%20%5Byour%20name%5D%2C%20%5Byour%20role%5D%20at%20%5Bcompany%5D.%20I%20saw%20your%20projects%20page%20and%20would%20like%20to%20try%20Callsight.%0A%0AI%27m%20mainly%20curious%20about%20%5Bwhat%20you%20want%20to%20look%20at%5D.%0A%0AThanks%2C%0A%5Byour%20name%5D">Ask for a login</a>
-                </div>
-            </div>
-        </article>
-
         <article class="entry" style="--c:var(--genai)">
             <div class="meta">
                 <time datetime="2026-11">Nov 2026</time>
@@ -172,21 +152,22 @@
             </div>
         </article>
 
-        <article class="entry" style="--c:var(--ml)">
+        <article class="entry" style="--c:var(--cloud)">
             <div class="meta">
-                <time datetime="2026-03">Mar 2026</time>
-                <span class="area">ML, privacy</span>
-                <p class="access">Open to everyone<small>runs on CPU, no API calls</small></p>
+                <time datetime="2026-06">Jun 2026</time>
+                <span class="area">GenAI, speech</span>
+                <p class="access">Sign-in needed<small>calls Claude or Grok</small></p>
             </div>
             <div class="story">
-                <h2><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span><a href="https://pii-shield.saakura.dev" target="_blank" rel="noopener">PII Shield</a></h2>
-                <p class="line">Strips <strong>35+</strong> kinds of personal data out of text before it reaches an LLM.</p>
-                <p>Paste in a support ticket or a chat log and it comes back with names, street addresses, Social Security numbers, card and bank numbers, emails and phone numbers replaced by labels like [NAME] and [SSN]. It's a Python library first, with a small FastAPI service and web page on top. Nothing you paste is stored.</p>
-                <p class="note"><b>Trade-off:</b> the hosted version runs the pattern rules only, which handles a sentence in about 2&nbsp;ms on a single CPU. The library also has a spaCy NER mode that catches more names, but it's slower and heavier, so it's off here.</p>
-                <p class="stack"><b>Built with</b> Python, spaCy, regex and dictionary rules, FastAPI, Docker. Open source.</p>
+                <h2><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h2M7 8v8M11 5v14M15 9v6M19 11v2"/></svg></span><a href="https://callsight.saakura.dev" target="_blank" rel="noopener">Callsight</a></h2>
+                <p class="line">Turns a recorded client call into a checked summary, alerts and follow-ups. The clients and calls in it are made up.</p>
+                <p>Upload a recording or paste a transcript. Whisper turns the speech into text on my own server, PII Shield masks names, phone numbers and card numbers, and then Claude or Grok writes a summary, a churn risk, upsell signals and follow-ups. Every point has to come with the exact words it's based on, and code checks those words are really in the call before anything raises an alert. You can also ask questions across all the calls, and each answer links back to where it was said.</p>
+                <p class="note"><b>Trade-off:</b> a quote that checks out proves the words were said, not that the score is right. On my 20 test calls, Grok obeyed a line hidden in one transcript telling it to score a cancelling client at 0%, and every quote it gave was real. So now a rule in plain code flags any low score on a call that mentions cancelling.</p>
+                <p class="stack"><b>Built with</b> Python, FastAPI, faster-whisper, PII Shield, the Claude and Grok APIs, fastembed, SQLite, Monday.com GraphQL. On the 20-call eval, Claude put churn risk in the right range 20 times out of 20, speech-to-text missed 3.6% of words, and none of the personal details read out on the test call reached the model. Open source, MIT licensed.</p>
                 <div class="go">
-                    <a class="btn btn-small btn-solid" href="https://pii-shield.saakura.dev" target="_blank" rel="noopener">Try PII Shield</a>
-                    <a class="btn btn-small btn-line" href="https://github.com/harshitrajchaurasia/pii-shield" target="_blank" rel="noopener">Read the code</a>
+                    <a class="btn btn-small btn-solid" href="https://callsight.saakura.dev" target="_blank" rel="noopener">Open Callsight</a>
+                    <a class="btn btn-small btn-line" href="https://github.com/harshitrajchaurasia/callsight" target="_blank" rel="noopener">Read the code</a>
+                    <a class="btn btn-small btn-line" href="mailto:harshit1chaurasia@outlook.com?subject=Login%20for%20Callsight&amp;body=Hi%20Harshit%2C%0A%0AI%27m%20%5Byour%20name%5D%2C%20%5Byour%20role%5D%20at%20%5Bcompany%5D.%20I%20saw%20your%20projects%20page%20and%20would%20like%20to%20try%20Callsight.%0A%0AI%27m%20mainly%20curious%20about%20%5Bwhat%20you%20want%20to%20look%20at%5D.%0A%0AThanks%2C%0A%5Byour%20name%5D">Ask for a login</a>
                 </div>
             </div>
         </article>
@@ -207,6 +188,25 @@
                     <a class="btn btn-small btn-solid" href="https://quillshift.saakura.dev" target="_blank" rel="noopener">Open QuillShift</a>
                     <a class="btn btn-small btn-line" href="https://github.com/harshitrajchaurasia/My-Own-RAG-Bot" target="_blank" rel="noopener">Read the code</a>
                     <a class="btn btn-small btn-line" href="mailto:harshit1chaurasia@outlook.com?subject=Login%20for%20QuillShift&amp;body=Hi%20Harshit%2C%0A%0AI%27m%20%5Byour%20name%5D%2C%20%5Byour%20role%5D%20at%20%5Bcompany%5D.%20I%20saw%20your%20projects%20page%20and%20would%20like%20to%20try%20QuillShift.%0A%0AI%27m%20mainly%20curious%20about%20%5Bwhat%20you%20want%20to%20look%20at%5D.%0A%0AThanks%2C%0A%5Byour%20name%5D">Ask for a login</a>
+                </div>
+            </div>
+        </article>
+
+        <article class="entry" style="--c:var(--ml)">
+            <div class="meta">
+                <time datetime="2026-01">Jan 2026</time>
+                <span class="area">ML, privacy</span>
+                <p class="access">Open to everyone<small>runs on CPU, no API calls</small></p>
+            </div>
+            <div class="story">
+                <h2><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span><a href="https://pii-shield.saakura.dev" target="_blank" rel="noopener">PII Shield</a></h2>
+                <p class="line">Strips <strong>35+</strong> kinds of personal data out of text before it reaches an LLM.</p>
+                <p>Paste in a support ticket or a chat log and it comes back with names, street addresses, Social Security numbers, card and bank numbers, emails and phone numbers replaced by labels like [NAME] and [SSN]. It's a Python library first, with a small FastAPI service and web page on top. Nothing you paste is stored.</p>
+                <p class="note"><b>Trade-off:</b> the hosted version runs the pattern rules only, which handles a sentence in about 2&nbsp;ms on a single CPU. The library also has a spaCy NER mode that catches more names, but it's slower and heavier, so it's off here.</p>
+                <p class="stack"><b>Built with</b> Python, spaCy, regex and dictionary rules, FastAPI, Docker. Open source.</p>
+                <div class="go">
+                    <a class="btn btn-small btn-solid" href="https://pii-shield.saakura.dev" target="_blank" rel="noopener">Try PII Shield</a>
+                    <a class="btn btn-small btn-line" href="https://github.com/harshitrajchaurasia/pii-shield" target="_blank" rel="noopener">Read the code</a>
                 </div>
             </div>
         </article>
