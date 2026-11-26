@@ -4,7 +4,7 @@ Personal portfolio for **Harshit Chaurasia** - Senior RPA Developer & ML Enginee
 
 **Live:** [harshit.saakura.dev](https://harshit.saakura.dev) (primary) - [harshitrajchaurasia.github.io](https://harshitrajchaurasia.github.io) (mirror)
 
-**Side projects:** [harshit.saakura.dev/projects](https://harshit.saakura.dev/projects/) - [PII Shield](https://pii-shield.saakura.dev) ([code](https://github.com/harshitrajchaurasia/pii-shield)), [QuillShift](https://quillshift.saakura.dev) ([code](https://github.com/harshitrajchaurasia/My-Own-RAG-Bot)), [LeadDesk AI](https://leaddesk.saakura.dev)
+**Side projects:** [harshit.saakura.dev/projects](https://harshit.saakura.dev/projects/) - [PII Shield](https://pii-shield.saakura.dev) ([code](https://github.com/harshitrajchaurasia/pii-shield)), [QuillShift](https://quillshift.saakura.dev) ([code](https://github.com/harshitrajchaurasia/My-Own-RAG-Bot)), [LeadDesk AI](https://leaddesk.saakura.dev) ([code](https://github.com/harshitrajchaurasia/leaddesk-ai))
 
 ## What this is
 
