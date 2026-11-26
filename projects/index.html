@@ -132,6 +132,25 @@
     </div>
 
     <div class="entries">
+        <article class="entry" style="--c:var(--cloud)">
+            <div class="meta">
+                <time datetime="2026-11">Nov 2026</time>
+                <span class="area">GenAI, speech</span>
+                <p class="access">Open to everyone<small>API calls capped at $1 a day</small></p>
+            </div>
+            <div class="story">
+                <h2><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h2M7 8v8M11 5v14M15 9v6M19 11v2"/></svg></span><a href="https://callsight.saakura.dev" target="_blank" rel="noopener">Callsight</a></h2>
+                <p class="line">Turns a recorded client call into a checked summary, alerts and follow-ups. The clients and calls in it are made up.</p>
+                <p>Upload a recording or paste a transcript. Whisper turns the speech into text on my own server, PII Shield masks names, phone numbers and card numbers, and then Claude or Grok writes a summary, a churn risk, upsell signals and follow-ups. Every point has to come with the exact words it's based on, and code checks those words are really in the call before anything raises an alert. You can also ask questions across all the calls, and each answer links back to where it was said.</p>
+                <p class="note"><b>Trade-off:</b> a quote that checks out proves the words were said, not that the score is right. On my 20 test calls, Grok obeyed a line hidden in one transcript telling it to score a cancelling client at 0%, and every quote it gave was real. So now a rule in plain code flags any low score on a call that mentions cancelling.</p>
+                <p class="stack"><b>Built with</b> Python, FastAPI, faster-whisper, PII Shield, the Claude and Grok APIs, fastembed, SQLite, Monday.com GraphQL. On the 20-call eval, Claude put churn risk in the right range 20 times out of 20, speech-to-text missed 3.6% of words, and none of the personal details read out on the test call reached the model. Open source, MIT licensed.</p>
+                <div class="go">
+                    <a class="btn btn-small btn-solid" href="https://callsight.saakura.dev" target="_blank" rel="noopener">Open Callsight</a>
+                    <a class="btn btn-small btn-line" href="https://github.com/harshitrajchaurasia/callsight" target="_blank" rel="noopener">Read the code</a>
+                </div>
+            </div>
+        </article>
+
         <article class="entry" style="--c:var(--genai)">
             <div class="meta">
                 <time datetime="2026-11">Nov 2026</time>
