@@ -161,7 +161,7 @@
             <div class="story">
                 <h2><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></span><a href="https://pii-shield.saakura.dev" target="_blank" rel="noopener">PII Shield</a></h2>
                 <p class="line">Strips <strong>35+</strong> kinds of personal data out of text before it reaches an LLM.</p>
-                <p>Paste in a support ticket or a chat log and it comes back with names, Aadhaar and PAN numbers, bank accounts, emails and phone numbers replaced by labels like [NAME] and [PHONE]. It's a Python library first, with a small FastAPI service and web page on top. Nothing you paste is stored.</p>
+                <p>Paste in a support ticket or a chat log and it comes back with names, street addresses, Social Security numbers, card and bank numbers, emails and phone numbers replaced by labels like [NAME] and [SSN]. It's a Python library first, with a small FastAPI service and web page on top. Nothing you paste is stored.</p>
                 <p class="note"><b>Trade-off:</b> the hosted version runs the pattern rules only, which handles a sentence in about 2&nbsp;ms on a single CPU. The library also has a spaCy NER mode that catches more names, but it's slower and heavier, so it's off here.</p>
                 <p class="stack"><b>Built with</b> Python, spaCy, regex and dictionary rules, FastAPI, Docker. Open source.</p>
                 <div class="go">
