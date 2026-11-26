@@ -566,10 +566,12 @@ html:not(.js) .proj-tools { display: none; }
    corner so they never sit behind the hero text. Purely decorative. */
 :root, [data-theme="light"] {
     --sakura-petals: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='200'><path d='M10 20C5.5 15 4.6 8 6.6 2.4L10 4.1l3.4-1.7C15.4 8 14.5 15 10 20z' fill='%23ec8fa8' opacity='0.45' transform='translate%2824 26%29 rotate%28-20 10 10%29 scale%280.8%29'/><path d='M10 20C5.5 15 4.6 8 6.6 2.4L10 4.1l3.4-1.7C15.4 8 14.5 15 10 20z' fill='%23ec8fa8' opacity='0.4' transform='translate%28150 84%29 rotate%28150 10 10%29 scale%280.7%29'/><path d='M10 20C5.5 15 4.6 8 6.6 2.4L10 4.1l3.4-1.7C15.4 8 14.5 15 10 20z' fill='%23ec8fa8' opacity='0.35' transform='translate%2878 150%29 rotate%2870 10 10%29 scale%280.6%29'/></svg>");
+    --sakura-band: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='260' height='56'><path d='M10 20C5.5 15 4.6 8 6.6 2.4L10 4.1l3.4-1.7C15.4 8 14.5 15 10 20z' fill='%23ec8fa8' opacity='0.5' transform='translate%2814 18%29 rotate%28-20 10 10%29 scale%280.75%29'/><path d='M10 20C5.5 15 4.6 8 6.6 2.4L10 4.1l3.4-1.7C15.4 8 14.5 15 10 20z' fill='%23ec8fa8' opacity='0.42' transform='translate%28124 30%29 rotate%28140 10 10%29 scale%280.6%29'/><path d='M10 20C5.5 15 4.6 8 6.6 2.4L10 4.1l3.4-1.7C15.4 8 14.5 15 10 20z' fill='%23ec8fa8' opacity='0.36' transform='translate%28206 8%29 rotate%2860 10 10%29 scale%280.55%29'/></svg>");
     --sakura-blush: #fdeaf0;
 }
 [data-theme="dark"] {
     --sakura-petals: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='200'><path d='M10 20C5.5 15 4.6 8 6.6 2.4L10 4.1l3.4-1.7C15.4 8 14.5 15 10 20z' fill='%23c25b7d' opacity='0.45' transform='translate%2824 26%29 rotate%28-20 10 10%29 scale%280.8%29'/><path d='M10 20C5.5 15 4.6 8 6.6 2.4L10 4.1l3.4-1.7C15.4 8 14.5 15 10 20z' fill='%23c25b7d' opacity='0.4' transform='translate%28150 84%29 rotate%28150 10 10%29 scale%280.7%29'/><path d='M10 20C5.5 15 4.6 8 6.6 2.4L10 4.1l3.4-1.7C15.4 8 14.5 15 10 20z' fill='%23c25b7d' opacity='0.35' transform='translate%2878 150%29 rotate%2870 10 10%29 scale%280.6%29'/></svg>");
+    --sakura-band: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='260' height='56'><path d='M10 20C5.5 15 4.6 8 6.6 2.4L10 4.1l3.4-1.7C15.4 8 14.5 15 10 20z' fill='%23c25b7d' opacity='0.5' transform='translate%2814 18%29 rotate%28-20 10 10%29 scale%280.75%29'/><path d='M10 20C5.5 15 4.6 8 6.6 2.4L10 4.1l3.4-1.7C15.4 8 14.5 15 10 20z' fill='%23c25b7d' opacity='0.42' transform='translate%28124 30%29 rotate%28140 10 10%29 scale%280.6%29'/><path d='M10 20C5.5 15 4.6 8 6.6 2.4L10 4.1l3.4-1.7C15.4 8 14.5 15 10 20z' fill='%23c25b7d' opacity='0.36' transform='translate%28206 8%29 rotate%2860 10 10%29 scale%280.55%29'/></svg>");
     --sakura-blush: #241a35;
 }
 body { position: relative; isolation: isolate; }
@@ -595,4 +597,27 @@ body::after {
 @media (max-width: 760px) {
     /* text spans the full width on phones: keep petals to the top corner, above the intro copy */
     body::after { width: 45%; height: 150px; }
+}
+/* header: a few petals toward the right end, visible at any scroll position */
+.topbar::before {
+    content: "";
+    position: absolute; inset: 0; z-index: -1;
+    pointer-events: none;
+    background:
+        var(--sakura-band) right 0 center / 260px 56px repeat-x,
+        linear-gradient(to left, var(--sakura-blush), transparent 45%);
+    -webkit-mask-image: linear-gradient(to left, #000, transparent 40%);
+            mask-image: linear-gradient(to left, #000, transparent 40%);
+}
+/* footer: mirrors the hero, rising from the bottom-left corner */
+.footer { position: relative; isolation: isolate; overflow: hidden; }
+.footer::before {
+    content: "";
+    position: absolute; inset: 0; z-index: -1;
+    pointer-events: none;
+    background:
+        var(--sakura-band) left 0 center / 260px 56px repeat-x,
+        radial-gradient(ellipse 45% 160% at 0% 100%, var(--sakura-blush), transparent 70%);
+    -webkit-mask-image: linear-gradient(to right, #000, transparent 50%);
+            mask-image: linear-gradient(to right, #000, transparent 50%);
 }
