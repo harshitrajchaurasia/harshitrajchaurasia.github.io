@@ -4,6 +4,8 @@ Personal portfolio for **Harshit Chaurasia** - Senior RPA Developer & ML Enginee
 
 **Live:** [harshit.saakura.dev](https://harshit.saakura.dev) (primary) - [harshitrajchaurasia.github.io](https://harshitrajchaurasia.github.io) (mirror)
 
+**Side projects:** [harshit.saakura.dev/projects](https://harshit.saakura.dev/projects/) - [PII Shield](https://pii-shield.saakura.dev) ([code](https://github.com/harshitrajchaurasia/pii-shield)), [QuillShift](https://quillshift.saakura.dev) ([code](https://github.com/harshitrajchaurasia/My-Own-RAG-Bot)), [LeadDesk AI](https://leaddesk.saakura.dev)
+
 ## What this is
 
 A single-page portfolio built as a static site. Everything is plain HTML/CSS/JS that you can open and read - there is no toolchain to learn, nothing to install, and nothing to compile. Editing the source and pushing to `master` deploys it.
