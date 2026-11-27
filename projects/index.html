@@ -59,6 +59,7 @@
       .story .stack { font-size: .88rem; margin: 1rem 0 0; }
       .stack b { color: var(--ink); font-weight: 600; }
       .story h2 { display: flex; align-items: center; gap: .7rem; }
+      .story h2 .wip { font-size: .45em; font-weight: 500; letter-spacing: 0; color: var(--ink-2); }
       .ico { flex: none; display: grid; place-items: center; width: 2.6rem; height: 2.6rem; border-radius: 12px; color: var(--c); background: color-mix(in srgb, var(--c) 13%, transparent); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--c) 28%, transparent); }
       .ico svg { width: 1.4rem; height: 1.4rem; }
       .go { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.3rem; }
@@ -139,7 +140,7 @@
                 <p class="access">Sign-in needed<small>calls Claude or Grok</small></p>
             </div>
             <div class="story">
-                <h2><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13h4l1.5 2.5h5L16 13h4"/><path d="M5.5 6h13L20 13v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-5z"/></svg></span><a href="https://leaddesk.saakura.dev" target="_blank" rel="noopener">LeadDesk AI</a></h2>
+                <h2><span class="ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13h4l1.5 2.5h5L16 13h4"/><path d="M5.5 6h13L20 13v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-5z"/></svg></span><a href="https://leaddesk.saakura.dev" target="_blank" rel="noopener">LeadDesk AI</a> <span class="wip">(work in progress)</span></h2>
                 <p class="line">A support desk for an agency that sells leads to insurance agents. The clients, leads and tickets in it are made up.</p>
                 <p>Agents write in all day with the same few complaints: a lead was junk, a lead was sold twice, add a state to my campaign, cancel my account. LeadDesk reads each ticket, works out what it is and how upset the client is, sends it to the right team, drafts a reply for a person to approve, and puts an item on a Monday.com board. On my Go High Level test account it also tags the contact, leaves a note, and sends the approved reply by email. A second tab turns a call transcript into a summary and action items on Monday.</p>
                 <p class="note"><b>The part I care about:</b> the model never decides whether a client gets a free replacement lead. That check runs in plain code against the lead record, because a wrong yes gives leads away and a wrong no loses the client.</p>
